@@ -1,0 +1,9 @@
+#include "../../headers/mini_rt.h"
+#include <gtest/gtest.h>
+
+void Input_Tests_argcTest(void)
+{
+	ExpectEqual(check_argc(1), 0);
+	ExpectEqual(check_argc(0), 1);
+}
+

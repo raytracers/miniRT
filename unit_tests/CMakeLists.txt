@@ -15,7 +15,7 @@ FetchContent_MakeAvailable(googletest)
 
 set(This mini_rt)
 
-project($(This) C CXX)
+project(${This} C CXX)
 
 # GoogleTest requires C++
 set(CMAKE_CXX_STANDARD 14)
@@ -27,9 +27,9 @@ set(Headers
 )
 
 set(Sources
-	../sources/main.c)
+	../sources/arg_validator.c)
 
-add_library($(This) $(Headers) $(Sources))
+add_library(${This} ${Sources} ${Headers})
 
 # this will add all the subdirectories with unit tests
 add_subdirectory(input_tests)
