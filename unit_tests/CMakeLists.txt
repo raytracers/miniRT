@@ -32,4 +32,4 @@ set(Sources
 add_library(${This} ${Sources} ${Headers})
 
 # this will add all the subdirectories with unit tests
-add_subdirectory(input_tests)
+add_subdirectory(InputTests)
