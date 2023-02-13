@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/12 22:34:12 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/02/13 03:51:32 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int	main(int argc, char **argv)
 {
+	int	scene_fd;
+
 	if (validate_args(argc, argv) != 0)
 		return (1);
+	scene_fd = scene_open(argv[1]);		
 	return (0);	
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   scene_reader.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 02:22:58 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/02/13 03:50:42 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#include "../headers/mini_rt.h"
+#include <unistd.h>
+#include <fcntl.h>
 
-int	check_argc(int argc);
-int	check_file_extension(char *filename);
-int	validate_args(int argc, char **argv);
+int	scene_open(char *filename)
+{
+	int	scene_fd;
 
-// scene
-int	scene_open(char *filename);
-#endif
+	scene_fd = open(filename, O_RDONLY);
+	return (scene_fd);
+}
