@@ -6,13 +6,17 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/02/13 15:35:05 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/02/13 15:51:43 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	miniRT
 
 BUILD = UnitTests/build
+
+LIBFT = libft/libft.a
+
+ILIBFT = -Llibft -lft
 
 ifeq ($(UNAME), Linux)
 MINILIBX	= -Lmlx_linux -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
@@ -23,6 +27,9 @@ MINILIBX	= -Lmlx_mac -lmlx -framework OpenGL -framework appKit
 MLX			= mlx_mac
 DEFINE		= -D ESC=53 -D ONE=18 -D TWO=19 -D THREE=20 -D FOUR=21 -D PLUS=24 -D MINUS=27 -D SCRLDWN=4 -D SCRLUP=5
 endif
+
+$(LIBFT):
+	@cd libft && $(MAKE)
 
 $(BUILD):
 	@cd UnitTests && cmake -S . -B build
