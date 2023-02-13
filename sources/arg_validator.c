@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/09 16:49:18 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/02/12 22:33:47 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,12 @@ int check_file_extension(char *filename)
 		&& filename[filename_len - 1] == 't')
 		return (0);
 	return (1);
+}
+
+// o intuito desta função é que ela chame todas as outras funções de validação
+int	validate_args(int argc, char **argv)
+{
+	if (!check_argc(argc) || !check_file_extension(argv[1]))
+		return (1);
+	return (0);
 }
