@@ -13,7 +13,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-set(This mini_rt)
+set(This MiniRT)
 
 project(${This} C CXX)
 
@@ -32,4 +32,4 @@ set(Sources
 add_library(${This} ${Sources} ${Headers})
 
 # this will add all the subdirectories with unit tests
-add_subdirectory(input_tests)
+add_subdirectory(InputTests)
