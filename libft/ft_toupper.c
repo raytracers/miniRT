@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/09 11:11:33 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/05/26 12:14:09 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
-
-int	main(int argc, char **argv)
+static int	ft_islower(int c)
 {
-	int	scene_fd;
-
-	if (validate_args(argc, argv) != 0)
+	if (c < 97 || c > 122)
+		return (0);
+	else
 		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+}
+
+int	ft_toupper(int c)
+{
+	if (ft_islower(c))
+		return (c - 32);
+	else
+		return (c);
 }

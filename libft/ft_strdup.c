@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/16 15:08:11 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/06/06 14:18:02 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+char	*ft_strdup(const char *str)
 {
-	int	scene_fd;
+	char	*ptr;
+	int		i;
+	int		size;	
 
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	size = ft_strlen(str) + 1;
+	ptr = malloc(size);
+	if (ptr == NULL)
+		return (0);
+	i = 0;
+	while (i < size)
+	{
+		ptr[i] = str[i];
+		i++;
+	}
+	return (ptr);
 }

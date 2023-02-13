@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/05 17:44:23 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/05/05 18:00:26 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
-
-int	main(int argc, char **argv)
+int	ft_isdigit(int c)
 {
-	int	scene_fd;
-
-	if (validate_args(argc, argv) != 0)
+	if (c > 47 && c < 58)
 		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	else
+		return (0);
 }

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/09 10:14:27 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/05/17 12:41:16 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_isalnum(int c)
 {
-	int	scene_fd;
-
-	if (validate_args(argc, argv) != 0)
+	if (ft_isalpha(c) || ft_isdigit(c))
 		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	else
+		return (0);
 }

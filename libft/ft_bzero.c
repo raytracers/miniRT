@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/16 14:01:17 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/05/17 12:40:54 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_bzero(void *s, size_t n)
 {
-	int	scene_fd;
+	size_t	i;
+	char	*pointer;
 
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	i = 0;
+	pointer = s;
+	while (i < n)
+	{
+		*(pointer + i) = '\0';
+		i++;
+	}
 }

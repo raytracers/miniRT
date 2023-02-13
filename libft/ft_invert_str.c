@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_invert_str.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/06/30 16:58:56 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/07/01 19:18:42 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_invert_str(char *str)
 {
-	int	scene_fd;
+	int		start;
+	int		end;
+	char	temp;
 
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	start = 0;
+	end = ft_strlen(str) - 1;
+	while (start <= end / 2)
+	{
+		temp = str[start];
+		str[start] = str[end - start];
+		str[end - start] = temp;
+		start++;
+	}
 }

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_reader.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 03:50:42 by lfarias-         ###   ########.fr       */
+/*   Created: 2022/05/23 13:13:23 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/06/14 14:17:01 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
 #include <unistd.h>
-#include <fcntl.h>
 
-int	scene_open(char *filename)
+int	ft_putchar_fd(char c, int fd)
 {
-	int	scene_fd;
-
-	scene_fd = open(filename, O_RDONLY);
-	return (scene_fd);
+	return (write(fd, &c, 1));
 }

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:16:49 by gcorreia         ###   ########.fr       */
+/*   Created: 2022/05/09 12:32:37 by gcorreia          #+#    #+#             */
+/*   Updated: 2022/06/03 17:00:01 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
-
-int	main(int argc, char **argv)
+char	*ft_strchr(const char *s, int c)
 {
-	int	scene_fd;
+	int		i;
+	char	*ptr;
 
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);		
-	return (0);	
+	ptr = (char *)s;
+	i = 0;
+	while (ptr[i] != '\0')
+	{
+		if (ptr[i] == (char)c)
+			return (i + ptr);
+		i++;
+	}
+	if (ptr[i] == c)
+		return (i + ptr);
+	else
+		return (0);
 }
