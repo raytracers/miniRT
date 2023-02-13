@@ -6,11 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/09 16:49:18 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/02/13 17:56:27 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "../../headers/mini_rt.h"
 #include <string.h>
 
 int	check_argc(int argc)
