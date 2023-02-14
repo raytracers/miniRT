@@ -45,6 +45,8 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 ILIBFT		= -L$(LIBFT_DIR) -lft
 
 #-----MLX VARIABLES-----#
+UNAME := $(shell uname -s)
+
 ifeq ($(UNAME), Linux)
 MLX_DIR		= mlx_linux
 IMLX		= -L$(MLX_DIR) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
