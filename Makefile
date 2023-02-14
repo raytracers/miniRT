@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/02/14 11:09:37 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/02/14 11:26:56 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ VALIDATION = $(addprefix validation/,	\
 MY_MLX		= $(addprefix mlx/,	\
 	utils.c						\
 	initialization.c			\
+	events.c					\
 )
 
 MAIN 		= main.c

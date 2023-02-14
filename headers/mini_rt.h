@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/14 11:03:15 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/02/14 12:52:32 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "types.h"
 #include "mlx.h"
 #include "mlx_functions.h"
+#include <stdlib.h>
 
 int	check_argc(int argc);
 int	check_file_extension(char *filename);

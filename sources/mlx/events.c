@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mlx_functions.h                                    :+:      :+:    :+:   */
+/*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/14 11:00:40 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/02/14 11:25:13 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/02/14 11:23:24 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MLX_FUNCTIONS_H
-# define MLX_FUNCTIONS_H
+#include "../../headers/mini_rt.h"
 
-#include "types.h"
 
-void	init_window(t_window *win);
-void	pixel_put(t_img *img, int x, int y, int color);
-int		handle_keypress(int keycode, t_window *win);
-int		handle_destroy(t_window *win);
+int	handle_keypress(int keycode, t_window *win)
+{
+	if (keycode == ESC)
+	{
+		mlx_destroy_window(win->vars.mlx, win->vars.win);
+		exit(0);
+	}
+	return (0);
+}
 
-#endif
+int	handle_destroy(t_window *win)
+{
+	mlx_destroy_window(win->vars.mlx, win->vars.win);
+	exit(0);
+	return (0);
+}
