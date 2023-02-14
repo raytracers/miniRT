@@ -4,6 +4,7 @@
 # Project
 build
 miniRT
+mlx_linux/test/mlx-test
 
 ### C ###
 # Prerequisites
