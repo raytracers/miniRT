@@ -17,7 +17,7 @@ BUILD	= UnitTests/build
 
 CC		= cc
 
-RM		= rm -f
+RM		= rm -rf
 
 CFLAGS	= -Wall -Wextra -Werror
 
@@ -89,3 +89,10 @@ $(BUILD):
 
 test: $(BUILD)
 	@cd UnitTests && cmake --build build && cd build && ctest --output-on-failure
+
+cleantest:
+	$(RM) $(BUILD)
+
+retest: cleantest test
+
+.PHONY: all clean fclean re test cleantest retest
