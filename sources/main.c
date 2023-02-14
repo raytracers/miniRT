@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 
 	if (validate_args(argc, argv) != 0)
 		return (1);
-	scene_fd = scene_open(argv[1]);		
+	scene_fd = scene_open(argv[1]);
+	(void)scene_fd;
 	return (0);	
 }

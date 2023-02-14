@@ -23,9 +23,7 @@ int	check_argc(int argc)
 int check_file_extension(char *filename)
 {
 	int		filename_len;
-	int		i;
 
-	i = 0;
 	filename_len = strlen(filename);
 	if (filename_len < 4)
 		return (1);
