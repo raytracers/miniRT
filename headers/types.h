@@ -10,15 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#ifndef	TYPES_H
+# define TYPES_H
 
-#include "types.h"
+typedef struct	s_image
+{
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
 
-int	check_argc(int argc);
-int	check_file_extension(char *filename);
-int	validate_args(int argc, char **argv);
+typedef struct	s_vars
+{
+	void	*mlx;
+	void	*win;
+}				t_vars;
 
-// scene
-int	scene_open(char *filename);
+typedef struct	s_window
+{
+	t_img	image;
+	t_vars	vars;
+}				t_window;
+
 #endif
