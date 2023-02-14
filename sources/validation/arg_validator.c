@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/13 18:17:20 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/02/14 13:10:10 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	check_argc(int argc)
 	return (0);
 }
 
-int check_file_extension(char *filename)
+int	check_file_extension(char *filename)
 {
 	int		filename_len;
 

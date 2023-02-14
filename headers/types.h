@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   types.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/14 13:09:38 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/02/14 13:15:25 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#ifndef TYPES_H
+# define TYPES_H
 
-int	main(int argc, char **argv)
+typedef struct s_image
 {
-	int			scene_fd;
-	t_window	window;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+}				t_img;
 
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);
-	(void)scene_fd;
-	init_window(&window);
-	mlx_loop(window.vars.mlx);
-	return (0);
-}
+typedef struct s_vars
+{
+	void	*mlx;
+	void	*win;
+}				t_vars;
+
+typedef struct s_window
+{
+	t_img	image;
+	t_vars	vars;
+	int		size;
+}				t_window;
+
+#endif

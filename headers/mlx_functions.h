@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   mlx_functions.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/14 13:15:56 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/02/14 11:00:40 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/02/14 13:16:18 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#ifndef MLX_FUNCTIONS_H
+# define MLX_FUNCTIONS_H
 
 # include "types.h"
-# include "mlx.h"
-# include "mlx_functions.h"
-# include <stdlib.h>
 
-int	check_argc(int argc);
-int	check_file_extension(char *filename);
-int	validate_args(int argc, char **argv);
+void	init_window(t_window *win);
+void	pixel_put(t_img *img, int x, int y, int color);
+int		handle_keypress(int keycode, t_window *win);
+int		handle_destroy(t_window *win);
 
-// scene
-int	scene_open(char *filename);
 #endif

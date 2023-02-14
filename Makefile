@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/02/13 18:18:31 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/02/14 11:26:56 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,11 +28,18 @@ VALIDATION = $(addprefix validation/,	\
 	scene_loader.c						\
 )
 
+MY_MLX		= $(addprefix mlx/,	\
+	utils.c						\
+	initialization.c			\
+	events.c					\
+)
+
 MAIN 		= main.c
 
 SRCS 		= $(addprefix sources/,	\
 	$(MAIN)							\
 	$(VALIDATION)					\
+	$(MY_MLX)					\
 )
 
 OBJS 		= $(SRCS:.c=.o)
