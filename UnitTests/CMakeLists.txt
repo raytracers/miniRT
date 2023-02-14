@@ -27,7 +27,7 @@ set(Headers
 )
 
 set(Sources
-	../sources/arg_validator.c)
+	../sources/validation/arg_validator.c)
 
 add_library(${This} ${Sources} ${Headers})
 
