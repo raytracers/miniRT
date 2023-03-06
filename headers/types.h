@@ -6,15 +6,28 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:27:09 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:35:22 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
 
+/* *********************** SPACE RELATED TYPES ****************************** */
+
+typedef struct s_point
+{
+	double	x;
+	double	y;
+	double	z;
+}	t_point;
+
+/* ************************************************************************** */
+
 /* *********************** SCENE RELATED TYPES ****************************** */
-enum	e_element {
+
+enum	e_element
+{
 	ambient_light,
 	camera,
 	light,
@@ -22,11 +35,12 @@ enum	e_element {
 	plane,
 	cylinder
 };
+
 /* ************************************************************************** */
 
 
 /* ************************ MLX RELATED TYPES ******************************* */
-//MLX RELATED TYPES
+
 typedef struct s_image
 {
 	void	*img;
@@ -48,5 +62,7 @@ typedef struct s_window
 	t_vars	vars;
 	int		size;
 }				t_window;
+
+/* ************************************************************************** */
 
 #endif
