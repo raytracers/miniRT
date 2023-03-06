@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 13:45:19 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:52:53 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,24 @@ typedef struct s_cylinder
 	double	height;
 	int		color;
 }	t_cylinder;
+
+union u_element
+{
+	t_a_light	ambient_light;
+	t_camera	camera;
+	t_light		light;
+	t_sphere	sphere;
+	t_plane		plane;
+	t_cylinder	cylinder;
+};
+
+typedef struct s_elist
+{
+	e_element		type;
+	u_element		element;
+	struct s_elist	*next;
+
+}	t_elist;
 
 /* ************************************************************************** */
 
