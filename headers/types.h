@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:46:08 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 13:45:19 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,49 @@ enum	e_element
 	cylinder
 };
 
-/* ************************************************************************** */
+typedef struct s_a_light
+{
+	double	ratio;
+	int		color;
+}	t_a_light;
 
+typedef struct s_camera
+{
+	t_point	origin;
+	t_point	orientation;
+	int		fov;
+}	t_camera;
+
+typedef struct s_light
+{
+	t_point	origin;
+	double	brightness;
+}	t_light;
+
+typedef struct s_sphere
+{
+	t_point	origin;
+	double	diameter;
+	int		color;
+}	t_sphere;
+
+typedef struct s_plane
+{
+	t_point	origin;
+	t_point	normal;
+	int		color;
+}	t_plane;
+
+typedef struct s_cylinder
+{
+	t_point	origin;
+	t_point	orientation;
+	double	diameter;
+	double	height;
+	int		color;
+}	t_cylinder;
+
+/* ************************************************************************** */
 
 /* ************************ MLX RELATED TYPES ******************************* */
 
