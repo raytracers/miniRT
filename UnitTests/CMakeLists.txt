@@ -27,9 +27,12 @@ set(Headers
 )
 
 set(Sources
-	../sources/validation/arg_validator.c)
+	../sources/validation/arg_validator.c
+	../sources/validation/scene_validation.c
+)
 
 add_library(${This} ${Sources} ${Headers})
 
 # this will add all the subdirectories with unit tests
 add_subdirectory(InputTests)
+add_subdirectory(SceneTests)
