@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 13:52:53 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 14:58:45 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ enum	e_element
 	light,
 	sphere,
 	plane,
-	cylinder
+	cylinder,
+	nae
 };
 
 typedef struct s_a_light
