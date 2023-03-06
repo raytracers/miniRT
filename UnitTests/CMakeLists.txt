@@ -31,7 +31,13 @@ set(Sources
 	../sources/validation/scene_validation.c
 )
 
-add_library(${This} ${Sources} ${Headers})
+add_library(${This} ${Sources} ${Libft} ${Headers})
+
+add_library(ft STATIC IMPORTED)
+set_target_properties(ft PROPERTIES IMPORTED_LOCATION
+	${CMAKE_SOURCE_DIR}/../libft/libft.a
+) 
+
 
 # this will add all the subdirectories with unit tests
 add_subdirectory(InputTests)

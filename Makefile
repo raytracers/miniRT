@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/06 16:44:17 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/06 17:54:05 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,7 +97,7 @@ $(LIBFT):
 $(BUILD):
 	@cd UnitTests && cmake -S . -B build
 
-test: $(BUILD)
+test: $(LIBFT) $(BUILD)
 	@cd UnitTests && cmake --build build && cd build && ctest --output-on-failure
 
 cleantest:

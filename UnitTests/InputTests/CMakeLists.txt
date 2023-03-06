@@ -9,7 +9,9 @@ add_executable(${this} ${Sources})
 
 target_link_libraries(${this} PUBLIC
 	GTest::gtest_main
-	MiniRT)
+	MiniRT
+	ft
+)
 
 add_test(
 		NAME ${this}
