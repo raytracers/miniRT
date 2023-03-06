@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 11:35:22 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:46:08 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ typedef struct s_point
 	double	y;
 	double	z;
 }	t_point;
+
+typedef struct s_vector
+{
+	t_point	origin;
+	t_point	orientation;
+}	t_vector;
 
 /* ************************************************************************** */
 
