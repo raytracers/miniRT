@@ -6,13 +6,24 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/02/14 13:15:25 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/06 11:11:30 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
 
+//SCENE RELATED TYPES
+enum	e_element {
+	ambient_light,
+	camera,
+	light,
+	sphere,
+	plane,
+	cylinder
+};
+
+// MLX RELATED TYPES
 typedef struct s_image
 {
 	void	*img;
