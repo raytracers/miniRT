@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 15:59:42 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:39:51 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,6 @@ int				scene_open(char *filename);
 // error handling
 void			print_correct_usage(void);
 void			print_wrong_extension(void);
+void			print_read_error(char *filename);
+void			print_no_file(char *filename);
 #endif
