@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:40:46 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:52:26 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,9 @@ static int	incorrect_colors(char **rgb)
 	while (*rgb)
 	{
 		value = ft_atoi(*rgb);
-		if (!is_digit_str(*rgb) || value < 0 || value > 255)
+		if (!ft_is_digit_str(*rgb) || value < 0 || value > 255)
 			return (1);
 		rgb++;
 	}
 	return (0);
-}
-
-static int	is_digit_str(char *str)
-{
-	if (!(*str))
-		return (0);
-	while (ft_isdigit(*str++))
-		;
-	if (*str)
-		return (0);
-	return (1);
 }
