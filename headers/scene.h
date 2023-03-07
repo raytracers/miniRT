@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:20:54 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 12:22:32 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:42:06 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "types.h"
 
 enum e_element	get_element(char *elem);
+int				get_color(char *rgb);
 int				scene_open(char *filename);
 
 #endif
