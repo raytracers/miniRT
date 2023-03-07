@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 16:55:16 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:22:45 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@ int	scene_open(char *filename)
 {
 	int	scene_fd;
 
+	scene_fd = open(filename, O_WRONLY);
+	if (scene_fd < 0 && errno == EISDIR)
+	{
+		print_wrong_extension();
+		return (scene_fd);
+	}
+	close(scene_fd);
 	scene_fd = open(filename, O_RDONLY);
 	if (scene_fd >= 0)
 		return (scene_fd);
