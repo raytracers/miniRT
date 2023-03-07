@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/06 18:18:15 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:40:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,7 @@ enum e_element	get_element(char *elem);
 
 // scene
 int				scene_open(char *filename);
+
+// error handling
+void			print_correct_usage(void);
 #endif

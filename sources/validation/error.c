@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 15:41:47 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/03/07 15:53:42 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/mini_rt.h"
+#include "../../headers/mini_rt.h"
 
-int	main(int argc, char **argv)
+void	print_correct_usage(void)
 {
-	int			scene_fd;
-	t_window	window;
-
-	if (validate_args(argc, argv) != 0)
-		return (1);
-	scene_fd = scene_open(argv[1]);
-	(void)scene_fd;
-	init_window(&window);
-	mlx_loop(window.vars.mlx);
-	return (0);
+	ft_putendl_fd("USAGE:", 2);
+	ft_putendl_fd("  ./miniRT <filename>.rt", 2);
 }
