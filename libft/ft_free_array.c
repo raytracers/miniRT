@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_arraylen.c                                      :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 15:08:22 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:17:53 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/07 15:15:13 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/07 15:17:17 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_arraylen(char **arr)
+#include <stdlib.h>
+
+void	ft_free_array(char **arr)
 {
 	int	i;
 
 	i = 0;
 	if (!arr)
-		return (0);
+		return ;
 	while (arr[i])
+	{
+		free(arr[i]);
 		++i;
-	return (i);
+	}
 }
