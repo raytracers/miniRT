@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 19:22:45 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:28:57 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,11 @@ int	scene_open(char *filename)
 	scene_fd = open(filename, O_RDONLY);
 	if (scene_fd >= 0)
 		return (scene_fd);
-	if (errno == EPERM || errno == EACCES)
+	else if (errno == EPERM || errno == EACCES)
 		print_read_error(filename);	
-	if (errno == ENOENT)
+	else if (errno == ENOENT)
 		print_no_file(filename);
+	else
+		print_error(filename);
 	return (scene_fd);
 }
