@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   ft_free_array.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 16:12:15 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/07 15:15:13 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/07 15:17:17 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#include <stdlib.h>
 
-# include "../libft/libft.h"
-# include "mlx.h"
-# include "mlx_functions.h"
-# include "types.h"
-# include "input.h"
-# include <stdlib.h>
+void	ft_free_array(char **arr)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (!arr)
+		return ;
+	while (arr[i])
+	{
+		free(arr[i]);
+		++i;
+	}
+}

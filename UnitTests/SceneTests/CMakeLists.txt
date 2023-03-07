@@ -4,6 +4,7 @@ set(this SceneTests)
 
 set(Sources 
 	GetElement.cpp
+	GetColor.cpp
 )
 
 add_executable(${this} ${Sources})
