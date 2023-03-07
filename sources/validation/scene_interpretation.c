@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_validation.c                                 :+:      :+:    :+:   */
+/*   scene_interpretation.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/06 18:17:32 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:19:56 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,10 @@ enum e_element	get_element(char *elem)
 		return (cylinder);
 	else
 		return (nae);
+}
+
+int	get_color(char *rgb)
+{
+	(void)rgb;
+	return (-1);
 }
