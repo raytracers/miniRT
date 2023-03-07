@@ -27,9 +27,9 @@ set(Headers
 )
 
 set(Sources
-	../sources/validation/arg_validator.c
-	../sources/validation/scene_interpretation.c
-	../sources/validation/get_color.c
+	../sources/input/arg_validator.c
+	../sources/input/get_element.c
+	../sources/input/get_color.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
