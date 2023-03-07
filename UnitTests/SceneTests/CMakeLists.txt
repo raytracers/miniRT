@@ -1,9 +1,10 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(this InputTests)
+set(this SceneTests)
 
 set(Sources 
-	InputTest.cpp)
+	GetElement.cpp
+)
 
 add_executable(${this} ${Sources})
 
