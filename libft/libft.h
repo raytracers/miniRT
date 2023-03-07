@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 09:48:00 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/06 18:19:18 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:10:51 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		ft_arraylen(char **arr);
 int		ft_atoi(const char *str);
 void	ft_bzero(void *s, size_t n);
 void	*ft_calloc(size_t num, size_t size);
