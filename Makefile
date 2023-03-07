@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/07 11:26:59 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/07 16:01:35 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ VALIDATION = $(addprefix validation/,	\
 	arg_validator.c						\
 	scene_loader.c						\
 	scene_interpretation.c				\
+	get_color.c							\
 )
 
 MY_MLX		= $(addprefix mlx/,	\

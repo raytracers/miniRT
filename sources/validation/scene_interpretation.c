@@ -6,14 +6,11 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:52:26 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/07 15:59:49 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-
-static int	incorrect_colors(char **rgb);
-static int	is_digit_str(char *str);
 
 enum e_element	get_element(char *elem)
 {
@@ -31,31 +28,4 @@ enum e_element	get_element(char *elem)
 		return (cylinder);
 	else
 		return (nae);
-}
-
-int	get_color(char *colors)
-{
-	char	**rgb;
-
-	rgb = ft_split(colors, ',');
-	if (ft_arraylen(rgb) != 3 || incorrect_colors(rgb))
-	{
-		ft_free_array(rgb);
-		return (-1);
-	}
-	return ((ft_atoi(rgb[0]) << 16) | (ft_atoi(rgb[1]) << 8) | ft_atoi(rgb[2]));
-}
-
-static int	incorrect_colors(char **rgb)
-{
-	int	value;
-
-	while (*rgb)
-	{
-		value = ft_atoi(*rgb);
-		if (!ft_is_digit_str(*rgb) || value < 0 || value > 255)
-			return (1);
-		rgb++;
-	}
-	return (0);
 }
