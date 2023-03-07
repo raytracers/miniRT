@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 19:34:39 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/07 19:42:42 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_read_error(char *filename)
 
 void	print_no_file(char *filename)
 {
-	ft_putstr_fd("ERROR: file does not exist: ", STDERR_FILENO);
+	ft_putstr_fd("ERROR: file not found: ", STDERR_FILENO);
 	ft_putendl_fd(filename, STDERR_FILENO);
 }
 
