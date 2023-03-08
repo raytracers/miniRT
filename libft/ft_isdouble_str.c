@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 10:55:11 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/08 11:50:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:30:22 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 int	ft_isdouble_str(char *str)
 {
+	if (ft_strlen(str) == 1 && (*str == '+' || *str == '-'))
+		return (0);
 	if (*str == '+' || *str == '-')
 		str++;
 	while (ft_isdigit(*str))
