@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/07 15:41:19 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/03/08 10:39:23 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,12 @@ CFLAGS	= -Wall -Wextra -Werror
 
 #-----C FILES-----#
 
-VALIDATION = $(addprefix validation/,	\
-	arg_validator.c						\
-	scene_loader.c						\
-	scene_validation.c					\
-	error.c 							\
+VALIDATION = $(addprefix input/,	\
+	arg_validator.c					\
+	scene_loader.c					\
+	error.c 						\
+	get_element.c					\
+	get_color.c						\
 )
 
 MY_MLX		= $(addprefix mlx/,	\

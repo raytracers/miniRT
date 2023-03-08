@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   ft_arraylen.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/08 10:37:57 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/07 15:08:22 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/07 15:17:53 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+int	ft_arraylen(char **arr)
+{
+	int	i;
 
-# include "../libft/libft.h"
-# include "mlx.h"
-# include "mlx_functions.h"
-# include "types.h"
-# include "input.h"
-# include "error.h"
-# include <stdlib.h>
-
-#endif
+	i = 0;
+	if (!arr)
+		return (0);
+	while (arr[i])
+		++i;
+	return (i);
+}

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   ft_is_digit_str.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/08 10:37:57 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/07 15:47:42 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/07 15:50:46 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include "mlx.h"
-# include "mlx_functions.h"
-# include "types.h"
-# include "input.h"
-# include "error.h"
-# include <stdlib.h>
-
-#endif
+int	ft_is_digit_str(char *str)
+{
+	if (!str || !(*str))
+		return (0);
+	while (ft_isdigit(*str++))
+		;
+	if (*str)
+		return (0);
+	return (1);
+}
