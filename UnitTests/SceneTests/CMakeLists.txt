@@ -6,6 +6,7 @@ set(Sources
 	GetElement.cpp
 	SceneOpen.cpp
 	GetColor.cpp
+	GetPoint.cpp
 )
 
 add_executable(${this} ${Sources})

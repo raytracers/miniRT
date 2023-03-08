@@ -32,6 +32,7 @@ set(Sources
 	../sources/input/arg_validator.c
 	../sources/input/get_element.c
 	../sources/input/get_color.c
+	../sources/input/get_point.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
