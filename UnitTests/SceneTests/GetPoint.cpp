@@ -23,6 +23,8 @@ TEST(GetPoint, InvalidPoints)
 
 	EXPECT_TRUE(get_point((char *)",,", &point));
 	EXPECT_TRUE(get_point((char *)"+,+,+", &point));
+	EXPECT_TRUE(get_point((char *)"++,++,++", &point));
+	EXPECT_TRUE(get_point((char *)"+-,-+,-+", &point));
 	EXPECT_TRUE(get_point((char *)"++32,+2,+1", &point));
 	EXPECT_TRUE(get_point((char *)"--32,-2,-1", &point));
 	EXPECT_TRUE(get_point((char *)"F32,2,1", &point));
