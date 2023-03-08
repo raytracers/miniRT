@@ -29,6 +29,8 @@ set(Headers
 set(Sources
 	../sources/validation/arg_validator.c
 	../sources/validation/scene_validation.c
+	../sources/validation/scene_loader.c
+	../sources/validation/error.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
