@@ -4,6 +4,7 @@ set(this SceneTests)
 
 set(Sources 
 	GetElement.cpp
+	SceneOpen.cpp
 	GetColor.cpp
 )
 

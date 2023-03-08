@@ -27,6 +27,8 @@ set(Headers
 )
 
 set(Sources
+	../sources/input/scene_loader.c
+	../sources/input/error.c
 	../sources/input/arg_validator.c
 	../sources/input/get_element.c
 	../sources/input/get_color.c

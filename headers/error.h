@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/08 10:37:57 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/08 10:37:06 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/08 10:37:41 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
+#ifndef ERROR_H
+# define ERROR_H
 
-# include "../libft/libft.h"
-# include "mlx.h"
-# include "mlx_functions.h"
-# include "types.h"
-# include "input.h"
-# include "error.h"
-# include <stdlib.h>
+void			print_correct_usage(void);
+void			print_wrong_extension(void);
+void			print_read_error(char *filename);
+void			print_no_file(char *filename);
+void			print_error(char *filename);
 
 #endif
