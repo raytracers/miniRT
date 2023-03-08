@@ -10,24 +10,29 @@ extern "C"
 TEST(SceneOpen, ValidFilenames)
 {
 	struct stat st = {0};
-	if (stat("./test_dir", &st) == -1) {
-		mkdir("./test_dir", 0700);
-	}
-	if (access("./scene.rt", F_OK) == -1) {
-		int new_fd = open("./scene.rt", O_CREAT);
-		close(new_fd);
-	}
-	if (access("./test_dir/inside_folder.rt", F_OK) == -1) {
-		int new_fd = open("./test_dir/inside_folder.rt", O_CREAT);
-		close(new_fd);
-	}
-	int fd;
-	std::cout << "THIS IS CWD " << getcwd(NULL, 0) << std::endl;
-	fd = scene_open((char *)"./scene.rt");
-	EXPECT_NE(fd, -1);
-	close(fd);
+	system("mkdir ./test_dir");
+	system("mkdir ./test_dir/another_dir");
+	system("touch ./scene.rt");
+	system("touch ./test_dir/inside_folder.rt");
+	system("touch ./test_dir/another_dir/inception.rt");
+	system("touch ../relative.rt");
+	system("touch ../../double_relative.rt");
 
-	fd = scene_open((char *)"./test_dir/inside_folder.rt");
-	EXPECT_NE(fd, -1);
-	close(fd);
+	char *files[6];
+	files[0] = (char *)"./scene.rt";
+	files[1] = (char *)"scene.rt";
+	files[2] = (char *)"./test_dir/inside_folder.rt";
+	files[3] = (char *)"./test_dir/another_dir/inception.rt";
+	files[4] = (char *)"../relative.rt";
+	files[5] = (char *)"../../double_relative.rt";
+	
+	int fd = -1;
+	for (int i = 0; i < 6; i++) {
+		fd = scene_open(files[i]);
+		EXPECT_NE(fd, -1);
+		close(fd);
+	}
+	for (int i = 0; i < 6; i++) {
+		unlink(files[i]);
+	}
 }
