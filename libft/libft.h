@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 09:48:00 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:51:34 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/08 10:58:07 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_list
 	struct s_list	*next;
 }	t_list;
 
+int		ft_isdouble_str(char *str);
 void	ft_free_array(char **arr);
 int		ft_is_digit_str(char *str);
 int		ft_arraylen(char **arr);
