@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/08 10:39:23 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/08 11:54:33 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,4 +107,4 @@ cleantest:
 
 retest: cleantest test
 
-.PHONY: all clean fclean re test cleantest retest
+.PHONY: all clean fclean re test clean test retest

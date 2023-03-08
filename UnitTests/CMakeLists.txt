@@ -45,3 +45,4 @@ set_target_properties(ft PROPERTIES IMPORTED_LOCATION
 # this will add all the subdirectories with unit tests
 add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
+add_subdirectory(LibftTests)
