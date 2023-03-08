@@ -13,6 +13,7 @@ TEST(GetPoint, ValidPoints)
 	EXPECT_DOUBLE_EQ(point.x, 42.42);
 	EXPECT_DOUBLE_EQ(point.y, -535.42);
 	EXPECT_DOUBLE_EQ(point.z, 0.002);
+	EXPECT_FALSE(get_point((char *)"0,0,0", &point));
 	EXPECT_FALSE(get_point((char *)"-0,-1,-2", &point));
 	EXPECT_FALSE(get_point((char *)"+0,+1,+2", &point));
 }
