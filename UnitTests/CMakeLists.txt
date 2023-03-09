@@ -36,6 +36,7 @@ set(Sources
 	../sources/input/is_normalized.c
 	../sources/input/init_sphere.c
 	../sources/input/init_camera.c
+	../sources/input/init_plane.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})

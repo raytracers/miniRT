@@ -10,6 +10,7 @@ set(Sources
 	IsNormalized.cpp
 	InitSphere.cpp	
 	InitCamera.cpp	
+	InitPlane.cpp
 )
 
 add_executable(${this} ${Sources})
