@@ -35,6 +35,7 @@ set(Sources
 	../sources/input/get_point.c
 	../sources/input/init_sphere.c
 	../sources/input/is_normalized.c
+	../sources/types/t_elist.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
@@ -49,3 +50,4 @@ set_target_properties(ft PROPERTIES IMPORTED_LOCATION
 add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
 add_subdirectory(LibftTests)
+add_subdirectory(ElistTests)
