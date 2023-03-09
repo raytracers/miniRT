@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 17:37:09 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:20:00 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ t_elist	*elist_new(enum e_element type, char **content)
 
 static void	get_functions(t_init_function *functions)
 {
-	get_color(NULL);
 	functions[ambient_light] = NULL;
 	functions[camera] = NULL;
 	functions[light] = NULL;
