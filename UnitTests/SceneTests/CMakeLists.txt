@@ -8,6 +8,7 @@ set(Sources
 	GetColor.cpp
 	GetPoint.cpp
 	InitSphere.cpp	
+	IsNormalized.cpp
 )
 
 add_executable(${this} ${Sources})

@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/08 10:37:57 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:05:56 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # include "input.h"
 # include "error.h"
 # include <stdlib.h>
+# include <math.h>
 
 #endif
