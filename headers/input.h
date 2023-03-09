@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:20:54 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 13:30:17 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/09 14:58:50 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int				get_color(char *rgb);
 int				get_point(char *str, t_point *point);
 int				init_sphere(char **attributes, union u_element *sphere);
 int				is_normalized(t_point vector);
+int				init_camera(union u_element *element);
 
 /* ************************************************************************** */
 
