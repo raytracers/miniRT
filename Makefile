@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/08 14:51:03 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/09 12:28:58 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ VALIDATION = $(addprefix input/,	\
 	get_element.c					\
 	get_color.c						\
 	get_point.c						\
+	is_normalized.c					\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
