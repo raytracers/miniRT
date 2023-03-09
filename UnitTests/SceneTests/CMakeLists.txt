@@ -9,6 +9,7 @@ set(Sources
 	GetPoint.cpp
 	InitSphere.cpp	
 	IsNormalized.cpp
+	InitCylinder.cpp
 )
 
 add_executable(${this} ${Sources})
