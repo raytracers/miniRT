@@ -8,6 +8,7 @@ set(Sources
 	GetColor.cpp
 	GetPoint.cpp
 	IsNormalized.cpp
+	InitCylinder.cpp
 	InitSphere.cpp	
 	InitCamera.cpp	
 )
