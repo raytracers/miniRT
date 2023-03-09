@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:20:54 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 14:58:50 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 15:13:34 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ enum e_element	get_element(char *elem);
 int				get_color(char *rgb);
 int				get_point(char *str, t_point *point);
 int				init_sphere(char **attributes, union u_element *sphere);
+int				init_camera(char **attributes, union u_element *camera);
 int				is_normalized(t_point vector);
-int				init_camera(union u_element *element);
 
 /* ************************************************************************** */
 
