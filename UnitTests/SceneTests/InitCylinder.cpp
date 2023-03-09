@@ -85,6 +85,9 @@ TEST(SceneTests, InvalidCylinderTest)
 	char *missing_all = (char *) " , , , , . . , , "; 
 	test_init_cylinder(missing_all);
 
+	char *normalized = (char *) "0.0,0.0,0.0 0.0,0.0,0.0 42.0 21.0 255,255,255";
+	test_init_cylinder(normalized);
+
 	char *empty = (char *) ""; 
 	test_init_cylinder(empty);
 
