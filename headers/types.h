@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 12:26:49 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 16:38:49 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,6 @@ typedef struct s_ray
 	t_point	origin;
 	t_point	orientation;
 }	t_ray;
-
-/* ************************************************************************** */
-
-/* *********************** SCENE RELATED TYPES ****************************** */
 
 enum	e_element
 {
@@ -102,6 +98,9 @@ typedef struct s_elist
 	struct s_elist		*next;
 
 }	t_elist;
+
+void	elist_addback(t_elist **lst, t_elist *n);
+void	free_elist(t_elist **head);
 
 /* ************************************************************************** */
 
