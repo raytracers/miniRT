@@ -7,6 +7,7 @@ set(Sources
 	SceneOpen.cpp
 	GetColor.cpp
 	GetPoint.cpp
+	InitSphere.cpp	
 	IsNormalized.cpp
 )
 
