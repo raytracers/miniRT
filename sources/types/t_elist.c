@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 18:20:00 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 18:42:09 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ t_elist	*elist_new(enum e_element type, char **content)
 		free(new_node);
 		return (NULL);
 	}
+	new_node->next = NULL;
 	return (new_node);
 }
 
