@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 18:42:09 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:08:37 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ t_elist	*elist_new(enum e_element type, char **content)
 static void	get_functions(t_init_function *functions)
 {
 	functions[ambient_light] = NULL;
-	functions[camera] = NULL;
+	functions[camera] = init_camera;
 	functions[light] = NULL;
 	functions[sphere] = init_sphere;
 	functions[plane] = NULL;
-	functions[cylinder] = NULL;
+	functions[cylinder] = init_cylinder;
 }
 
 void	free_elist(t_elist **head)
