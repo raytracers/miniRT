@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/09 16:41:32 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/09 17:44:22 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ VALIDATION = $(addprefix input/,	\
 	get_color.c						\
 	get_point.c						\
 	is_normalized.c					\
+	init_sphere.c					\
 )
 
 TYPES = $(addprefix types/,	\

@@ -6,14 +6,45 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 16:41:46 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 17:37:09 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/types.h"
-#include <stdlib.h>
+#include "../../headers/mini_rt.h"
+
+typedef int	(*t_init_function)(char **, union u_element *);
 
 static t_elist	*elist_last(t_elist *lst);
+static void		get_functions(t_init_function *functions);
+
+t_elist	*elist_new(enum e_element type, char **content)
+{
+	t_init_function	init_fn[6];
+	t_elist			*new_node;
+
+	new_node = malloc(sizeof(t_elist));
+	if (!new_node)
+		return (NULL);
+	get_functions(init_fn);
+	new_node->type = type;
+	if (init_fn[type](content, &new_node->element))
+	{
+		free(new_node);
+		return (NULL);
+	}
+	return (new_node);
+}
+
+static void	get_functions(t_init_function *functions)
+{
+	get_color(NULL);
+	functions[ambient_light] = NULL;
+	functions[camera] = NULL;
+	functions[light] = NULL;
+	functions[sphere] = init_sphere;
+	functions[plane] = NULL;
+	functions[cylinder] = NULL;
+}
 
 void	free_elist(t_elist **head)
 {
