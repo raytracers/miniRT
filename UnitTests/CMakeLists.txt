@@ -34,9 +34,10 @@ set(Sources
 	../sources/input/get_color.c
 	../sources/input/get_point.c
 	../sources/input/is_normalized.c
-	../sources/input/init_sphere.c
-	../sources/input/init_camera.c
-  ../sources/input/init_cylinder.c
+	../sources/types/init_sphere.c
+	../sources/types/init_camera.c
+	../sources/types/init_cylinder.c
+	../sources/types/t_elist.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
@@ -51,3 +52,4 @@ set_target_properties(ft PROPERTIES IMPORTED_LOCATION
 add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
 add_subdirectory(LibftTests)
+add_subdirectory(ElistTests)
