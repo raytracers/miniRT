@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/09 17:44:22 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/09 19:02:13 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 #-----C FILES-----#
 
-VALIDATION = $(addprefix input/,	\
+INPUT = $(addprefix input/,	\
 	arg_validator.c					\
 	scene_loader.c					\
 	error.c 						\
@@ -31,11 +31,13 @@ VALIDATION = $(addprefix input/,	\
 	get_color.c						\
 	get_point.c						\
 	is_normalized.c					\
-	init_sphere.c					\
 )
 
 TYPES = $(addprefix types/,	\
 	t_elist.c				\
+	init_camera.c			\
+	init_sphere.c			\
+	init_cylinder.c			\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
@@ -48,7 +50,7 @@ MAIN 		= main.c
 
 SRCS 		= $(addprefix sources/,	\
 	$(MAIN)							\
-	$(VALIDATION)					\
+	$(INPUT)						\
 	$(TYPES)						\
 	$(MY_MLX)						\
 )

@@ -33,8 +33,10 @@ set(Sources
 	../sources/input/get_element.c
 	../sources/input/get_color.c
 	../sources/input/get_point.c
-	../sources/input/init_sphere.c
 	../sources/input/is_normalized.c
+	../sources/types/init_sphere.c
+	../sources/types/init_camera.c
+	../sources/types/init_cylinder.c
 	../sources/types/t_elist.c
 )
 

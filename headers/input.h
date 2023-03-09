@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:20:54 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 13:30:17 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/09 19:01:43 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ int				scene_open(char *filename);
 enum e_element	get_element(char *elem);
 int				get_color(char *rgb);
 int				get_point(char *str, t_point *point);
-int				init_sphere(char **attributes, union u_element *sphere);
 int				is_normalized(t_point vector);
 
 /* ************************************************************************** */
