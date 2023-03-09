@@ -31,6 +31,7 @@ int				get_color(char *rgb);
 int				get_point(char *str, t_point *point);
 int				init_sphere(char **attributes, union u_element *sphere);
 int				init_cylinder(char **attributes, union u_element *cylinder);
+int				init_camera(char **attributes, union u_element *camera);
 int				is_normalized(t_point vector);
 
 /* ************************************************************************** */

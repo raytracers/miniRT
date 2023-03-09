@@ -7,9 +7,10 @@ set(Sources
 	SceneOpen.cpp
 	GetColor.cpp
 	GetPoint.cpp
-	InitSphere.cpp	
 	IsNormalized.cpp
 	InitCylinder.cpp
+	InitSphere.cpp	
+	InitCamera.cpp	
 )
 
 add_executable(${this} ${Sources})
