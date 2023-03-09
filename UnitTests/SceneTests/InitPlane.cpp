@@ -18,7 +18,7 @@ TEST(SceneTests, InitPlaneTest)
 	EXPECT_DOUBLE_EQ(element.plane.normal.x, 0.0);
 	EXPECT_DOUBLE_EQ(element.plane.normal.y, 1.0);
 	EXPECT_DOUBLE_EQ(element.plane.normal.z, 0.0);
-	EXPECT_EQ(element.plane.color, 0x0000FF);
+	EXPECT_EQ(element.plane.color, 0x0000E1);
 	ft_free_array(attributes);
 
 	plane_str = (char *) "0.0,0.0,0.0 0.0,1.0,0.0 0,0,0";
