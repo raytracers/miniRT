@@ -1,26 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mini_rt.h                                          :+:      :+:    :+:   */
+/*   render.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
+/*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 18:00:40 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/10 18:00:10 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINI_RT_H
-# define MINI_RT_H
-
-# include "../libft/libft.h"
-# include "mlx.h"
-# include "mlx_functions.h"
 # include "types.h"
-# include "input.h"
-# include "error.h"
-# include "render.h"
-# include <stdlib.h>
-# include <math.h>
 
-#endif
+t_intersection	sphere_intersection(t_ray ray, union u_object *object);

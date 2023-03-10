@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/09 21:02:08 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/10 18:01:30 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,10 @@ TYPES = $(addprefix types/,	\
 	init_sphere.c			\
 	init_cylinder.c			\
 	init_plane.c			\
+)
+
+RENDER = $(addprefix render/,	\
+	sphere_intersection.c		\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
