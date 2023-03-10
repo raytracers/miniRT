@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:50:58 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 17:44:29 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ typedef struct s_ray
 	t_point	origin;
 	t_point	orientation;
 }	t_ray;
+
+typedef struct s_intersection
+{
+	int		exists;
+	t_point	location;
+	t_point	normal;
+	double	distance;
+}	t_intersection;
 
 enum	e_element
 {
@@ -105,6 +113,7 @@ typedef struct s_scene
 	struct s_scene	*next;
 
 }	t_scene;
+
 
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
