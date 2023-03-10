@@ -7,11 +7,10 @@ extern "C"
 
 TEST(SceneTests, ValidSphereTest)
 {
-	char *sphere_str = (char *) "0.0,0.0,20.6 12.6 10,0,255";
-	char **attributes = ft_split(sphere_str, ' ');
+	char **attributes = ft_split("0.0,0.0,20.6 12.6 10,0,255", ' ');
 	union u_object object;
-	int op_result = init_sphere(attributes, &object);
-	EXPECT_EQ(op_result, 0);
+
+	EXPECT_FALSE(init_sphere(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.sphere.origin.y, 0.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.x, 0.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.z, 20.6);
@@ -19,10 +18,8 @@ TEST(SceneTests, ValidSphereTest)
 	EXPECT_EQ(object.sphere.color, 0x0A00FF);
 	ft_free_array(attributes);
 
-	sphere_str = (char *) "-1.0,-1.0,-1.0 -42.42 255,255,255";
-	attributes = ft_split(sphere_str, ' ');
-	op_result = init_sphere(attributes, &object);
-	EXPECT_EQ(op_result, 0);
+	attributes = ft_split("-1.0,-1.0,-1.0 -42.42 255,255,255", ' ');
+	EXPECT_FALSE(init_sphere(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.sphere.origin.y, -1.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.x, -1.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.z, -1.0);
@@ -30,10 +27,8 @@ TEST(SceneTests, ValidSphereTest)
 	EXPECT_EQ(object.sphere.color, 0xFFFFFF);
 	ft_free_array(attributes);
 
-	sphere_str = (char *) "0.0,0.0,0.0 0.0 0,0,0";
-	attributes = ft_split(sphere_str, ' ');
-	op_result = init_sphere(attributes, &object);
-	EXPECT_EQ(op_result, 0);
+	attributes = ft_split("0.0,0.0,0.0 0.0 0,0,0", ' ');
+	EXPECT_FALSE(init_sphere(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.sphere.origin.y, 0.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.x, 0.0);
 	EXPECT_DOUBLE_EQ(object.sphere.origin.z, 0.0);
@@ -46,21 +41,14 @@ void	test_init_sphere(char *input_str)
 {
 	union u_object object;
 	char			**attributes;	
-	int				op_result;	
 
 	attributes = ft_split(input_str, ' ');
-	op_result = init_sphere(attributes, &object);
-	EXPECT_EQ(op_result, 1);
+	EXPECT_TRUE(init_sphere(attributes, &object));
 	ft_free_array(attributes);
 }
 
 TEST(SceneTests, InvalidSphereTest)
 {
-	union u_object object;
-	char			**attributes;	
-	int				op_result;	
-	
-	// missing fields
 	char *missing_color = (char *) "42.0,42.0,42.0 13.0";
 	test_init_sphere(missing_color);
 
@@ -91,7 +79,6 @@ TEST(SceneTests, InvalidSphereTest)
 	char *wrong_color_delimiter = (char *) "0.0,0.0,0.0 12.0 255;0;255"; 
 	test_init_sphere(wrong_color_delimiter);
 
-	// more fields than necessary
 	char *vec4_coord = (char *) "0.0,0.0,0.0,0.0 12.0 255,0,255"; 
 	test_init_sphere(vec4_coord);
 
