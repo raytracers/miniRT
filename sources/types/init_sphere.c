@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:57:10 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:52:32 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 12:23:15 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,11 @@
 
 int	init_sphere(char **attributes, union u_object *object)
 {
-	int			attr_len;
 	int			color;
 	t_sphere	*sphere;
 
-	color = 0;
 	sphere = &object->sphere;
-	attr_len = ft_arraylen(attributes);
-	if (attr_len != 3)
+	if (ft_arraylen(attributes) != 3)
 		return (1);
 	if (get_point(attributes[0], &sphere->origin))
 		return (1);
