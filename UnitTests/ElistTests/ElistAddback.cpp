@@ -7,7 +7,7 @@ extern "C"
 
 TEST(ElistAddback, ValidNode)
 {
-	union u_element	u;
+	union u_object	u;
 	t_elist	first = {sphere, u, NULL};
 	t_elist	second = {camera, u, NULL};
 	t_elist	third = {light, u, NULL};
@@ -23,7 +23,7 @@ TEST(ElistAddback, ValidNode)
 
 TEST(ElistAddback, InvalidNode)
 {
-	union u_element	u;
+	union u_object	u;
 	t_elist	first = {sphere, u, NULL};
 	t_elist	*head;
 
@@ -34,7 +34,7 @@ TEST(ElistAddback, InvalidNode)
 
 TEST(ElistAddback, EmptyList)
 {
-	union u_element	u;
+	union u_object	u;
 	t_elist	first = {sphere, u, NULL};
 	t_elist	*head;
 

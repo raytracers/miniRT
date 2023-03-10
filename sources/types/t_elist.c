@@ -6,20 +6,20 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 19:08:37 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:53:28 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-typedef int	(*t_init_function)(char **, union u_element *);
+typedef int	(*t_init_function)(char **, union u_object *);
 
 static t_elist	*elist_last(t_elist *lst);
 static void		get_functions(t_init_function *functions);
 
 t_elist	*elist_new(enum e_element type, char **content)
 {
-	t_init_function	init_fn[6];
+	t_init_function	init_fn[3];
 	t_elist			*new_node;
 
 	new_node = malloc(sizeof(t_elist));
@@ -27,7 +27,7 @@ t_elist	*elist_new(enum e_element type, char **content)
 		return (NULL);
 	get_functions(init_fn);
 	new_node->type = type;
-	if (init_fn[type](content, &new_node->element))
+	if (init_fn[type](content, &new_node->object))
 	{
 		free(new_node);
 		return (NULL);
@@ -38,11 +38,8 @@ t_elist	*elist_new(enum e_element type, char **content)
 
 static void	get_functions(t_init_function *functions)
 {
-	functions[ambient_light] = NULL;
-	functions[camera] = init_camera;
-	functions[light] = NULL;
 	functions[sphere] = init_sphere;
-	functions[plane] = NULL;
+	functions[plane] = init_plane;
 	functions[cylinder] = init_cylinder;
 }
 
