@@ -38,6 +38,7 @@ set(Sources
 	../sources/types/init_sphere.c
 	../sources/types/init_camera.c
 	../sources/types/init_cylinder.c
+	../sources/types/init_light.c
 	../sources/types/t_elist.c
 	../sources/types/get_ray.c
 )
