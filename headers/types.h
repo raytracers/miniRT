@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 21:01:31 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:30:25 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ typedef struct s_ray
 
 enum	e_element
 {
-	ambient_light,
-	camera,
-	light,
 	sphere,
 	plane,
 	cylinder,
+	ambient_light,
+	camera,
+	light,
 	nae
 };
 
@@ -98,6 +98,16 @@ typedef struct s_elist
 	struct s_elist		*next;
 
 }	t_elist;
+
+typedef struct s_scene
+{
+	t_light			*light;
+	t_a_light		*a_light;
+	t_camera		*camera;
+	t_elist			*elements;
+	struct s_scene	*next;
+
+}	t_scene;
 
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
