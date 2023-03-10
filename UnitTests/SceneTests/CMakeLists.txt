@@ -11,6 +11,7 @@ set(Sources
 	InitCylinder.cpp
 	InitSphere.cpp	
 	InitCamera.cpp	
+	InitPlane.cpp
 )
 
 add_executable(${this} ${Sources})

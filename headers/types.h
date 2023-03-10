@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 19:01:38 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/09 21:01:31 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ t_elist	*elist_new(enum e_element type, char **content);
 int		init_sphere(char **attributes, union u_element *sphere);
 int		init_cylinder(char **attributes, union u_element *cylinder);
 int		init_camera(char **attributes, union u_element *camera);
+int		init_plane(char **attributes, union u_element *element);
 
 /* ************************************************************************** */
 

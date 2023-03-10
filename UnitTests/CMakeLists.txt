@@ -34,6 +34,7 @@ set(Sources
 	../sources/input/get_color.c
 	../sources/input/get_point.c
 	../sources/input/is_normalized.c
+	../sources/types/init_plane.c
 	../sources/types/init_sphere.c
 	../sources/types/init_camera.c
 	../sources/types/init_cylinder.c
