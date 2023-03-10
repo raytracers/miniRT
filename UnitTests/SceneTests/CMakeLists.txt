@@ -12,6 +12,7 @@ set(Sources
 	InitSphere.cpp	
 	InitCamera.cpp	
 	InitPlane.cpp
+	InitAmbientLight.cpp
 )
 
 add_executable(${this} ${Sources})
