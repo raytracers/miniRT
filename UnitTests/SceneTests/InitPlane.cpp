@@ -9,6 +9,7 @@ TEST(SceneTests, InitPlaneTest)
 {
 	char **attributes = ft_split("0.0,0.0,-10.0 0.0,1.0,0.0 0,0,225", ' ');
 	union u_object object;
+
 	EXPECT_FALSE(init_plane(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.plane.origin.y, 0.0);
 	EXPECT_DOUBLE_EQ(object.plane.origin.x, 0.0);
@@ -46,7 +47,6 @@ void	test_init_plane(char *input_str)
 {
 	union u_object object;
 	char			**attributes;	
-	int				op_result;	
 
 	attributes = ft_split(input_str, ' ');
 	EXPECT_TRUE(init_plane(attributes, &object));
