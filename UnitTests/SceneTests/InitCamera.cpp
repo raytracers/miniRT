@@ -20,6 +20,7 @@ TEST(SceneTests, ValidCamera)
 	EXPECT_DOUBLE_EQ(cam->orientation.y, 0.0);
 	EXPECT_DOUBLE_EQ(cam->orientation.z, 1.0);
 	EXPECT_EQ(cam->fov, 70);
+	EXPECT_TRUE(cam->r_fov < 1.223 && cam->r_fov > 1.221);
 	ft_free_array(attributes);
 }
 
