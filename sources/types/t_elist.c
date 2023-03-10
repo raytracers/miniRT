@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/10 11:45:57 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:49:30 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		get_functions(t_init_function *functions);
 
 t_elist	*elist_new(enum e_element type, char **content)
 {
-	t_init_function	init_fn[6];
+	t_init_function	init_fn[3];
 	t_elist			*new_node;
 
 	new_node = malloc(sizeof(t_elist));
@@ -39,7 +39,7 @@ t_elist	*elist_new(enum e_element type, char **content)
 static void	get_functions(t_init_function *functions)
 {
 	functions[sphere] = init_sphere;
-	functions[plane] = NULL;
+	functions[plane] = init_plane;
 	functions[cylinder] = init_cylinder;
 }
 

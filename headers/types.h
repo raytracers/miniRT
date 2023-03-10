@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:36:20 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:48:46 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ typedef struct s_cylinder
 
 union u_element
 {
-	t_a_light	ambient_light;
-	t_light		light;
 	t_sphere	sphere;
 	t_plane		plane;
 	t_cylinder	cylinder;
