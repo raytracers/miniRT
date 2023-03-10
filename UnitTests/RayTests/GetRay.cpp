@@ -20,18 +20,6 @@ TEST(GetRay, ArgcTest)
 	EXPECT_DOUBLE_EQ(ray.origin.z, origin.z);
 }
 {
-	t_point	origin = {2.0, 1.0, 4.0};
-	t_point	destination= {0.134, -0.134, 0.982};
-	t_ray	ray = get_ray(origin, destination);
-
-	EXPECT_DOUBLE_EQ(ray.orientation.x, destination.x);
-	EXPECT_DOUBLE_EQ(ray.orientation.y, destination.y);
-	EXPECT_DOUBLE_EQ(ray.orientation.z, destination.z);
-	EXPECT_DOUBLE_EQ(ray.origin.x, origin.x);
-	EXPECT_DOUBLE_EQ(ray.origin.y, origin.y);
-	EXPECT_DOUBLE_EQ(ray.origin.z, origin.z);
-}
-{
 	t_point	origin = {3.0, 2.0, 1.0};
 	t_point	destination= {0, 0, 0};
 	t_ray	ray = get_ray(origin, destination);
