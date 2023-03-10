@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:34:46 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/09 15:53:28 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:39:31 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,25 @@
 
 static int	get_fov(char *str);
 
-int	init_camera(char **attributes, union u_element *element)
+int	init_camera(char **attributes, t_camera **cam)
 {
-	t_camera	*camera;
-
 	if (ft_arraylen(attributes) != 3)
 		return (1);
-	camera = &element->camera;
-	if (get_point(attributes[0], &camera->origin)
-		|| get_point(attributes[1], &camera->orientation))
+	*cam = malloc(sizeof(t_camera));
+	if (!*cam)
+		return (1);
+	if (get_point(attributes[0], &(*cam)->origin)
+		|| get_point(attributes[1], &(*cam)->orientation))
 	{
+		free(*cam);
 		return (1);
 	}
-	if (!is_normalized(camera->orientation))
+	(*cam)->fov = get_fov(attributes[2]);
+	if ((*cam)->fov == -1 || !is_normalized((*cam)->orientation))
+	{
+		free(*cam);
 		return (1);
-	camera->fov = get_fov(attributes[2]);
-	if (camera->fov == -1)
-		return (1);
+	}
 	return (0);
 }
 

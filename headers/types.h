@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:30:25 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:36:20 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ typedef struct s_cylinder
 union u_element
 {
 	t_a_light	ambient_light;
-	t_camera	camera;
 	t_light		light;
 	t_sphere	sphere;
 	t_plane		plane;
@@ -112,9 +111,9 @@ typedef struct s_scene
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
 t_elist	*elist_new(enum e_element type, char **content);
+int		init_camera(char **attributes, t_camera **camera);
 int		init_sphere(char **attributes, union u_element *sphere);
 int		init_cylinder(char **attributes, union u_element *cylinder);
-int		init_camera(char **attributes, union u_element *camera);
 int		init_plane(char **attributes, union u_element *element);
 
 /* ************************************************************************** */
