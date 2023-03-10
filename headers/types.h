@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:50:58 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:07:35 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,8 @@ typedef struct s_window
 {
 	t_img	image;
 	t_vars	vars;
-	int		size;
+	int		height;
+	int		width;
 }				t_window;
 
 /* ************************************************************************** */
