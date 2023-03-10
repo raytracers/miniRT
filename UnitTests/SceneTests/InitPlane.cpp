@@ -7,11 +7,9 @@ extern "C"
 
 TEST(SceneTests, InitPlaneTest)
 {
-	char *plane_str = (char *) "0.0,0.0,-10.0 0.0,1.0,0.0 0,0,225";
-	char **attributes = ft_split(plane_str, ' ');
+	char **attributes = ft_split("0.0,0.0,-10.0 0.0,1.0,0.0 0,0,225", ' ');
 	union u_object object;
-	int op_result = init_plane(attributes, &object);
-	EXPECT_EQ(op_result, 0);
+	EXPECT_FALSE(init_plane(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.plane.origin.y, 0.0);
 	EXPECT_DOUBLE_EQ(object.plane.origin.x, 0.0);
 	EXPECT_DOUBLE_EQ(object.plane.origin.z, -10.0);
@@ -32,9 +30,8 @@ TEST(SceneTests, InitPlaneTest)
 	EXPECT_EQ(object.plane.color, 0x000000);
 	ft_free_array(attributes);
 
-	plane_str = (char *) "-10.0,-10.0,-10.0 0.0,1.0,0.0 0,0,0";
-	attributes = ft_split(plane_str, ' ');
-	op_result = init_plane(attributes, &object);
+	attributes = ft_split("-10.0,-10.0,-10.0 0.0,1.0,0.0 0,0,0", ' ');
+	EXPECT_FALSE(init_plane(attributes, &object));
 	EXPECT_DOUBLE_EQ(object.plane.origin.y, -10.0);
 	EXPECT_DOUBLE_EQ(object.plane.origin.x, -10.0);
 	EXPECT_DOUBLE_EQ(object.plane.origin.z, -10.0);
@@ -52,18 +49,12 @@ void	test_init_plane(char *input_str)
 	int				op_result;	
 
 	attributes = ft_split(input_str, ' ');
-	op_result = init_plane(attributes, &object);
-	EXPECT_EQ(op_result, 1);
+	EXPECT_TRUE(init_plane(attributes, &object));
 	ft_free_array(attributes);
 }
 
 TEST(SceneTests, MissingArgPlaneTest)
 {
-	union u_object object;
-	char			**attributes;	
-	int				op_result;	
-	
-	// missing fields
 	char *missing_color = (char *) "0.0,0.0,-10.0 0.0,1.0,0.0";
 	test_init_plane(missing_color);
 
@@ -75,15 +66,10 @@ TEST(SceneTests, MissingArgPlaneTest)
 
 	char *normalized = (char *) "0.0,0.0,-10.0 0.0,0.0,0.0 255,255,255";
 	test_init_plane(normalized);
-
 }
 
 TEST(SceneTests, WrongFormatPlaneTest)
 {
-	union u_object object;
-	char			**attributes;	
-	int				op_result;	
-
 	char *missing_all = (char *) " , , . , , "; 
 	test_init_plane(missing_all);
 
@@ -105,7 +91,6 @@ TEST(SceneTests, WrongFormatPlaneTest)
 	char *wrong_color_delimiter = (char *) "0.0,0.0,0.0 0.0,1.0,0.0 255;0;255"; 
 	test_init_plane(wrong_color_delimiter);
 
-	// more fields than necessary
 	char *vec4_coord = (char *) "0.0,0.0,0.0,0.0 0.0,1.0,0.0 255,0,255"; 
 	test_init_plane(vec4_coord);
 
