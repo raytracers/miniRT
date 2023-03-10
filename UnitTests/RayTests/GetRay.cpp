@@ -12,9 +12,9 @@ TEST(GetRay, ArgcTest)
 	t_point	destination = {43.0, 20.0, -36.0};
 	t_ray	ray = get_ray(origin, destination);
 
-	EXPECT_TRUE(ray.orientation.x > 0.721 && ray.orientation.x < 0.723);
-	EXPECT_TRUE(ray.orientation.y > 0.335 && ray.orientation.y < 0.337);
-	EXPECT_TRUE(ray.orientation.z > -0.605 && ray.orientation.z < -0.603);
+	EXPECT_TRUE(ray.orientation.x > 0.678 && ray.orientation.x < 0.680);
+	EXPECT_TRUE(ray.orientation.y > 0.314 && ray.orientation.y < 0.316);
+	EXPECT_TRUE(ray.orientation.z > -0.664 && ray.orientation.z < -0.662);
 	EXPECT_DOUBLE_EQ(ray.origin.x, origin.x);
 	EXPECT_DOUBLE_EQ(ray.origin.y, origin.y);
 	EXPECT_DOUBLE_EQ(ray.origin.z, origin.z);
