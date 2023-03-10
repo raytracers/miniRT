@@ -6,12 +6,19 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 14:07:35 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:10:46 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
+
+
+/* *************************** CONSTANTS ************************************ */
+
+#define M_PI 3.14159265358979323846
+
+/* ************************************************************************** */
 
 /* *********************** SPACE RELATED TYPES ****************************** */
 
@@ -50,6 +57,7 @@ typedef struct s_camera
 	t_point	origin;
 	t_point	orientation;
 	int		fov;
+	double	r_fov;
 }	t_camera;
 
 typedef struct s_light
