@@ -9,54 +9,54 @@ TEST(SceneTests, ValidSphereTest)
 {
 	char *sphere_str = (char *) "0.0,0.0,20.6 12.6 10,0,255";
 	char **attributes = ft_split(sphere_str, ' ');
-	union u_element element;
-	int op_result = init_sphere(attributes, &element);
+	union u_object object;
+	int op_result = init_sphere(attributes, &object);
 	EXPECT_EQ(op_result, 0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.y, 0.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.x, 0.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.z, 20.6);
-	EXPECT_DOUBLE_EQ(element.sphere.diameter, 12.6);
-	EXPECT_EQ(element.sphere.color, 0x0A00FF);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.y, 0.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.x, 0.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.z, 20.6);
+	EXPECT_DOUBLE_EQ(object.sphere.diameter, 12.6);
+	EXPECT_EQ(object.sphere.color, 0x0A00FF);
 	ft_free_array(attributes);
 
 	sphere_str = (char *) "-1.0,-1.0,-1.0 -42.42 255,255,255";
 	attributes = ft_split(sphere_str, ' ');
-	op_result = init_sphere(attributes, &element);
+	op_result = init_sphere(attributes, &object);
 	EXPECT_EQ(op_result, 0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.y, -1.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.x, -1.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.z, -1.0);
-	EXPECT_DOUBLE_EQ(element.sphere.diameter, -42.42);
-	EXPECT_EQ(element.sphere.color, 0xFFFFFF);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.y, -1.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.x, -1.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.z, -1.0);
+	EXPECT_DOUBLE_EQ(object.sphere.diameter, -42.42);
+	EXPECT_EQ(object.sphere.color, 0xFFFFFF);
 	ft_free_array(attributes);
 
 	sphere_str = (char *) "0.0,0.0,0.0 0.0 0,0,0";
 	attributes = ft_split(sphere_str, ' ');
-	op_result = init_sphere(attributes, &element);
+	op_result = init_sphere(attributes, &object);
 	EXPECT_EQ(op_result, 0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.y, 0.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.x, 0.0);
-	EXPECT_DOUBLE_EQ(element.sphere.origin.z, 0.0);
-	EXPECT_DOUBLE_EQ(element.sphere.diameter, 0.0);
-	EXPECT_EQ(element.sphere.color, 0x000000);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.y, 0.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.x, 0.0);
+	EXPECT_DOUBLE_EQ(object.sphere.origin.z, 0.0);
+	EXPECT_DOUBLE_EQ(object.sphere.diameter, 0.0);
+	EXPECT_EQ(object.sphere.color, 0x000000);
 	ft_free_array(attributes);
 }
 
 void	test_init_sphere(char *input_str)
 {
-	union u_element element;
+	union u_object object;
 	char			**attributes;	
 	int				op_result;	
 
 	attributes = ft_split(input_str, ' ');
-	op_result = init_sphere(attributes, &element);
+	op_result = init_sphere(attributes, &object);
 	EXPECT_EQ(op_result, 1);
 	ft_free_array(attributes);
 }
 
 TEST(SceneTests, InvalidSphereTest)
 {
-	union u_element element;
+	union u_object object;
 	char			**attributes;	
 	int				op_result;	
 	

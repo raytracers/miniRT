@@ -6,21 +6,21 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:57:10 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 13:58:26 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:52:32 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 #include <stdio.h>
 
-int	init_sphere(char **attributes, union u_element *element)
+int	init_sphere(char **attributes, union u_object *object)
 {
 	int			attr_len;
 	int			color;
 	t_sphere	*sphere;
 
 	color = 0;
-	sphere = &element->sphere;
+	sphere = &object->sphere;
 	attr_len = ft_arraylen(attributes);
 	if (attr_len != 3)
 		return (1);

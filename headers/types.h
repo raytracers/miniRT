@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 11:48:46 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:50:58 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct s_cylinder
 	int		color;
 }	t_cylinder;
 
-union u_element
+union u_object
 {
 	t_sphere	sphere;
 	t_plane		plane;
@@ -91,7 +91,7 @@ union u_element
 typedef struct s_elist
 {
 	enum e_element		type;
-	union u_element		element;
+	union u_object		object;
 	struct s_elist		*next;
 
 }	t_elist;
@@ -110,9 +110,9 @@ void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
 t_elist	*elist_new(enum e_element type, char **content);
 int		init_camera(char **attributes, t_camera **camera);
-int		init_sphere(char **attributes, union u_element *sphere);
-int		init_cylinder(char **attributes, union u_element *cylinder);
-int		init_plane(char **attributes, union u_element *element);
+int		init_sphere(char **attributes, union u_object *sphere);
+int		init_cylinder(char **attributes, union u_object *cylinder);
+int		init_plane(char **attributes, union u_object *element);
 
 /* ************************************************************************** */
 

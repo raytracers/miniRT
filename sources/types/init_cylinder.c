@@ -6,14 +6,14 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:32:20 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 18:05:23 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:52:17 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 #include <stdio.h>
 
-int	init_cylinder(char **attributes, union u_element *element)
+int	init_cylinder(char **attributes, union u_object *object)
 {
 	int			attr_len;
 	int			color;
@@ -21,7 +21,7 @@ int	init_cylinder(char **attributes, union u_element *element)
 
 	color = 0;
 	attr_len = ft_arraylen(attributes);
-	cylinder = &element->cylinder;
+	cylinder = &object->cylinder;
 	if (attr_len != 5)
 		return (1);
 	if (get_point(attributes[0], &cylinder->origin))

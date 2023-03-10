@@ -6,13 +6,13 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:15:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 19:54:57 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/10 11:51:47 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-int	init_plane(char **attributes, union u_element *element)
+int	init_plane(char **attributes, union u_object *object)
 {
 	int			attr_len;
 	int			color;
@@ -20,7 +20,7 @@ int	init_plane(char **attributes, union u_element *element)
 
 	color = -1;
 	attr_len = ft_arraylen(attributes);
-	plane = &element->plane;
+	plane = &object->plane;
 	if (attr_len != 3)
 		return (1);
 	if (get_point(attributes[0], &plane->origin))
