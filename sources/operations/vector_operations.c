@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 12:48:44 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 13:47:55 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:03:29 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,5 @@ t_point	normalize(t_point v)
 	v.x = v.x / mag;
 	v.y = v.y / mag;
 	v.z = v.z / mag;
-		return (v);
+	return (v);
 }

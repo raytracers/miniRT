@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 14:55:09 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:56:56 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 static inline double	get_b(t_ray r, t_sphere s);
 static inline double	get_c(t_ray r, t_sphere s);
-static inline double	distance(t_point a, t_point b);
 
 t_intersection	sphere_intersection(t_ray r, union u_object object)
 {
@@ -46,9 +45,4 @@ static inline double	get_c(t_ray r, t_sphere s)
 
 	oc = vector_dif(r.origin, s.origin);
 	return (dot_product(oc, oc) - pow(s.diameter / 2, 2));
-}
-
-static inline double	distance(t_point a, t_point b)
-{
-	return (sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2) + pow(a.z - b.z, 2)));
 }
