@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/10 18:02:49 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 11:59:54 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_intersection	sphere_intersection(t_ray ray, union u_object *object)
 	(void)sphere;
 	(void)ray;
 	(void)object;
+	point.exists = 0;
 	return (point);
 }
