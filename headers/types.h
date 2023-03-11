@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 17:44:29 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 20:21:52 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ int		init_camera(char **attributes, t_camera **camera);
 int		init_sphere(char **attributes, union u_object *sphere);
 int		init_cylinder(char **attributes, union u_object *cylinder);
 int		init_plane(char **attributes, union u_object *element);
+int		init_light(char **attributes, t_light *light);
 
 /* ************************************************************************** */
 
