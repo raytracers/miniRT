@@ -39,7 +39,7 @@ set(Sources
 	../sources/types/init_camera.c
 	../sources/types/init_cylinder.c
 	../sources/types/t_elist.c
-	../sources/render/quadratic_solver.c
+	../sources/operations/quadratic_solver.c
 	../sources/render/sphere_intersection.c
 )
 

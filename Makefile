@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/11 11:58:55 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/11 12:45:31 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,10 @@ TYPES = $(addprefix types/,	\
 
 RENDER = $(addprefix render/,	\
 	sphere_intersection.c		\
-	quadratic_solver.c			\
+)
+
+OPERATIONS = $(addprefix operations/,	\
+	quadratic_solver.c					\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
@@ -59,6 +62,7 @@ SRCS 		= $(addprefix sources/,	\
 	$(INPUT)						\
 	$(TYPES)						\
 	$(RENDER)						\
+	$(OPERATIONS)					\
 	$(MY_MLX)						\
 )
 
