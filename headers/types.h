@@ -6,12 +6,19 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 17:44:29 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:14:25 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
+
+
+/* *************************** CONSTANTS ************************************ */
+
+#define M_PI 3.14159265358979323846
+
+/* ************************************************************************** */
 
 /* *********************** SPACE RELATED TYPES ****************************** */
 
@@ -58,6 +65,7 @@ typedef struct s_camera
 	t_point	origin;
 	t_point	orientation;
 	int		fov;
+	double	r_fov;
 }	t_camera;
 
 typedef struct s_light
@@ -118,10 +126,13 @@ typedef struct s_scene
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
 t_elist	*elist_new(enum e_element type, char **content);
+t_ray	get_ray(t_point origin, t_point orientation);
 int		init_camera(char **attributes, t_camera **camera);
+int		init_ambient_light(char **attributes, t_a_light *amb_light);
 int		init_sphere(char **attributes, union u_object *sphere);
 int		init_cylinder(char **attributes, union u_object *cylinder);
 int		init_plane(char **attributes, union u_object *element);
+int		init_light(char **attributes, t_light *light);
 
 /* ************************************************************************** */
 
@@ -146,7 +157,8 @@ typedef struct s_window
 {
 	t_img	image;
 	t_vars	vars;
-	int		size;
+	int		height;
+	int		width;
 }				t_window;
 
 /* ************************************************************************** */
