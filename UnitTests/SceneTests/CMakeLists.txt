@@ -12,6 +12,7 @@ set(Sources
 	InitSphere.cpp	
 	InitCamera.cpp	
 	InitPlane.cpp
+	InitAmbientLight.cpp
 	InitLight.cpp
 )
 

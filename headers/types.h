@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 20:21:52 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:14:25 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,7 @@ void	free_elist(t_elist **head);
 t_elist	*elist_new(enum e_element type, char **content);
 t_ray	get_ray(t_point origin, t_point orientation);
 int		init_camera(char **attributes, t_camera **camera);
+int		init_ambient_light(char **attributes, t_a_light *amb_light);
 int		init_sphere(char **attributes, union u_object *sphere);
 int		init_cylinder(char **attributes, union u_object *cylinder);
 int		init_plane(char **attributes, union u_object *element);
