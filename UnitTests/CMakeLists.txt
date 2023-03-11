@@ -39,7 +39,9 @@ set(Sources
 	../sources/types/init_camera.c
 	../sources/types/init_cylinder.c
 	../sources/types/init_ambient_light.c
+	../sources/types/init_light.c
 	../sources/types/t_elist.c
+	../sources/types/get_ray.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
@@ -55,3 +57,4 @@ add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
 add_subdirectory(LibftTests)
 add_subdirectory(ElistTests)
+add_subdirectory(RayTests)

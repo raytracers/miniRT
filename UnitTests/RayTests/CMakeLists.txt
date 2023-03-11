@@ -1,19 +1,9 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(this SceneTests)
+set(this RayTests)
 
 set(Sources 
-	GetElement.cpp
-	SceneOpen.cpp
-	GetColor.cpp
-	GetPoint.cpp
-	IsNormalized.cpp
-	InitCylinder.cpp
-	InitSphere.cpp	
-	InitCamera.cpp	
-	InitPlane.cpp
-	InitAmbientLight.cpp
-	InitLight.cpp
+	GetRay.cpp
 )
 
 add_executable(${this} ${Sources})
