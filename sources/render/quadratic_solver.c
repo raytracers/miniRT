@@ -6,20 +6,20 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:39:41 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 11:57:07 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:26:42 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-double	quadratic_solver(double	b, double c)
+double	quadratic_solver(double b, double c)
 {
 	double	delta;
 	double	sol_one;
 	double	sol_two;
 
 	b *= -1;
-	delta = pow(b,2) - 4 * c;
+	delta = pow(b, 2) - 4 * c;
 	if (delta < 0)
 		return (-1);
 	delta = sqrt(delta);
