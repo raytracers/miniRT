@@ -39,6 +39,7 @@ set(Sources
 	../sources/types/init_camera.c
 	../sources/types/init_cylinder.c
 	../sources/types/t_elist.c
+	../sources/render/sphere_intersection.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
@@ -54,3 +55,4 @@ add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
 add_subdirectory(LibftTests)
 add_subdirectory(ElistTests)
+add_subdirectory(IntersectionTests)
