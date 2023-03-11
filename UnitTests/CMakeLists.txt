@@ -40,6 +40,7 @@ set(Sources
 	../sources/types/init_cylinder.c
 	../sources/types/t_elist.c
 	../sources/operations/quadratic_solver.c
+	../sources/operations/vector_operations.c
 	../sources/render/sphere_intersection.c
 )
 
