@@ -69,7 +69,7 @@ TEST(VectorOperations, VectorScalarProduct)
 	{
 		t_point	v = { 0, 0, 0 };
 		double	s = 42;
-		result = vector_scalar_product(v, s);
+		result = vector_scalar(v, s);
 	}
 	EXPECT_DOUBLE_EQ(result.x, 0.0);
 	EXPECT_DOUBLE_EQ(result.y, 0.0);
@@ -77,7 +77,7 @@ TEST(VectorOperations, VectorScalarProduct)
 	{
 		t_point	v = { 42, 42, 42 };
 		double	s = 0;
-		result = vector_scalar_product(v, s);
+		result = vector_scalar(v, s);
 	}
 	EXPECT_DOUBLE_EQ(result.x, 0.0);
 	EXPECT_DOUBLE_EQ(result.y, 0.0);
@@ -85,7 +85,7 @@ TEST(VectorOperations, VectorScalarProduct)
 	{
 		t_point	v = { 2, 4, 8};
 		double	s = 2;
-		result = vector_scalar_product(v, s);
+		result = vector_scalar(v, s);
 	}
 	EXPECT_DOUBLE_EQ(result.x, 4.0);
 	EXPECT_DOUBLE_EQ(result.y, 8.0);

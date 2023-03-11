@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 12:48:44 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 13:26:50 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 13:37:04 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_point	vector_sum(t_point a, t_point b)
 	return (a);
 }
 
-t_point	vector_scalar_product(t_point v, double s)
+t_point	vector_scalar(t_point v, double s)
 {
 	v.x *= s;
 	v.y *= s;
