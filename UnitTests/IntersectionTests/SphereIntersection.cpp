@@ -15,7 +15,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	t_point			direction = { -0.821, 0.537, 0.197 };
 	t_point			origin = { -0.191, 1.821, 1.0 };
 	t_ray			ray = {origin, direction};
-	inter = sphere_intersection(ray, &s);
+	inter = sphere_intersection(ray, s);
 }
 	EXPECT_TRUE(inter.exists);
 	EXPECT_TRUE(inter.distance > 6.569 && inter.distance < 6.571);
@@ -31,7 +31,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	t_point			origin = { 0, 5, 0 };
 	t_point			direction = { 0, -1, 0 };
 	t_ray			ray = {origin, direction};
-	inter = sphere_intersection(ray, &s);
+	inter = sphere_intersection(ray, s);
 }
 	EXPECT_TRUE(inter.exists);
 	EXPECT_TRUE(inter.distance > 2.499 && inter.distance < 2.501);
@@ -47,7 +47,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	t_point			origin = { 0, 0, 0 };
 	t_point			direction = { 0, 0, 1 };
 	t_ray			ray = {origin, direction};
-	inter = sphere_intersection(ray, &s);
+	inter = sphere_intersection(ray, s);
 }
 	EXPECT_TRUE(inter.exists);
 	EXPECT_TRUE(inter.distance > 4.499 && inter.distance < 5.501);
@@ -69,7 +69,7 @@ TEST(SphereIntersection, SingleIntersectingSphere)
 	t_point			origin = { 2, 2, 0 };
 	t_point			direction = { -1, 0, 0 };
 	t_ray			ray = {origin, direction};
-	inter = sphere_intersection(ray, &s);
+	inter = sphere_intersection(ray, s);
 }
 	EXPECT_TRUE(inter.exists);
 	EXPECT_TRUE(inter.distance > 1.999 && inter.distance < 2.001);
@@ -91,7 +91,7 @@ TEST(SphereIntersection, NoIntersectionSphere)
 	t_point			origin = { 2, 3, 0 };
 	t_point			direction = { -1, 0, 0 };
 	t_ray			ray = {origin, direction};
-	inter = sphere_intersection(ray, &s);
+	inter = sphere_intersection(ray, s);
 }
 	EXPECT_FALSE(inter.exists);
 }
