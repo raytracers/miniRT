@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/09 21:02:08 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/11 13:49:14 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,15 @@ TYPES = $(addprefix types/,	\
 	init_plane.c			\
 )
 
+RENDER = $(addprefix render/,	\
+	sphere_intersection.c		\
+)
+
+OPERATIONS = $(addprefix operations/,	\
+	quadratic_solver.c					\
+	vector_operations.c					\
+)
+
 MY_MLX		= $(addprefix mlx/,	\
 	utils.c						\
 	initialization.c			\
@@ -53,6 +62,8 @@ SRCS 		= $(addprefix sources/,	\
 	$(MAIN)							\
 	$(INPUT)						\
 	$(TYPES)						\
+	$(RENDER)						\
+	$(OPERATIONS)					\
 	$(MY_MLX)						\
 )
 

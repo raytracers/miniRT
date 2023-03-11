@@ -42,6 +42,9 @@ set(Sources
 	../sources/types/init_light.c
 	../sources/types/t_elist.c
 	../sources/types/get_ray.c
+	../sources/operations/quadratic_solver.c
+	../sources/operations/vector_operations.c
+	../sources/render/sphere_intersection.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})
@@ -56,5 +59,7 @@ set_target_properties(ft PROPERTIES IMPORTED_LOCATION
 add_subdirectory(InputTests)
 add_subdirectory(SceneTests)
 add_subdirectory(LibftTests)
-add_subdirectory(ElistTests)
 add_subdirectory(RayTests)
+add_subdirectory(MathTests)
+add_subdirectory(ElistTests)
+add_subdirectory(IntersectionTests)

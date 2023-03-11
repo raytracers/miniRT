@@ -6,17 +6,16 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 14:14:25 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:59:39 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
 
-
 /* *************************** CONSTANTS ************************************ */
 
-#define M_PI 3.14159265358979323846
+# define M_PI 3.14159265358979323846
 
 /* ************************************************************************** */
 
@@ -121,7 +120,6 @@ typedef struct s_scene
 	struct s_scene	*next;
 
 }	t_scene;
-
 
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);

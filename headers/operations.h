@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_ray.c                                          :+:      :+:    :+:   */
+/*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 14:31:03 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 13:46:29 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/11 12:49:59 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/11 15:02:38 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/mini_rt.h"
+#ifndef OPERATIONS_H
+# define OPERATIONS_H
 
-t_ray	get_ray(t_point origin, t_point destination)
-{
-	t_ray	ray;
-	t_point	orientation;
+# include "types.h"
 
-	ray.origin = origin;
-	orientation.x = destination.x - origin.x;
-	orientation.y = destination.y - origin.y;
-	orientation.z = destination.z - origin.z;
-	ray.orientation = normalize(orientation);
-	return (ray);
-}
+double	quadratic_solver(double b, double c);
+double	dot_product(t_point a, t_point b);
+t_point	vector_dif(t_point a, t_point b);
+t_point	vector_sum(t_point a, t_point b);
+t_point	vector_scalar(t_point v, double s);
+t_point	normalize(t_point v);
+
+#endif

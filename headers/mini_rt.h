@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/09 14:05:56 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:51:11 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include "types.h"
 # include "input.h"
 # include "error.h"
+# include "render.h"
+# include "operations.h"
 # include <stdlib.h>
 # include <math.h>
 

@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_ray.c                                          :+:      :+:    :+:   */
+/*   render.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 14:31:03 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 13:46:29 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/11 15:01:19 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/mini_rt.h"
+#ifndef RENDER_H
+# define RENDER_H
 
-t_ray	get_ray(t_point origin, t_point destination)
-{
-	t_ray	ray;
-	t_point	orientation;
+# include "types.h"
 
-	ray.origin = origin;
-	orientation.x = destination.x - origin.x;
-	orientation.y = destination.y - origin.y;
-	orientation.z = destination.z - origin.z;
-	ray.orientation = normalize(orientation);
-	return (ray);
-}
+t_intersection	sphere_intersection(t_ray ray, union u_object object);
+
+#endif
