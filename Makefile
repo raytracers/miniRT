@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/11 13:49:14 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/11 19:11:33 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ CFLAGS	= -Wall -Wextra -Werror
 
 INPUT = $(addprefix input/,	\
 	arg_validator.c					\
-	scene_loader.c					\
+	scene_open.c					\
 	error.c 						\
 	get_element.c					\
 	get_color.c						\
