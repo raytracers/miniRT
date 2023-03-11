@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/11 12:45:31 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/11 13:49:14 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,6 +47,7 @@ RENDER = $(addprefix render/,	\
 
 OPERATIONS = $(addprefix operations/,	\
 	quadratic_solver.c					\
+	vector_operations.c					\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
