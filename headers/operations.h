@@ -1,15 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   operations.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 12:50:44 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/11 12:49:59 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/11 13:06:13 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "types.h"
+#include "types.h"
 
-t_intersection	sphere_intersection(t_ray ray, union u_object object);
+double	quadratic_solver(double	b, double c);
+double	dot_product(t_point a, t_point b);
+t_point	vector_dif(t_point a, t_point b);
