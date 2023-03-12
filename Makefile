@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/11 19:11:33 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/03/12 01:20:14 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,14 @@ CC		= cc
 
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -g
 
 #-----C FILES-----#
 
 INPUT = $(addprefix input/,	\
 	arg_validator.c					\
 	scene_open.c					\
+	scene_loader.c 					\
 	error.c 						\
 	get_element.c					\
 	get_color.c						\
@@ -39,6 +40,8 @@ TYPES = $(addprefix types/,	\
 	init_sphere.c			\
 	init_cylinder.c			\
 	init_plane.c			\
+	init_light.c 			\
+	init_ambient_light.c 	\
 )
 
 RENDER = $(addprefix render/,	\
@@ -128,5 +131,8 @@ cleantest:
 	$(RM) $(BUILD)
 
 retest: cleantest test
+
+run1: $(NAME)
+	./$(NAME) ./scenes/scene.rt
 
 .PHONY: all clean fclean re test clean test retest
