@@ -7,35 +7,41 @@ extern "C"
 
 TEST(SceneTests, ValidAmbientLight)
 {
-	t_a_light amb_light;
+	t_a_light *amb_light;
 	char	  **attributes;
 
+	amb_light = NULL;
 	attributes = ft_split((char *) "0.2 255,255,255", ' ');
 	EXPECT_EQ(init_ambient_light(attributes, &amb_light), 0);
-	EXPECT_DOUBLE_EQ(amb_light.ratio, 0.2);
-	EXPECT_EQ(amb_light.color, 0xFFFFFF);
+	EXPECT_DOUBLE_EQ(amb_light->ratio, 0.2);
+	EXPECT_EQ(amb_light->color, 0xFFFFFF);
 	ft_free_array(attributes);
+	free(amb_light);
 
 	attributes = ft_split((char *) "0.0 0,0,0", ' ');
 	EXPECT_EQ(init_ambient_light(attributes, &amb_light), 0);
-	EXPECT_DOUBLE_EQ(amb_light.ratio, 0.0);
-	EXPECT_EQ(amb_light.color, 0x000000);
+	EXPECT_DOUBLE_EQ(amb_light->ratio, 0.0);
+	EXPECT_EQ(amb_light->color, 0x000000);
 	ft_free_array(attributes);
+	free(amb_light);
 
 	attributes = ft_split((char *) "2.0 255,255,255", ' ');
 	EXPECT_EQ(init_ambient_light(attributes, &amb_light), 0);
-	EXPECT_DOUBLE_EQ(amb_light.ratio, 2.0);
-	EXPECT_EQ(amb_light.color, 0xFFFFFF);
+	EXPECT_DOUBLE_EQ(amb_light->ratio, 2.0);
+	EXPECT_EQ(amb_light->color, 0xFFFFFF);
 	ft_free_array(attributes);
+	free(amb_light);
 }
 
 void test_init_amb_light(char *str)
 {
 	char		**attributes;
-	t_a_light	amb_light;
+	t_a_light	*amb_light;
 
 	attributes = ft_split(str, ' ');
+	amb_light = NULL;
 	EXPECT_EQ(init_ambient_light(attributes, &amb_light), 1);
+	free(amb_light);
 	ft_free_array(attributes);
 }
 
