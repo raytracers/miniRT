@@ -46,6 +46,7 @@ set(Sources
 	../sources/operations/quadratic_solver.c
 	../sources/operations/vector_operations.c
 	../sources/render/sphere_intersection.c
+	../sources/app/destroy_scene.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})

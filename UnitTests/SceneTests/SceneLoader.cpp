@@ -56,6 +56,7 @@ TEST(SceneTests, SceneLoaderValid)
 		check_cylinder(&scene.elements->next->next->object, origin, orientation,\
 			14.2, 21.42, 0x0A00FF);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 }
 
@@ -69,27 +70,33 @@ TEST(SceneTests, LoadSingleElement)
 
 	{
 		scene_fd = open("../../../scenes/tests/ambient.rt", O_RDONLY);
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 		check_ambient_light(scene.a_light, 0.2, 0xFFFFFF);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/camera.rt", O_RDONLY);	
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 		init_array(origin, -50.0, 0, 20);
 		init_array(orientation, 0, 0, 1);
 		check_camera(scene.camera, origin, orientation, 70);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/light.rt", O_RDONLY);	
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 		init_array(origin, -40,0,30);
 		check_light(scene.light, origin, 0.7);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 }
 
@@ -129,24 +136,30 @@ TEST(SceneTests, DuplicateUniqueObjects)
 	
 	{
 		scene_fd = open("../../../scenes/tests/duplicate_alight.rt", O_RDONLY);
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/duplicate_light.rt", O_RDONLY);
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/duplicate_camera.rt", O_RDONLY);
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
 		close(scene_fd);
+		destroy_scene(&scene);
 	}
 }
 
@@ -170,6 +183,7 @@ TEST(SceneTests, InvalidSceneElement)
 	for (int i = 0; files[i] != NULL; i++)
 	{
 		scene_fd = open(files[i], O_RDONLY);
+		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
