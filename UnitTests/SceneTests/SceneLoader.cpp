@@ -150,6 +150,33 @@ TEST(SceneTests, DuplicateUniqueObjects)
 	}
 }
 
+TEST(SceneTests, InvalidSceneElement)
+{
+	int scene_fd;
+	t_scene scene;
+	char *files[10];
+
+	files[0] = (char *) "../../../scenes/tests/invalid_element.rt";
+	files[1] = (char *) "../../../scenes/tests/wrong_elem_name.rt";
+	files[2] = (char *) "../../../scenes/tests/wrong_elem_name2.rt";
+	files[3] = (char *) "../../../scenes/tests/wrong_elem_name3.rt";
+	files[4] = (char *) "../../../scenes/tests/wrong_elem_name4.rt";
+	files[5] = (char *) "../../../scenes/tests/wrong_elem_name5.rt";
+	files[6] = (char *) "../../../scenes/tests/wrong_elem_name6.rt";
+	files[7] = (char *) "../../../scenes/tests/wrong_elem_name7.rt";
+	files[8] = (char *) "../../../scenes/tests/wrong_elem_name8.rt";
+	files[9] = NULL; 
+
+	for (int i = 0; files[i] != NULL; i++)
+	{
+		scene_fd = open(files[i], O_RDONLY);
+		EXPECT_NE(scene_fd, -1);
+
+		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		close(scene_fd);
+	}
+}
+
 void init_scene(t_scene *scene)
 {
 	scene->a_light = NULL;
