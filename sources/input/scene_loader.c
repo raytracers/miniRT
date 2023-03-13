@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/13 15:52:30 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:26:19 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #define SCENE_EMPTY_LN 1 
 
 void	free_resources(char *line, char **line_fields);
-int		read_line(int scene_fd, char **line);
+int		get_line_fields(int scene_fd, char **line, char ***line_fields);
 int		get_uniq_elem(enum e_element e_type, char **line_f, t_scene *scene);
 int		get_primitive(enum e_element e_type, char **line_f, t_scene *scene);
 
@@ -30,17 +30,11 @@ int	scene_load(int scene_fd, t_scene *scene)
 
 	while (42)
 	{
-		op_code = read_line(scene_fd, &line);
+		op_code = get_line_fields(scene_fd, &line, &line_fields);
 		if (op_code == SCENE_EOF)
 			break ;
 		if (op_code == SCENE_EMPTY_LN)
 			continue ;
-		line_fields = ft_split(line, ' ');
-		if (*line_fields == NULL || line_fields[0][0] == '\0')
-		{
-			free_resources(line, line_fields);
-			continue ;
-		}
 		e_type = get_element(line_fields[0]);
 		if (e_type == nae || get_uniq_elem(e_type, &line_fields[1], scene) \
 			|| get_primitive(e_type, &line_fields[1], scene))
@@ -53,7 +47,7 @@ int	scene_load(int scene_fd, t_scene *scene)
 	return (0);
 }
 
-int	read_line(int scene_fd, char **line)
+int	get_line_fields(int scene_fd, char **line, char ***line_fields)
 {
 	int	line_size;
 
@@ -69,6 +63,12 @@ int	read_line(int scene_fd, char **line)
 	line_size = ft_strlen(*line);
 	if (line_size > 0 && line[0][line_size - 1] == '\n')
 		line[0][line_size - 1] = '\0';
+	*line_fields = ft_split(*line, ' ');
+	if (**line_fields == NULL || *line_fields[0][0] == '\0')
+	{
+		free_resources(*line, *line_fields);
+		return (SCENE_EMPTY_LN);
+	}
 	return (0);
 }
 
