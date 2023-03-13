@@ -14,6 +14,7 @@ set(Sources
 	InitPlane.cpp
 	InitAmbientLight.cpp
 	InitLight.cpp
+	SceneLoader.cpp
 )
 
 add_executable(${this} ${Sources})

@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/12 18:48:53 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/12 23:07:26 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,12 @@ int	get_uniq_elem(enum e_element e_type, char **line_f, t_scene *scene)
 	}
 	else if (e_type == light)
 	{
-		scene->light = malloc(sizeof(t_light));
-		if (init_light(line_f, scene->light))
+		if (init_light(line_f, &scene->light))
 			return (1);
 	}
 	else if (e_type == ambient_light)
 	{
-		scene->a_light = malloc(sizeof(t_a_light));
-		if (init_ambient_light(line_f, scene->a_light))
+		if (init_ambient_light(line_f, &scene->a_light))
 			return (1);
 	}
 	return (0);
@@ -116,3 +114,11 @@ int	get_primitive(enum e_element e_type, char **line_f, t_scene *scene)
 	}
 	return (0);
 }
+
+/*printf("a_light: %p\n", scene->a_light);
+printf("a_light ratio: %lf\n", scene->a_light->ratio);
+printf("a_light color: %d\n", scene->a_light->color);
+printf("camera: %p\n", scene->camera);
+printf("camera origin x: %lf\n", scene->camera->origin.x);
+printf("camera origin y: %lf\n", scene->camera->origin.y);
+printf("camera origin z: %lf\n", scene->camera->origin.z);*/
