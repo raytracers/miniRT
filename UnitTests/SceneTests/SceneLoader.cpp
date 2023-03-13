@@ -109,7 +109,7 @@ TEST(SceneTests, LoadEmptyScenes)
 		EXPECT_EQ(scene.elements, nullptr);
 		close(scene_fd);
 	}
-	/*{
+	{
 		scene_fd = open("../../../scenes/tests/spaces.rt", O_RDONLY);
 		EXPECT_NE(scene_fd, -1);
 		init_scene(&scene);
@@ -119,7 +119,7 @@ TEST(SceneTests, LoadEmptyScenes)
 		EXPECT_EQ(scene.light, nullptr);
 		EXPECT_EQ(scene.elements, nullptr);
 		close(scene_fd);
-	}*/
+	}
 }
 
 void init_scene(t_scene *scene)
