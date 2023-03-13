@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/12 23:07:26 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/13 02:46:47 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	scene_load(int scene_fd, t_scene *scene)
 		if (op_code == SCENE_EMPTY_LN)
 			continue ;
 		line_fields = ft_split(line, ' ');
+		if (line_fields == NULL || line_fields[0][0] == '\0')
+			continue ;
 		e_type = get_element(line_fields[0]);
 		if (e_type == nae || get_uniq_elem(e_type, &line_fields[1], scene) \
 			|| get_primitive(e_type, &line_fields[1], scene))
