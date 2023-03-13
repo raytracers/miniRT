@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/13 01:19:48 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/03/13 15:21:08 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC		= cc
 
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g
+CFLAGS	= -Wall -Wextra -Werror -g 
 
 #-----C FILES-----#
 
@@ -53,6 +53,10 @@ OPERATIONS = $(addprefix operations/,	\
 	vector_operations.c					\
 )
 
+APP = $(addprefix app/,	\
+	destroy_scene.c					\
+)
+
 MY_MLX		= $(addprefix mlx/,	\
 	utils.c						\
 	initialization.c			\
@@ -63,6 +67,7 @@ MAIN 		= main.c
 
 SRCS 		= $(addprefix sources/,	\
 	$(MAIN)							\
+	$(APP)							\
 	$(INPUT)						\
 	$(TYPES)						\
 	$(RENDER)						\

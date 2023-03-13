@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/12 01:11:31 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:44:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ int	main(int argc, char **argv)
 		return (2);
 	init_scene(&scene);
 	if (scene_load(scene_fd, &scene))
+	{
+		destroy_scene(&scene);
 		return (3);
+	}
 	init_window(&window);
 	mlx_loop(window.vars.mlx);
 	return (0);
