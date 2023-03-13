@@ -122,6 +122,34 @@ TEST(SceneTests, LoadEmptyScenes)
 	}
 }
 
+TEST(SceneTests, DuplicateUniqueObjects)
+{
+	int scene_fd;
+	t_scene scene;
+	
+	{
+		scene_fd = open("../../../scenes/tests/duplicate_alight.rt", O_RDONLY);
+		EXPECT_NE(scene_fd, -1);
+
+		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		close(scene_fd);
+	}
+	{
+		scene_fd = open("../../../scenes/tests/duplicate_light.rt", O_RDONLY);
+		EXPECT_NE(scene_fd, -1);
+
+		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		close(scene_fd);
+	}
+	{
+		scene_fd = open("../../../scenes/tests/duplicate_camera.rt", O_RDONLY);
+		EXPECT_NE(scene_fd, -1);
+
+		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		close(scene_fd);
+	}
+}
+
 void init_scene(t_scene *scene)
 {
 	scene->a_light = NULL;
