@@ -6,12 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:32:20 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 12:21:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:21:40 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 int	init_cylinder(char **attributes, union u_object *object)
 {

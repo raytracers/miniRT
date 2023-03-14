@@ -6,12 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 20:19:17 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:24:30 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <string.h>
 
 int	check_argc(int argc)
 {
@@ -24,7 +23,7 @@ int	check_file_extension(char *filename)
 {
 	int		filename_len;
 
-	filename_len = strlen(filename);
+	filename_len = ft_strlen(filename);
 	if (filename_len < 4)
 		return (0);
 	if (filename[filename_len - 3] == '.' \
@@ -34,7 +33,6 @@ int	check_file_extension(char *filename)
 	return (0);
 }
 
-// o intuito desta função é que ela chame todas as outras funções de validação
 int	validate_args(int argc, char **argv)
 {
 	if (!check_argc(argc - 1))
