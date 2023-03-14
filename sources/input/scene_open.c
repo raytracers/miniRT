@@ -6,13 +6,12 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/11 19:09:29 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:29:09 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 #include <errno.h>
-#include <unistd.h>
 #include <fcntl.h>
 
 int	scene_open(char *filename)
@@ -22,7 +21,7 @@ int	scene_open(char *filename)
 	scene_fd = open(filename, O_WRONLY);
 	if (scene_fd < 0 && errno == EISDIR)
 	{
-		print_wrong_extension();
+		print_invalid_file();
 		return (scene_fd);
 	}
 	close(scene_fd);
