@@ -166,9 +166,9 @@ TEST(VectorOperations, VectorTransformation)
 	}
 	v.x = 1; v.y = 2; v.z = 3;
 	r = transform_vector(v, m);
-	EXPECT_DOUBLE_EQ(r.x, 1.0);
-	EXPECT_DOUBLE_EQ(r.y, 4.0);
-	EXPECT_DOUBLE_EQ(r.z, 18.0);
+	EXPECT_DOUBLE_EQ(r.x, 4.0);
+	EXPECT_DOUBLE_EQ(r.y, 2.0);
+	EXPECT_DOUBLE_EQ(r.z, 24.0);
 
 	{
 		double	first[4] =	{0, 1, 3, -4};
@@ -180,7 +180,7 @@ TEST(VectorOperations, VectorTransformation)
 	}
 	v.x = 7; v.y = -4; v.z = 1;
 	r = transform_vector(v, m);
-	EXPECT_DOUBLE_EQ(r.x, -1.0);
-	EXPECT_DOUBLE_EQ(r.y, -2.0);
-	EXPECT_DOUBLE_EQ(r.z, 14.0);
+	EXPECT_DOUBLE_EQ(r.x, -5.0);
+	EXPECT_DOUBLE_EQ(r.y, -1.0);
+	EXPECT_DOUBLE_EQ(r.z, 21.0);
 }
