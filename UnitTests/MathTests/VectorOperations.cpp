@@ -110,3 +110,40 @@ TEST(VectorOperations, DotProduct)
 		EXPECT_DOUBLE_EQ(dot_product(a, b), 40.0);
 	}
 }
+
+TEST(VectorOperations, CrossProduct)
+{
+	t_point	result;
+	{
+		t_point	a = { 0, 0, 0 };
+		t_point	b = { 1, 2, 3 };
+		result = cross_product(a, b); 
+	}
+	EXPECT_DOUBLE_EQ(result.x, 0.0);
+	EXPECT_DOUBLE_EQ(result.y, 0.0);
+	EXPECT_DOUBLE_EQ(result.z, 0.0);
+	{
+		t_point	a = { 1, 0, 0 };
+		t_point	b = { 1, 0, 0 };
+		result = cross_product(a, b); 
+	}
+	EXPECT_DOUBLE_EQ(result.x, 0.0);
+	EXPECT_DOUBLE_EQ(result.y, 0.0);
+	EXPECT_DOUBLE_EQ(result.z, 0.0);
+	{
+		t_point	a = { 1, 5, 2 };
+		t_point	b = { 3, 4, 6 };
+		result = cross_product(a, b); 
+	}
+	EXPECT_DOUBLE_EQ(result.x, 22.0);
+	EXPECT_DOUBLE_EQ(result.y, 0.0);
+	EXPECT_DOUBLE_EQ(result.z, -11.0);
+	{
+		t_point	a = { 0, -1, -3 };
+		t_point	b = { -5, -4, 6 };
+		result = cross_product(a, b); 
+	}
+	EXPECT_DOUBLE_EQ(result.x, -18.0);
+	EXPECT_DOUBLE_EQ(result.y, 15.0);
+	EXPECT_DOUBLE_EQ(result.z, -5.0);
+}
