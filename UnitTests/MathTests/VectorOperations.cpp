@@ -147,3 +147,40 @@ TEST(VectorOperations, CrossProduct)
 	EXPECT_DOUBLE_EQ(result.y, 15.0);
 	EXPECT_DOUBLE_EQ(result.z, -5.0);
 }
+
+TEST(VectorOperations, VectorTransformation)
+{
+	t_point	v;
+	t_point	r;
+	double	*m[4];
+	double	last[4] = { 0, 0, 0, 1 };
+	m[3] = last;
+
+	{
+		double	first[4] =	{1, 0, 0, 3};
+		double	second[4] =	{2, 1, 0, -2};
+		double	third[4] =	{3, 3, 3, 6};
+		m[0] = first;
+		m[1] = second;
+		m[2] = third;
+	}
+	v.x = 1; v.y = 2; v.z = 3;
+	r = transform_vector(v, m);
+	EXPECT_DOUBLE_EQ(r.x, 1.0);
+	EXPECT_DOUBLE_EQ(r.y, 4.0);
+	EXPECT_DOUBLE_EQ(r.z, 18.0);
+
+	{
+		double	first[4] =	{0, 1, 3, -4};
+		double	second[4] =	{0, 1, 2, 1};
+		double	third[4] =	{3, 2, 1, 7};
+		m[0] = first;
+		m[1] = second;
+		m[2] = third;
+	}
+	v.x = 7; v.y = -4; v.z = 1;
+	r = transform_vector(v, m);
+	EXPECT_DOUBLE_EQ(r.x, -1.0);
+	EXPECT_DOUBLE_EQ(r.y, -2.0);
+	EXPECT_DOUBLE_EQ(r.z, 14.0);
+}

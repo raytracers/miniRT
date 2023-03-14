@@ -46,6 +46,7 @@ set(Sources
 	../sources/operations/quadratic_solver.c
 	../sources/operations/vector_operations.c
 	../sources/operations/cross_product.c
+	../sources/operations/transform_vector.c
 	../sources/render/sphere_intersection.c
 	../sources/app/destroy_scene.c
 )
