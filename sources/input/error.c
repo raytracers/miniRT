@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/07 19:42:42 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:27:15 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_correct_usage(void)
 	ft_putendl_fd("USAGE: ./miniRT <filename>.rt", STDERR_FILENO);
 }
 
-void	print_wrong_extension(void)
+void	print_invalid_file(void)
 {
 	ft_putstr_fd("ERROR: ", STDERR_FILENO);
 	ft_putendl_fd("the current filename is not a .rt file", STDERR_FILENO);

@@ -6,12 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/13 16:26:19 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:21:23 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 #define SCENE_EOF -1
 #define SCENE_EMPTY_LN 1 
@@ -118,11 +117,3 @@ int	get_primitive(enum e_element e_type, char **line_f, t_scene *scene)
 	}
 	return (0);
 }
-
-/*printf("a_light: %p\n", scene->a_light);
-printf("a_light ratio: %lf\n", scene->a_light->ratio);
-printf("a_light color: %d\n", scene->a_light->color);
-printf("camera: %p\n", scene->camera);
-printf("camera origin x: %lf\n", scene->camera->origin.x);
-printf("camera origin y: %lf\n", scene->camera->origin.y);
-printf("camera origin z: %lf\n", scene->camera->origin.z);*/
