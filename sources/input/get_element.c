@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_interpretation.c                             :+:      :+:    :+:   */
+/*   get_element.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:59:49 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/13 02:30:10 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 enum e_element	get_element(char *elem)
 {
+	if (elem == NULL)
+		return (nae);
 	if (!ft_strncmp(elem, "A", 2))
 		return (ambient_light);
 	else if (!ft_strncmp(elem, "C", 2))

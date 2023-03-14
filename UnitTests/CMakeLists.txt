@@ -27,6 +27,7 @@ set(Headers
 )
 
 set(Sources
+	../sources/input/scene_open.c
 	../sources/input/scene_loader.c
 	../sources/input/error.c
 	../sources/input/arg_validator.c
@@ -45,6 +46,7 @@ set(Sources
 	../sources/operations/quadratic_solver.c
 	../sources/operations/vector_operations.c
 	../sources/render/sphere_intersection.c
+	../sources/app/destroy_scene.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})

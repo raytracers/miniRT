@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:15:13 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/07 15:17:17 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/13 15:52:22 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	ft_free_array(char **arr)
 		free(arr[i]);
 		++i;
 	}
+	free(arr);
 }
