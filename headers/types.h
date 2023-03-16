@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/14 15:00:58 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/14 16:36:53 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
 t_elist	*elist_new(enum e_element type, char **content);
 t_ray	get_ray(t_point origin, t_point orientation);
+t_point	new_point(int x, int y, int z);
 int		init_camera(char **attributes, t_camera **camera);
 int		init_ambient_light(char **attributes, t_a_light **amb_light);
 int		init_sphere(char **attributes, union u_object *sphere);
