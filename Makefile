@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/14 15:19:45 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/14 18:06:01 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,10 +42,13 @@ TYPES = $(addprefix types/,	\
 	init_plane.c			\
 	init_light.c 			\
 	init_ambient_light.c 	\
+	new_point.c			 	\
 )
 
 RENDER = $(addprefix render/,	\
+	transform_scene.c			\
 	sphere_intersection.c		\
+	vtm.c						\
 )
 
 OPERATIONS = $(addprefix operations/,	\
@@ -56,7 +59,7 @@ OPERATIONS = $(addprefix operations/,	\
 )
 
 APP = $(addprefix app/,	\
-	destroy_scene.c					\
+	destroy_scene.c		\
 )
 
 MY_MLX		= $(addprefix mlx/,	\
