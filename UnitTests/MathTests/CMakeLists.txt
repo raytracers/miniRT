@@ -5,6 +5,7 @@ set(this MathTests)
 set(Sources 
 	QuadraticSolver.cpp
 	VectorOperations.cpp
+	CameraTransformation.cpp
 )
 
 add_executable(${this} ${Sources})

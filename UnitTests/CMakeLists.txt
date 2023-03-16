@@ -42,12 +42,15 @@ set(Sources
 	../sources/types/init_ambient_light.c
 	../sources/types/init_light.c
 	../sources/types/t_elist.c
+	../sources/types/new_point.c
 	../sources/types/get_ray.c
 	../sources/operations/quadratic_solver.c
 	../sources/operations/vector_operations.c
 	../sources/operations/cross_product.c
 	../sources/operations/transform_vector.c
 	../sources/render/sphere_intersection.c
+	../sources/render/vtm.c
+	../sources/render/transform_elements.c
 	../sources/app/destroy_scene.c
 )
 
