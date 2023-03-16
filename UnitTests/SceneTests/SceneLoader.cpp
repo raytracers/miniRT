@@ -30,7 +30,7 @@ TEST(SceneTests, SceneLoaderValid)
 
 	{
 		scene_fd = open("../../../scenes/scene.rt", O_RDONLY);
-		EXPECT_NE(scene_fd, -1);
+		ASSERT_NE(scene_fd, -1);
 		init_scene(&scene);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 

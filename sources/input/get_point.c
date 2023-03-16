@@ -6,13 +6,13 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 14:46:58 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/08 15:40:34 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:38:10 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-static int	strs_are_valid(char** strs);
+static int	strs_are_valid(char **strs);
 
 int	get_point(char *str, t_point *point)
 {
@@ -31,7 +31,7 @@ int	get_point(char *str, t_point *point)
 	return (0);
 }
 
-static int	strs_are_valid(char** strs)
+static int	strs_are_valid(char **strs)
 {
 	while (*strs)
 	{

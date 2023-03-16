@@ -6,12 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 15:57:10 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 12:23:15 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:20:52 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 int	init_sphere(char **attributes, union u_object *object)
 {
