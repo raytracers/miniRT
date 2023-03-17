@@ -6,12 +6,11 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 14:56:56 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/14 13:21:54 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 static inline double	get_b(t_ray r, t_sphere s);
 static inline double	get_c(t_ray r, t_sphere s);
