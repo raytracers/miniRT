@@ -50,6 +50,7 @@ set(Sources
 	../sources/operations/transform_vector.c
 	../sources/render/sphere_intersection.c
 	../sources/render/vtm.c
+	../sources/render/rtm.c
 	../sources/render/transform_elements.c
 	../sources/app/destroy_scene.c
 )
