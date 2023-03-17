@@ -33,7 +33,7 @@ void	test_rotation(char *str)
 TEST(CameraTransformation, CameraAtRandompos)
 {
 	test_rotation((char *)"-50.0,0,20 0.424,0.566,0.707 70");
-	test_rotation((char *)"-50.0,0,20 0,0,1 70");
-	test_rotation((char *)"-50.0,0,20 0,0.707,0.707 70");
-	test_rotation((char *)"-50.0,0,20 0,-0.707,0.707 70");
+	test_rotation((char *)"0,0,0 0,0,1 70");
+	test_rotation((char *)"42,21,84 0,0.707,0.707 70");
+	test_rotation((char *)"-50,-50,-50 0,-0.707,0.707 70");
 }
