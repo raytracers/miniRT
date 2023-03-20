@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:47:22 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 09:56:55 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/20 10:28:36 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,19 +83,4 @@ static void	z_aligned(double **rtm, double orientation)
 	else
 		rtm[2][2] = 1;
 	rtm[2][3] = 0;
-}
-
-void	free_matrix(double **m)
-{
-	double	**p;
-
-	if (!m)
-		return ;
-	p = m;
-	while (*p)
-	{
-		free(*p);
-		++p;
-	}
-	free(m);
 }
