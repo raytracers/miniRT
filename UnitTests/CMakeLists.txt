@@ -48,9 +48,9 @@ set(Sources
 	../sources/operations/vector_operations.c
 	../sources/operations/cross_product.c
 	../sources/operations/transform_vector.c
+	../sources/operations/vtm.c
+	../sources/operations/rtm.c
 	../sources/render/sphere_intersection.c
-	../sources/render/vtm.c
-	../sources/render/rtm.c
 	../sources/render/transform_elements.c
 	../sources/app/destroy_scene.c
 )

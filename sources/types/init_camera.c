@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:34:46 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/14 13:42:21 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:26:03 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int	init_camera(char **attributes, t_camera **cam)
 		return (1);
 	}
 	(*cam)->r_fov = fov_to_rfov((*cam)->fov);
+	(*cam)->orientation = normalize((*cam)->orientation);
 	return (0);
 }
 
