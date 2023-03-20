@@ -1,12 +1,11 @@
 #include <gtest/gtest.h>
-#include <iostream>
 
 extern "C"
 {
 	#include "../../headers/mini_rt.h"
 }
 
-void	test_rotation(char *str)
+void	test_rotation(const char *str)
 {
 	t_camera	*c;
 	double		**vtm;
@@ -16,10 +15,10 @@ void	test_rotation(char *str)
 	attr = ft_split(str, ' ');
 	init_camera(attr, &c);
 	ASSERT_NE(c, nullptr);
-	vtm = get_vtm(c);
-	ASSERT_NE(vtm, nullptr);
 	rtm = get_rtm(c);
 	ASSERT_NE(rtm, nullptr);
+	vtm = get_vtm(rtm, c);
+	ASSERT_NE(vtm, nullptr);
 	transform_camera(c, vtm, rtm);
 
 	EXPECT_DOUBLE_EQ(c->origin.x, 0);
@@ -32,13 +31,13 @@ void	test_rotation(char *str)
 
 TEST(CameraTransformation, CameraAtRandompos)
 {
-	test_rotation((char *)"-50.0,0,20 0.424,0.566,0.707 70");
-	test_rotation((char *)"42,21,84 0,0.707,0.707 70");
-	test_rotation((char *)"-50,-50,-50 0,-0.707,0.707 70");
+	test_rotation("-50.0,0,20 0.424,0.566,0.707 70");
+	test_rotation("42,21,84 0,0.707,0.707 70");
+	test_rotation("-50,-50,-50 0,-0.707,0.707 70");
 }
 
 TEST(CameraTransformation, CameraAlignedWithZ)
 {
-	test_rotation((char *)"0,0,0 0,0,1 70");
-	test_rotation((char *)"42,42,42 0,0,-1 70");
+	test_rotation("0,0,0 0,0,1 70");
+	test_rotation("42,42,42 0,0,-1 70");
 }
