@@ -6,16 +6,16 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:51:15 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/14 18:16:30 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/17 17:06:06 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-void	transform_camera(t_camera *c, double **vtm)
+void	transform_camera(t_camera *c, double **vtm, double **rtm)
 {
 	c->origin = transform_vector(c->origin, vtm);
-	c->orientation = transform_vector(c->orientation, vtm);
+	c->orientation = transform_vector(c->orientation, rtm);
 }
 
 void	transform_light(t_light *l, double **vtm)

@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/17 19:51:17 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:48:02 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,5 @@ void			transform_scene(t_scene *scene);
 void			free_vtm(double **vtm);
 void			free_matrix(double **vtm);
 void			transform_camera(t_camera *c, double **vtm, double **rtm);
-double			**get_vtm(t_camera *c);
-double			**get_rtm(t_camera *c);
 
 #endif
