@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:47:22 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 09:43:54 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/20 09:56:55 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,15 @@ static void	init_rtm(double **m, t_camera *cam)
 	m[0][0] = c + pow(a.x, 2) * (1 - c);
 	m[0][1] = a.x * a.y * (1 - c) - a.z * s;
 	m[0][2] = a.x * a.z * (1 - c) + a.y * s;
+	m[0][3] = 0;
 	m[1][0] = a.x * a.y * (1 - c) + a.z * s;
 	m[1][1] = c + pow(a.y, 2) * (1 - c);
 	m[1][2] = a.y * a.z * (1 - c) - a.x * s;
+	m[1][3] = 0;
 	m[2][0] = a.x * a.z * (1 - c) - a.y * s;
 	m[2][1] = a.y * a.z * (1 - c) + a.x * s;
 	m[2][2] = c + pow(a.z, 2) * (1 - c);
+	m[2][3] = 0;
 }
 
 static void	z_aligned(double **rtm, double orientation)
@@ -68,15 +71,18 @@ static void	z_aligned(double **rtm, double orientation)
 	rtm[0][0] = 1;
 	rtm[0][1] = 0;
 	rtm[0][2] = 0;
+	rtm[0][3] = 0;
 	rtm[1][0] = 0;
 	rtm[1][1] = 1;
 	rtm[1][2] = 0;
+	rtm[1][3] = 0;
 	rtm[2][0] = 0;
 	rtm[2][1] = 0;
 	if (orientation == 1)
 		rtm[2][2] = -1;
 	else
 		rtm[2][2] = 1;
+	rtm[2][3] = 0;
 }
 
 void	free_matrix(double **m)
