@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:51:15 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/17 17:06:06 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/20 11:16:30 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,20 @@ void	transform_light(t_light *l, double **vtm)
 	l->origin = transform_vector(l->origin, vtm);
 }
 
-void	transform_sphere(t_sphere *s, double **vtm)
+void	transform_sphere(union u_object *o, double **vtm, double **rtm)
 {
-	s->origin = transform_vector(s->origin, vtm);
+	o->sphere.origin = transform_vector(o->sphere.origin, vtm);
+	(void)rtm;
 }
 
-void	transform_cylinder(t_cylinder *c, double **vtm)
+void	transform_cylinder(union u_object *o, double **vtm, double **rtm)
 {
-	c->origin = transform_vector(c->origin, vtm);
-	c->orientation = transform_vector(c->orientation, vtm);
+	o->cylinder.origin = transform_vector(o->cylinder.origin, vtm);
+	o->cylinder.orientation = transform_vector(o->cylinder.orientation, rtm);
 }
 
-void	transform_plane(t_plane *p, double **vtm)
+void	transform_plane(union u_object *o, double **vtm, double **rtm)
 {
-	p->origin = transform_vector(p->origin, vtm);
-	p->normal = transform_vector(p->normal, vtm);
+	o->plane.origin = transform_vector(o->plane.origin, vtm);
+	o->plane.normal = transform_vector(o->plane.normal, rtm);
 }

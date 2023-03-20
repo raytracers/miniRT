@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/20 10:32:30 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/20 13:56:38 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ OPERATIONS = $(addprefix operations/,	\
 	vector_operations.c					\
 	cross_product.c						\
 	transform_vector.c					\
+	transform_elements.c				\
 	vtm.c								\
 	rtm.c								\
 	matrix.c							\

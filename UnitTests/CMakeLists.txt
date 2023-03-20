@@ -48,11 +48,11 @@ set(Sources
 	../sources/operations/vector_operations.c
 	../sources/operations/cross_product.c
 	../sources/operations/transform_vector.c
+	../sources/operations/transform_elements.c
 	../sources/operations/vtm.c
 	../sources/operations/rtm.c
 	../sources/operations/matrix.c
 	../sources/render/sphere_intersection.c
-	../sources/render/transform_elements.c
 	../sources/app/destroy_scene.c
 )
 
