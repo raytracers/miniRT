@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 16:47:22 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 10:28:36 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:51:10 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ double	**get_rtm(t_camera *c)
 	double	**rtm;
 	int		i;
 
-	rtm = malloc(sizeof(double **));
+	rtm = ft_calloc(4, sizeof(double *));
 	if (!rtm)
 		return (NULL);
 	i = 0;
 	while (i < 3)
 	{
-		rtm[i] = malloc(sizeof(double *) * 4);
+		rtm[i] = ft_calloc(4, sizeof(double));
 		if (!rtm[i])
 		{
 			free_matrix(rtm);

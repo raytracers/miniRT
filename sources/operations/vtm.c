@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:39:43 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 11:00:29 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:51:32 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ double	**get_vtm(double **rtm, t_camera *c)
 	double	**vtm;
 	int		i;
 
-	vtm = malloc(sizeof(double **));
+	vtm = ft_calloc(4, sizeof(double *));
 	if (!vtm)
 		return (NULL);
 	i = 0;
 	while (i < 3)
 	{
-		vtm[i] = malloc(sizeof(double *) * 4);
+		vtm[i] = ft_calloc(4, sizeof(double));
 		if (!vtm[i])
 		{
 			free_matrix(vtm);
