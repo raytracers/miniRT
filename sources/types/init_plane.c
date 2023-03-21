@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:15:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 12:23:42 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:58:57 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ int	init_plane(char **attributes, union u_object *object)
 	if (color == -1)
 		return (1);
 	plane->color = color;
+	plane->normal = normalize(plane->normal);
 	return (0);
 }
