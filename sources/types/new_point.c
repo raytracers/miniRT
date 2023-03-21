@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   new_point.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 14:00:06 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/14 16:30:27 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/14 16:31:39 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#include "../../headers/types.h"
 
-# include "types.h"
+t_point	new_point(int x, int y, int z)
+{
+	t_point	p;
 
-t_intersection	sphere_intersection(t_ray ray, union u_object object);
-int				transform_scene(t_scene *scene);
-void			free_vtm(double **vtm);
-void			free_matrix(double **vtm);
-
-#endif
+	p.x = x;
+	p.y = y;
+	p.z = z;
+	return (p);
+}

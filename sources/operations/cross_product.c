@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   cross_product.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 14:00:06 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/14 14:45:58 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/14 15:06:13 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#include "../../headers/types.h"
 
-# include "types.h"
+t_point	cross_product(t_point a, t_point b)
+{
+	t_point	result;
 
-t_intersection	sphere_intersection(t_ray ray, union u_object object);
-int				transform_scene(t_scene *scene);
-void			free_vtm(double **vtm);
-void			free_matrix(double **vtm);
-
-#endif
+	result.x = a.y * b.z - a.z * b.y;
+	result.y = (a.x * b.z - a.z * b.x) * -1;
+	result.z = (a.x * b.y - a.y * b.x);
+	return (result);
+}
