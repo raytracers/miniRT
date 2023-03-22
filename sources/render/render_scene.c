@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/22 12:29:31 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/22 12:32:11 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,20 +50,20 @@ static t_ray	get_px_ray(int x, int y, t_window *win, double fov)
 {
 	double	a_ratio;
 	double	fov_mult;
-	t_point			origin;
-	t_ray			ray;
+	t_point	origin;
+	t_ray	ray;
 
 	a_ratio = (double)win->width / win->height;
 	fov_mult = tan(fov / 2.0);
 	origin.x = (2 * ((x + 0.5) / win->width) - 1) * a_ratio * fov_mult;
 	origin.y = (1 - 2 * ((y + 0.5) / win->height)) * fov_mult;
 	origin.z = 0;
-	ray = get_ray(new_point(0,0,1), origin);
+	ray = get_ray(new_point(0, 0, 1), origin);
 	ray.origin = origin;
 	return (ray);
 }
 
-typedef t_intersection (*t_intersec_funcs)(t_ray, union u_object); 
+typedef t_intersection	(*t_intersec_funcs)(t_ray, union u_object);
 
 static t_intersection	get_intersection(t_ray ray, t_elist *e)
 {
