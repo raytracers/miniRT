@@ -7,6 +7,7 @@ set(Sources
 	VectorOperations.cpp
 	RotationMatrix.cpp
 	ViewTransformMatrix.cpp
+	GetDistance.cpp
 )
 
 add_executable(${this} ${Sources})

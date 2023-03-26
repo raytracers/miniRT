@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 12:49:59 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 14:19:22 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/26 18:00:10 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ double	quadratic_solver(double b, double c);
 
 /* ************************** VECTOR OPERATIONS ***************************** */
 
+double	get_distance(t_point origin, t_point dest);
 double	dot_product(t_point a, t_point b);
 t_point	vector_dif(t_point a, t_point b);
 t_point	vector_sum(t_point a, t_point b);
