@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/20 17:33:28 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/26 17:38:43 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,8 @@ RENDER = $(addprefix render/,	\
 	transform_scene.c			\
 	sphere_intersection.c		\
 	render_scene.c				\
+	get_px_color.c				\
+	get_intersection.c			\
 )
 
 OPERATIONS = $(addprefix operations/,	\

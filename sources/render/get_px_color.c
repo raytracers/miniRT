@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   get_px_color.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/26 17:38:14 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/26 16:20:07 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/26 17:39:42 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#include "../../headers/mini_rt.h"
 
-# include "types.h"
-
-t_intersection	get_intersection(t_ray ray, t_elist *e);
-t_intersection	sphere_intersection(t_ray ray, union u_object object);
-int				transform_scene(t_scene *scene);
-int				get_px_color(t_intersection i, t_scene *s);
-void			free_vtm(double **vtm);
-void			free_matrix(double **vtm);
-void			render_scene(t_scene *scene, t_window *win);
-
-#endif
+int	get_px_color(t_intersection i, t_scene *s)
+{
+	(void)s;
+	int				color;
+//	double			cosinus;
+//	t_intersection	obj;
+//
+	color = 0;
+	if (!i.exists)
+		return (color);
+//	obj = get_intersection(get_ray(i.location, s->light->origin), s->elements);
+	return (i.color);
+}
