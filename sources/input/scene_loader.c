@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/13 16:26:19 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/27 22:31:33 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,12 @@ int	scene_load(int scene_fd, t_scene *scene)
 			|| get_primitive(e_type, &line_fields[1], scene))
 		{
 			free_resources(line, line_fields);
+			get_next_line(GNL_FLUSH);
 			return (1);
 		}
 		free_resources(line, line_fields);
 	}
+	get_next_line(GNL_FLUSH);
 	return (0);
 }
 
@@ -76,6 +78,7 @@ void	free_resources(char *line, char **line_fields)
 {
 	free(line);
 	ft_free_array(line_fields);
+	//get_next_line(GNL_FLUSH);
 }
 
 int	get_uniq_elem(enum e_element e_type, char **line_f, t_scene *scene)
