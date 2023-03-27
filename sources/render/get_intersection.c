@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:36:20 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/26 17:36:36 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/26 18:33:04 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_intersection	get_intersection(t_ray ray, t_elist *e)
 		fn[2] = NULL;
 	}
 	intersec.exists = 0;
-	ray.origin = vector_sum(ray.origin, vector_scalar(ray.orientation, 0.0001));
 	while (e)
 	{
 		temp = fn[e->type](ray, e->object);
