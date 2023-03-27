@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:32:20 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:37:10 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:58:01 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ int	init_cylinder(char **attributes, union u_object *object)
 	if (color == -1)
 		return (1);
 	cylinder->color = color;
+	cylinder->orientation = normalize(cylinder->orientation);
 	return (0);
 }

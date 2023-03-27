@@ -1,4 +1,5 @@
 #include <gtest/gtest.h>
+#include <iostream>
 
 extern "C"
 {
@@ -8,7 +9,6 @@ extern "C"
 void	test_rotation(const char *str)
 {
 	t_camera	*c;
-	double		**vtm;
 	double		**rtm;
 	char		**attr;
 
@@ -22,6 +22,9 @@ void	test_rotation(const char *str)
 	EXPECT_TRUE(c->orientation.x > -0.001 && c->orientation.x < 0.001);
 	EXPECT_TRUE(c->orientation.y > -0.001 && c->orientation.y < 0.001);
 	EXPECT_DOUBLE_EQ(c->orientation.z, -1);
+	ft_free_array(attr);
+	free_matrix(rtm);
+	free(c);
 }
 
 TEST(RotationMatrix, VectorAtRandomOrientation)

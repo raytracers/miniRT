@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/20 17:28:44 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:44:38 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_ray
 typedef struct s_intersection
 {
 	int		exists;
+	int		color;
 	t_point	location;
 	t_point	normal;
 	double	distance;

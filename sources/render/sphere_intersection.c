@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/14 13:21:54 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:46:21 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_intersection	sphere_intersection(t_ray r, union u_object object)
 	intersec.distance = sol;
 	intersec.location = vector_sum(r.origin, vector_scalar(r.orientation, sol));
 	intersec.normal = normalize(vector_dif(intersec.location, sphere.origin));
+	intersec.color = sphere.color;
 	return (intersec);
 }
 
