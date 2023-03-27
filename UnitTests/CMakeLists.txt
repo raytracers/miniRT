@@ -52,6 +52,7 @@ set(Sources
 	../sources/operations/vtm.c
 	../sources/operations/rtm.c
 	../sources/operations/matrix.c
+	../sources/operations/get_distance.c
 	../sources/render/sphere_intersection.c
 	../sources/app/destroy_scene.c
 )
