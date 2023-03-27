@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/27 22:31:33 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/27 22:58:59 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	free_resources(char *line, char **line_fields)
 {
 	free(line);
 	ft_free_array(line_fields);
-	//get_next_line(GNL_FLUSH);
 }
 
 int	get_uniq_elem(enum e_element e_type, char **line_f, t_scene *scene)
