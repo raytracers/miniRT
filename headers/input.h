@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 12:20:54 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/27 18:12:16 by freemanc1        ###   ########.fr       */
+/*   Updated: 2023/03/27 21:19:48 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int				check_argc(int argc);
 int				check_file_extension(char *filename);
 int				validate_args(int argc, char **argv);
-int				scene_checker(t_scene *scene);
+int				scene_check(t_scene *scene);
 
 /* ************************************************************************** */
 

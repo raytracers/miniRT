@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/13 15:21:08 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/03/27 21:22:43 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ INPUT = $(addprefix input/,	\
 	arg_validator.c					\
 	scene_open.c					\
 	scene_loader.c 					\
+	scene_checker.c					\
 	error.c 						\
 	get_element.c					\
 	get_color.c						\
