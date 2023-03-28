@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 23:42:24 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/28 03:53:33 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/28 04:07:36 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@ t_intersection	plane_intersection(t_ray r, union u_object object)
         return (t >= 0);
     } */
 	
-	// (p0 - l0) * n / l * n
+	// t = (p0 - l0) * n / l * n
 	// p0 - plane origin
-	// p  - plane point
 	// l0 - ray origin
 	// l  - ray direction
-	// n - normal
+	// n - plane normal/orientation
 	plane = object.plane;
 	intersec.exists = 0;
 	denom = dot_product(plane.normal, r.orientation);
+	// if the plane normal is near zero then the intersection is way far off in the distance
+	// or there are infinite solution
+	// if its zero they are completely perpendicular
 	if (denom < 0.000001)
 		return (intersec);
 	t = (double) dot_product(vector_dif(plane.origin, r.origin), plane.normal) / denom;
