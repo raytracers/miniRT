@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/26 17:38:14 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:46:42 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 t_intersection	get_intersection(t_ray ray, t_elist *e);
 t_intersection	sphere_intersection(t_ray ray, union u_object object);
+t_intersection	plane_intersection(t_ray ray, union u_object object);
 int				transform_scene(t_scene *scene);
 int				get_px_color(t_intersection i, t_scene *s);
 void			free_vtm(double **vtm);

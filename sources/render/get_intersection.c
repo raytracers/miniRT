@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:36:20 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/26 18:33:04 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/28 00:46:06 by freemanc1        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_intersection	get_intersection(t_ray ray, t_elist *e)
 	if (*fn == NULL)
 	{
 		fn[0] = sphere_intersection;
-		fn[1] = NULL;
+		fn[1] = plane_intersection;
 		fn[2] = NULL;
 	}
 	intersec.exists = 0;

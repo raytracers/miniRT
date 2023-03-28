@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/26 18:05:49 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/28 00:55:34 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ TYPES = $(addprefix types/,	\
 RENDER = $(addprefix render/,	\
 	transform_scene.c			\
 	sphere_intersection.c		\
+	plane_intersection.c 		\
 	render_scene.c				\
 	get_px_color.c				\
 	get_intersection.c			\
