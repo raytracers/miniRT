@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 11:24:05 by gcorreia          #+#    #+#             */
-/*   Updated: 2022/08/01 10:28:58 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/27 21:51:34 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*get_next_line(int fd)
 	static char	*buffer[4096];
 	char		*line;
 
+	if (fd == GNL_FLUSH)
+		return (gnl_clean_buffer(buffer));
 	if (fd < 0)
 		return (NULL);
 	if (!buffer[fd])

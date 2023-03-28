@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 09:48:00 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/08 10:58:07 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/27 21:51:19 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
+# endif
+
+# ifndef GNL_FLUSH
+#  define GNL_FLUSH -42
 # endif
 
 # define RED "\033[1;31m"
@@ -90,6 +94,7 @@ int		ft_putptr_fd(unsigned long int p, int fd);
 int		ft_putunsignednbr_fd(unsigned int n, int fd);
 int		ft_linelen(char const *str);
 char	*get_next_line(int fd);
+char	*gnl_clean_buffer(char **buffer);
 char	*find_line_in(int fd, char **buffer);
 char	*get_last_line_from(char **buffer);
 char	*get_line_from(char **buffer);

@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/22 11:29:45 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:01:18 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	if (scene_fd < 0)
 		return (2);
 	init_scene(&scene);
-	if (scene_load(scene_fd, &scene))
+	if (scene_load(scene_fd, &scene) || scene_check(&scene))
 	{
 		destroy_scene(&scene);
 		return (3);

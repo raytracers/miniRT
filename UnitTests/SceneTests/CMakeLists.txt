@@ -15,6 +15,7 @@ set(Sources
 	InitAmbientLight.cpp
 	InitLight.cpp
 	SceneLoader.cpp
+	SceneChecker.cpp
 )
 
 add_executable(${this} ${Sources})
