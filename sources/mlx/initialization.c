@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:38:29 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/10 14:16:57 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/27 11:41:25 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,10 @@ void	init_window(t_window *win)
 	init_image(win);
 }
 
-//Podemos deixar o valor de size dinâmico futuramente
 static void	init_vars(t_window *win)
 {
-	win->width= 800;
-	win->height= 800;
+	win->width = 1920;
+	win->height = 1080;
 	win->vars.mlx = mlx_init();
 	win->vars.win = mlx_new_window(win->vars.mlx, win->width,
 			win->height, "MiniRT");

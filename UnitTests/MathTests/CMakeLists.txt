@@ -5,6 +5,9 @@ set(this MathTests)
 set(Sources 
 	QuadraticSolver.cpp
 	VectorOperations.cpp
+	RotationMatrix.cpp
+	ViewTransformMatrix.cpp
+	GetDistance.cpp
 )
 
 add_executable(${this} ${Sources})

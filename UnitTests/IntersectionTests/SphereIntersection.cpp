@@ -25,6 +25,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	EXPECT_DOUBLE_EQ(inter.normal.x, 0);
 	EXPECT_DOUBLE_EQ(inter.normal.y, 1);
 	EXPECT_DOUBLE_EQ(inter.normal.z, 0);
+	EXPECT_DOUBLE_EQ(inter.color, 0);
 {
 	char			**attributes = ft_split("0.0,0.0,0.0 10.0 0,0,0", ' ');
 	ASSERT_FALSE(init_sphere(attributes, &s));
@@ -41,6 +42,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	EXPECT_TRUE(inter.normal.x > -0.001 && inter.normal.x < 0.001);
 	EXPECT_TRUE(inter.normal.y > -0.001 && inter.normal.y < 0.001);
 	EXPECT_TRUE(inter.normal.z > 0.999 && inter.normal.z < 1.001);
+	EXPECT_DOUBLE_EQ(inter.color, 0);
 }
 
 TEST(SphereIntersection, SingleIntersectingSphere)
@@ -63,6 +65,7 @@ TEST(SphereIntersection, SingleIntersectingSphere)
 	EXPECT_TRUE(inter.normal.x > -0.001 && inter.normal.x < 0.001);
 	EXPECT_TRUE(inter.normal.y > 0.999 && inter.normal.y < 1.001);
 	EXPECT_TRUE(inter.normal.z > -0.001 && inter.normal.z < 0.001);
+	EXPECT_DOUBLE_EQ(inter.color, 0);
 }
 
 TEST(SphereIntersection, NoIntersectionSphere)

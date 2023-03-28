@@ -6,12 +6,11 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/11 14:56:56 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 13:46:21 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 static inline double	get_b(t_ray r, t_sphere s);
 static inline double	get_c(t_ray r, t_sphere s);
@@ -31,6 +30,7 @@ t_intersection	sphere_intersection(t_ray r, union u_object object)
 	intersec.distance = sol;
 	intersec.location = vector_sum(r.origin, vector_scalar(r.orientation, sol));
 	intersec.normal = normalize(vector_dif(intersec.location, sphere.origin));
+	intersec.color = sphere.color;
 	return (intersec);
 }
 

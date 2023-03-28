@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   get_distance.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/26 17:38:14 by gcorreia         ###   ########.fr       */
+/*   Created: 2023/03/26 17:42:32 by gcorreia          #+#    #+#             */
+/*   Updated: 2023/03/26 17:50:05 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#include "../../headers/mini_rt.h"
+#include <math.h>
 
-# include "types.h"
+double	get_distance(t_point origin, t_point dest)
+{
+	t_point	diff;
 
-t_intersection	get_intersection(t_ray ray, t_elist *e);
-t_intersection	sphere_intersection(t_ray ray, union u_object object);
-int				transform_scene(t_scene *scene);
-int				get_px_color(t_intersection i, t_scene *s);
-void			free_vtm(double **vtm);
-void			free_matrix(double **vtm);
-void			render_scene(t_scene *scene, t_window *win);
-
-#endif
+	diff = vector_dif(origin, dest);
+	return (sqrt(pow(diff.x, 2) + pow(diff.y, 2) + pow(diff.z, 2)));
+}

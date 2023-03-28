@@ -6,12 +6,11 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 15:32:20 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/10 12:21:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:58:01 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
-#include <stdio.h>
 
 int	init_cylinder(char **attributes, union u_object *object)
 {
@@ -19,7 +18,7 @@ int	init_cylinder(char **attributes, union u_object *object)
 	t_cylinder	*cylinder;
 
 	cylinder = &object->cylinder;
-	if (ft_arraylen(attributes)!= 5)
+	if (ft_arraylen(attributes) != 5)
 		return (1);
 	if (get_point(attributes[0], &cylinder->origin))
 		return (1);
@@ -34,5 +33,6 @@ int	init_cylinder(char **attributes, union u_object *object)
 	if (color == -1)
 		return (1);
 	cylinder->color = color;
+	cylinder->orientation = normalize(cylinder->orientation);
 	return (0);
 }

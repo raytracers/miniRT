@@ -6,13 +6,13 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/27 21:19:39 by freemanc1        ###   ########.fr       */
+/*   Updated: 2023/03/28 14:01:18 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/mini_rt.h"
 
-void	init_scene(t_scene *scene);
+static void	init_scene(t_scene *scene);
 
 int	main(int argc, char **argv)
 {
@@ -32,11 +32,13 @@ int	main(int argc, char **argv)
 		return (3);
 	}
 	init_window(&window);
+	transform_scene(&scene);
+	render_scene(&scene, &window);
 	mlx_loop(window.vars.mlx);
 	return (0);
 }
 
-void	init_scene(t_scene *scene)
+static void	init_scene(t_scene *scene)
 {
 	scene->a_light = NULL;
 	scene->light = NULL;
