@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/29 15:06:41 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/29 17:51:04 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC		= cc
 
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g 
+CFLAGS	= -Wall -Wextra -Werror -O3
 
 #-----C FILES-----#
 
@@ -54,6 +54,7 @@ RENDER = $(addprefix render/,	\
 	get_px_color.c				\
 	get_intersection.c			\
 	interactive_render.c		\
+	move_scene.c				\
 )
 
 OPERATIONS = $(addprefix operations/,	\

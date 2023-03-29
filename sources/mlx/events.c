@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 15:08:36 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:49:34 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,15 @@ int	handle_keypress(int keycode, t_info	*info)
 
 static void	handle_interactive_key(t_info *info, int keycode)
 {
-	(void)info;
-	(void)keycode;
+	if (keycode == KEY_W)
+		move_foreward(info->s);
+	else if (keycode == KEY_S)
+		move_back(info->s);
+	else if (keycode == KEY_A)
+		move_left(info->s);
+	else if (keycode == KEY_D)
+		move_right(info->s);
+	else
+		return ;
+	interactive_render(info->s, info->w);
 }
