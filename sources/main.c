@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/29 11:53:21 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:54:41 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ int	main(int argc, char **argv)
 	}
 	init_window(&info);
 	transform_scene(&scene);
-	interactive_render(&scene, &window);
-	//render_scene(&scene, &window);
+	render_scene(&scene, &window);
 	mlx_loop(window.vars.mlx);
 	return (0);
 }
