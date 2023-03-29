@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/21 13:44:38 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:41:31 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,6 +161,12 @@ typedef struct s_window
 	int		height;
 	int		width;
 }				t_window;
+
+typedef struct s_info
+{
+	t_scene		*s;
+	t_window	*w;
+}	t_info;
 
 /* ************************************************************************** */
 
