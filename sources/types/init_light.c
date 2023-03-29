@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:12:54 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/12 21:31:25 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:00:46 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 int	init_light(char **attributes, t_light **light)
 {
 	double	brightness;
+	int	n_attr;
 
-	if (ft_arraylen(attributes) != 2)
+	n_attr = ft_arraylen(attributes);
+	if (n_attr < 2 || n_attr > 3)
 		return (1);
 	*light = malloc(sizeof(t_light));
 	if (!*light)
@@ -29,5 +31,11 @@ int	init_light(char **attributes, t_light **light)
 	if (!(brightness >= 0.0 && brightness <= 1.0))
 		return (1);
 	(*light)->brightness = brightness;
+	if (n_attr == 2)
+		(*light)->color = 0XFFFFFF;
+	else
+		(*light)->color = get_color(attributes[2]);
+	if ((*light)->color == -1)
+		return (-1);
 	return (0);
 }
