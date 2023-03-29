@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 18:25:17 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:45:57 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,7 @@ void			turn_up(t_scene *s);
 void			turn_down(t_scene *s);
 void			turn_left(t_scene *s);
 void			turn_right(t_scene *s);
+void			spin_left(t_scene *s);
+void			spin_right(t_scene *s);
 
 #endif

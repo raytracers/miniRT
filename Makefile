@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/29 18:06:55 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/03/29 18:43:03 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,7 @@ RENDER = $(addprefix render/,	\
 	interactive_render.c		\
 	move_scene.c				\
 	rotate_scene.c				\
+	interactive_z_axis.c		\
 )
 
 OPERATIONS = $(addprefix operations/,	\
@@ -113,7 +114,8 @@ MLX_DIR		= mlx_mac
 IMLX		= -L$(MLX_DIR) -lmlx -framework OpenGL -framework appKit
 DEFINES		= -D ESC=53 -D KEY_I=34 -D KEY_R=15 -D KEY_W=13 -D KEY_A=0	\
 			  -D KEY_S=1 -D KEY_D=2 -D KEY_LEFT=123 -D KEY_RIGHT=124	\
-			  -D KEY_DOWN=125 -D KEY_UP=126
+			  -D KEY_DOWN=125 -D KEY_UP=126 -D KEY_HOOKR=33				\
+			  -D KEY_HOOKL=30 -D KEY_CTRL=256 -D KEY_SPACE=49
 endif
 
 MLX = $(MLX_DIR)/libmlx.a

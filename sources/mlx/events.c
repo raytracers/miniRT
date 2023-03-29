@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 18:27:33 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:46:51 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,10 @@ static void	handle_interactive_key(t_info *info, int keycode)
 		turn_left(info->s);
 	else if (keycode == KEY_RIGHT)
 		turn_right(info->s);
+	else if (keycode == KEY_HOOKL)
+		spin_left(info->s);
+	else if (keycode == KEY_HOOKR)
+		spin_right(info->s);
 	else
 		return ;
 	interactive_render(info->s, info->w);
