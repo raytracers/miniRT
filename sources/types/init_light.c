@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:12:54 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/28 16:00:46 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 10:50:40 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,6 @@ int	init_light(char **attributes, t_light **light)
 	else
 		(*light)->color = get_color(attributes[2]);
 	if ((*light)->color == -1)
-		return (-1);
+		return (1);
 	return (0);
 }
