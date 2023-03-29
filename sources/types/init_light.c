@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 20:12:54 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/29 10:50:40 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:00:57 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	init_light(char **attributes, t_light **light)
 {
 	double	brightness;
-	int	n_attr;
+	int		n_attr;
 
 	n_attr = ft_arraylen(attributes);
 	if (n_attr < 2 || n_attr > 3)
