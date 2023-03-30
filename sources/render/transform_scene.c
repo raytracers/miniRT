@@ -6,15 +6,13 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:00:48 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/20 14:20:07 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:00:53 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
 typedef void	(*t_transform)(union u_object *, double **, double **);
-
-static void	transform_objects(t_elist *lst, double **vtm, double **rtm);
 
 int	transform_scene(t_scene *scene)
 {
@@ -38,7 +36,7 @@ int	transform_scene(t_scene *scene)
 	return (0);
 }
 
-static void	transform_objects(t_elist *lst, double **vtm, double **rtm)
+void	transform_objects(t_elist *lst, double **vtm, double **rtm)
 {
 	t_transform	fn[3];
 
