@@ -18,26 +18,29 @@ TEST(SceneTests, ValidLight)
 		EXPECT_DOUBLE_EQ(light->origin.y, 50.0);
 		EXPECT_DOUBLE_EQ(light->origin.z, 0.0);
 		EXPECT_DOUBLE_EQ(light->brightness, 0.6);
+		EXPECT_EQ(light->color, 0XFFFFFF);
 		ft_free_array(attributes);
 	}
 	{
 		light = NULL;
-		attributes = ft_split((char *) "0.0,0.0,0.0 0.0", ' ');
+		attributes = ft_split((char *) "0.0,0.0,0.0 0.0 0,0,0", ' ');
 		EXPECT_EQ(init_light(attributes, &light), 0);
 		EXPECT_DOUBLE_EQ(light->origin.x, 0.0);
 		EXPECT_DOUBLE_EQ(light->origin.y, 0.0);
 		EXPECT_DOUBLE_EQ(light->origin.z, 0.0);
 		EXPECT_DOUBLE_EQ(light->brightness, 0.0);
+		EXPECT_EQ(light->color, 0);
 		ft_free_array(attributes);
 	}
 	{
 		light = NULL;
-		attributes = ft_split((char *) "42.0,42.0,42.0 1.0", ' ');
+		attributes = ft_split((char *) "42.0,42.0,42.0 1.0 255,0,255", ' ');
 		EXPECT_EQ(init_light(attributes, &light), 0);
 		EXPECT_DOUBLE_EQ(light->origin.x, 42.0);
 		EXPECT_DOUBLE_EQ(light->origin.y, 42.0);
 		EXPECT_DOUBLE_EQ(light->origin.z, 42.0);
 		EXPECT_DOUBLE_EQ(light->brightness, 1.0);
+		EXPECT_EQ(light->color, 0XFF00FF);
 		ft_free_array(attributes);
 	}
 }

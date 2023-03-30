@@ -73,6 +73,7 @@ typedef struct s_light
 {
 	t_point	origin;
 	double	brightness;
+	int		color;
 }	t_light;
 
 typedef struct s_sphere
