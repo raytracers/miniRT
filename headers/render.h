@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 18:45:57 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:49:17 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void			move_foreward(t_scene *s);
 void			move_back(t_scene *s);
 void			move_left(t_scene *s);
 void			move_right(t_scene *s);
+void			move_up(t_scene *s);
+void			move_down(t_scene *s);
 void			turn_up(t_scene *s);
 void			turn_down(t_scene *s);
 void			turn_left(t_scene *s);

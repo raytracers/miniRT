@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:10:58 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 18:45:01 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:49:43 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,54 @@ void	spin_right(t_scene *s)
 	matrix[1][1] = 0.96592583;
 	matrix[1][2] = 0;
 	matrix[1][3] = 0;
+	matrix[2][0] = 0;
+	matrix[2][1] = 0;
+	matrix[2][2] = 1;
+	matrix[2][3] = 0;
+	transform_light(s->light, matrix);
+	transform_objects(s->elements, matrix, NULL);
+	free_matrix(matrix);
+}
+
+void	move_up(t_scene *s)
+{
+	double	**matrix;
+
+	matrix = malloc_matrix();
+	if (!matrix)
+		return ;
+	matrix[0][0] = 1;
+	matrix[0][1] = 0;
+	matrix[0][2] = 0;
+	matrix[0][3] = 0;
+	matrix[1][0] = 0;
+	matrix[1][1] = 1;
+	matrix[1][2] = 0;
+	matrix[1][3] = -10;
+	matrix[2][0] = 0;
+	matrix[2][1] = 0;
+	matrix[2][2] = 1;
+	matrix[2][3] = 0;
+	transform_light(s->light, matrix);
+	transform_objects(s->elements, matrix, NULL);
+	free_matrix(matrix);
+}
+
+void	move_down(t_scene *s)
+{
+	double	**matrix;
+
+	matrix = malloc_matrix();
+	if (!matrix)
+		return ;
+	matrix[0][0] = 1;
+	matrix[0][1] = 0;
+	matrix[0][2] = 0;
+	matrix[0][3] = 0;
+	matrix[1][0] = 0;
+	matrix[1][1] = 1;
+	matrix[1][2] = 0;
+	matrix[1][3] = 10;
 	matrix[2][0] = 0;
 	matrix[2][1] = 0;
 	matrix[2][2] = 1;
