@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:50:16 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:56:49 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	interactive_render(t_scene *scene, t_window *win)
 	int		x;
 	int		y;
 	void	*menu;
-	char	*path;
 
 	x = 0;
 	while (x < win->width)
