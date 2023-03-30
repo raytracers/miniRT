@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:20:07 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 10:59:00 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:09:52 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	get_px_color(t_intersection i, t_scene *s)
 	t_ray			ray;
 
 	if (!i.exists)
-		return (0XAAAAAA);
+		return (0);
 	dist = get_distance(i.location, s->light->origin);
 	ray = get_ray(i.location, s->light->origin);
 	ray.origin = vector_sum(ray.origin, vector_scalar(i.normal, 0.0001));
