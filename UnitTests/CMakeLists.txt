@@ -46,6 +46,7 @@ set(Sources
 	../sources/types/get_ray.c
 	../sources/operations/quadratic_solver.c
 	../sources/operations/vector_operations.c
+	../sources/operations/vector_operations2.c
 	../sources/operations/cross_product.c
 	../sources/operations/transform_vector.c
 	../sources/operations/transform_elements.c
@@ -54,6 +55,7 @@ set(Sources
 	../sources/operations/matrix.c
 	../sources/operations/get_distance.c
 	../sources/render/sphere_intersection.c
+	../sources/render/plane_intersection.c
 	../sources/app/destroy_scene.c
 )
 
