@@ -17,6 +17,7 @@
 
 t_intersection	get_intersection(t_ray ray, t_elist *e);
 t_intersection	sphere_intersection(t_ray ray, union u_object object);
+t_intersection	plane_intersection(t_ray ray, union u_object object);
 int				transform_scene(t_scene *scene);
 int				get_px_color(t_intersection i, t_scene *s);
 void			transform_objects(t_elist *lst, double **vtm, double **rtm);

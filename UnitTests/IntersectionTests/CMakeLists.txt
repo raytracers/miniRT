@@ -4,6 +4,7 @@ set(this IntersectionTests)
 
 set(Sources 
 	SphereIntersection.cpp
+	PlaneIntersection.cpp
 )
 
 add_executable(${this} ${Sources})

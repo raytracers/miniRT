@@ -50,6 +50,7 @@ TYPES = $(addprefix types/,	\
 RENDER = $(addprefix render/,	\
 	transform_scene.c			\
 	sphere_intersection.c		\
+	plane_intersection.c 		\
 	render_scene.c				\
 	get_px_color.c				\
 	get_intersection.c			\
@@ -62,6 +63,7 @@ RENDER = $(addprefix render/,	\
 OPERATIONS = $(addprefix operations/,	\
 	quadratic_solver.c					\
 	vector_operations.c					\
+	vector_operations2.c				\
 	cross_product.c						\
 	transform_vector.c					\
 	transform_elements.c				\
