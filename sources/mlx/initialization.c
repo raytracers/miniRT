@@ -6,30 +6,30 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:38:29 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/27 11:41:25 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:52:33 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-static void	init_vars(t_window *win);
+static void	init_vars(t_info *info);
 static void	init_image(t_window *win);
 
-void	init_window(t_window *win)
+void	init_window(t_info *info)
 {
-	init_vars(win);
-	init_image(win);
+	init_vars(info);
+	init_image(info->w);
 }
 
-static void	init_vars(t_window *win)
+static void	init_vars(t_info *info)
 {
-	win->width = 1920;
-	win->height = 1080;
-	win->vars.mlx = mlx_init();
-	win->vars.win = mlx_new_window(win->vars.mlx, win->width,
-			win->height, "MiniRT");
-	mlx_hook(win->vars.win, 2, 1L << 0, handle_keypress, win);
-	mlx_hook(win->vars.win, 17, 0L << 0, handle_destroy, win);
+	info->w->width = 1920;
+	info->w->height = 1080;
+	info->w->vars.mlx = mlx_init();
+	info->w->vars.win = mlx_new_window(info->w->vars.mlx, info->w->width,
+			info->w->height, "MiniRT");
+	mlx_hook(info->w->vars.win, 2, 1L << 0, handle_keypress, info);
+	mlx_hook(info->w->vars.win, 17, 0L << 0, handle_destroy, info);
 }
 
 static void	init_image(t_window *win)
