@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 11:35:54 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:56:49 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	interactive_render(t_scene *scene, t_window *win)
 {
 	int		x;
 	int		y;
+	void	*menu;
 
 	x = 0;
 	while (x < win->width)
@@ -31,7 +32,10 @@ void	interactive_render(t_scene *scene, t_window *win)
 		}
 		++x;
 	}
+	menu = mlx_xpm_file_to_image(win->vars.mlx, "images/Interactive_menu.xpm",
+			&x, &y);
 	mlx_put_image_to_window(win->vars.mlx, win->vars.win, win->image.img, 0, 0);
+	mlx_put_image_to_window(win->vars.mlx, win->vars.win, menu, 0, 0);
 }
 
 static void	render_px(int x, int y, t_scene *s, t_window *win)
@@ -44,7 +48,7 @@ static void	render_px(int x, int y, t_scene *s, t_window *win)
 	if (intersec.exists)
 		pixel_put(&win->image, x, y, intersec.color);
 	else
-		pixel_put(&win->image, x, y, 0X666666);
+		pixel_put(&win->image, x, y, 0);
 }
 
 static t_ray	get_px_ray(int x, int y, t_window *win, double fov)
