@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/29 14:08:40 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/03/29 18:43:03 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC		= cc
 
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -g 
+CFLAGS	= -Wall -Wextra -Werror -O3
 
 #-----C FILES-----#
 
@@ -27,6 +27,7 @@ INPUT = $(addprefix input/,	\
 	arg_validator.c					\
 	scene_open.c					\
 	scene_loader.c 					\
+	scene_checker.c					\
 	error.c 						\
 	get_element.c					\
 	get_color.c						\
@@ -53,6 +54,10 @@ RENDER = $(addprefix render/,	\
 	render_scene.c				\
 	get_px_color.c				\
 	get_intersection.c			\
+	interactive_render.c		\
+	move_scene.c				\
+	rotate_scene.c				\
+	interactive_z_axis.c		\
 )
 
 OPERATIONS = $(addprefix operations/,	\
@@ -105,11 +110,14 @@ UNAME := $(shell uname -s)
 ifeq ($(UNAME), Linux)
 MLX_DIR		= mlx_linux
 IMLX		= -L$(MLX_DIR) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
-DEFINES		= -D ESC=65307 -D ONE=49 -D TWO=50 -D THREE=51 -D FOUR=52 -D PLUS=61 -D MINUS=45 -D SCRLDWN=5 -D SCRLUP=4
+DEFINES		= -D ESC=65307 
 else
 MLX_DIR		= mlx_mac
 IMLX		= -L$(MLX_DIR) -lmlx -framework OpenGL -framework appKit
-DEFINES		= -D ESC=53 -D ONE=18 -D TWO=19 -D THREE=20 -D FOUR=21 -D PLUS=24 -D MINUS=27 -D SCRLDWN=4 -D SCRLUP=5
+DEFINES		= -D ESC=53 -D KEY_I=34 -D KEY_R=15 -D KEY_W=13 -D KEY_A=0	\
+			  -D KEY_S=1 -D KEY_D=2 -D KEY_LEFT=123 -D KEY_RIGHT=124	\
+			  -D KEY_DOWN=125 -D KEY_UP=126 -D KEY_HOOKR=33				\
+			  -D KEY_HOOKL=30 -D KEY_CTRL=256 -D KEY_SPACE=49
 endif
 
 MLX = $(MLX_DIR)/libmlx.a

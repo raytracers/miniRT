@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 22:00:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/14 13:21:23 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/03/28 14:00:56 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,12 @@ int	scene_load(int scene_fd, t_scene *scene)
 			|| get_primitive(e_type, &line_fields[1], scene))
 		{
 			free_resources(line, line_fields);
+			get_next_line(GNL_FLUSH);
 			return (1);
 		}
 		free_resources(line, line_fields);
 	}
+	get_next_line(GNL_FLUSH);
 	return (0);
 }
 

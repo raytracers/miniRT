@@ -39,6 +39,8 @@ t_point	transform_vector(t_point v, double *m[4]);
 
 double	**get_vtm(double **rtm, t_camera *c);
 double	**get_rtm(t_camera *c);
+double	**malloc_matrix(void);
+void	free_matrix(double **vtm);
 void	transform_camera(t_camera *c, double **vtm, double **rtm);
 void	transform_light(t_light *l, double **vtm);
 void	transform_sphere(union u_object *o, double **vtm, double **rtm);

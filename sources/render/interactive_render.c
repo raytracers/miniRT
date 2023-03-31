@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_scene.c                                     :+:      :+:    :+:   */
+/*   interactive_render.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:57:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/30 17:56:49 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void				render_px(int x, int y, t_scene *s, t_window *win);
 static t_ray			get_px_ray(int x, int y, t_window *win, double fov);
 
-void	render_scene(t_scene *scene, t_window *win)
+void	interactive_render(t_scene *scene, t_window *win)
 {
 	int		x;
 	int		y;
@@ -32,7 +32,7 @@ void	render_scene(t_scene *scene, t_window *win)
 		}
 		++x;
 	}
-	menu = mlx_xpm_file_to_image(win->vars.mlx, "images/Render_menu.xpm",
+	menu = mlx_xpm_file_to_image(win->vars.mlx, "images/Interactive_menu.xpm",
 			&x, &y);
 	mlx_put_image_to_window(win->vars.mlx, win->vars.win, win->image.img, 0, 0);
 	mlx_put_image_to_window(win->vars.mlx, win->vars.win, menu, 0, 0);
@@ -42,12 +42,13 @@ static void	render_px(int x, int y, t_scene *s, t_window *win)
 {
 	t_ray			ray;
 	t_intersection	intersec;
-	int				color;
 
 	ray = get_px_ray(x, y, win, s->camera->r_fov);
 	intersec = get_intersection(ray, s->elements);
-	color = get_px_color(intersec, s);
-	pixel_put(&win->image, x, y, color);
+	if (intersec.exists)
+		pixel_put(&win->image, x, y, intersec.color);
+	else
+		pixel_put(&win->image, x, y, 0);
 }
 
 static t_ray	get_px_ray(int x, int y, t_window *win, double fov)

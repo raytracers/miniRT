@@ -12,6 +12,7 @@ SRCS	=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c 	\
 			ft_invert_str.c ft_printf.c ft_putptr_fd.c		\
 			ft_putunsignednbr_fd.c ft_puthex_case_fd.c		\
 			get_next_line.c ft_atof.c ft_lstnew.c 			\
+			get_next_line_utils.c 							\
 			ft_lstadd_front.c ft_lstsize.c					\
 			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c	\
 			ft_lstclear.c ft_lstiter.c ft_lstmap.c			\

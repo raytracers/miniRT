@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/21 13:44:38 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/03/30 16:57:44 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ typedef struct s_light
 {
 	t_point	origin;
 	double	brightness;
+	int		color;
 }	t_light;
 
 typedef struct s_sphere
@@ -161,6 +162,12 @@ typedef struct s_window
 	int		height;
 	int		width;
 }				t_window;
+
+typedef struct s_info
+{
+	t_scene		*s;
+	t_window	*w;
+}	t_info;
 
 /* ************************************************************************** */
 
