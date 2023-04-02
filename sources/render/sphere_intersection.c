@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/21 13:46:21 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/02 12:04:03 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_intersection	sphere_intersection(t_ray r, union u_object object)
 
 	sphere = object.sphere;
 	intersec.exists = 0;
-	sol = quadratic_solver(get_b(r, sphere), get_c(r, sphere));
+	sol = quadratic_solver(1, get_b(r, sphere), get_c(r, sphere));
 	if (sol < 0)
 		return (intersec);
 	intersec.exists = 1;
