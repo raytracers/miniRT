@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/04/04 14:45:26 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/04/04 16:05:19 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ RENDER = $(addprefix render/,	\
 	get_px_color.c				\
 	compute_diffuse.c			\
 	compute_ambient.c			\
+	compute_specular.c			\
 	get_intersection.c			\
 	interactive_render.c		\
 	move_scene.c				\

@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 14:35:25 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:04:32 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void			spin_right(t_scene *s);
 int				get_px_color(t_intersection i, t_ray view_d, t_scene *s);
 int				compute_diffuse(t_scene *s, t_ray ld, t_intersection i);
 int				compute_ambient(t_intersection intersec, t_a_light *light);
+int				compute_specular(t_point v, t_point l, t_point n, t_light *light);
 
 /* ************************************************************************** */
 
