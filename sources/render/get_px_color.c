@@ -6,44 +6,44 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:20:07 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:09:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:35:55 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-static int	compute_color(t_intersection i, t_scene *s, double cs);
+static int	compute_color(t_intersection i, t_scene *s, t_ray r);
 static int	compute_blue(t_intersection i, t_scene *s, double cs);
 static int	compute_green(t_intersection i, t_scene *s, double cs);
 static int	compute_red(t_intersection i, t_scene *s, double cs);
 
 int	get_px_color(t_intersection i, t_scene *s)
 {
-	double			dist;
-	double			cosinus;
-	t_intersection	obj;
 	t_ray			ray;
 
 	if (!i.exists)
 		return (0);
-	dist = get_distance(i.location, s->light->origin);
 	ray = get_ray(i.location, s->light->origin);
 	ray.origin = vector_sum(ray.origin, vector_scalar(i.normal, 0.0001));
-	obj = get_intersection(ray, s->elements);
-	cosinus = dot_product(i.normal, ray.orientation);
-	if (cosinus < 0 || (obj.exists && obj.distance < dist))
-		cosinus = 0;
-	return (compute_color(i, s, cosinus));
+	return (compute_color(i, s, ray));
 }
 
-static int	compute_color(t_intersection i, t_scene *s, double cs)
+static int	compute_color(t_intersection i, t_scene *s, t_ray r)
 {
-	int	color;
+	int				color;
+	double			dist;
+	double			cosinus;
+	t_intersection	obj;
 
+	dist = get_distance(i.location, s->light->origin);
+	obj = get_intersection(r, s->elements);
+	cosinus = dot_product(i.normal, r.orientation);
+	if (cosinus < 0 || (obj.exists && obj.distance < dist))
+		cosinus = 0;
 	color = 0;
-	color |= compute_blue(i, s, cs);
-	color |= compute_green(i, s, cs) << 8;
-	color |= compute_red(i, s, cs) << 16;
+	color |= compute_blue(i, s, cosinus);
+	color |= compute_green(i, s, cosinus) << 8;
+	color |= compute_red(i, s, cosinus) << 16;
 	return (color);
 }
 
