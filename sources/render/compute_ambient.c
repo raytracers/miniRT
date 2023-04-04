@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 13:51:57 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 14:47:34 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:21:09 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	compute_ambient(t_intersection intersec, t_a_light *light)
 	if (!light || !light->ratio)
 		return (0);
 	r = ambient_red(intersec.color, light);
-	g = ambient_green(intersec.color,light);
+	g = ambient_green(intersec.color, light);
 	b = ambient_blue(intersec.color, light);
 	return (r << 16 | g << 8 | b);
 }

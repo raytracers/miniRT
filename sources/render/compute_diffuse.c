@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 14:03:13 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 14:47:50 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:21:23 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	compute_diffuse(t_scene *s, t_ray ld, t_intersection i)
 	int		g;
 	int		b;
 	double	cosinus;
-	
+
 	cosinus = dot_product(i.normal, ld.orientation);
 	if (cosinus <= 0)
 		return (0);

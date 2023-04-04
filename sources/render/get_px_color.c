@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:20:07 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 16:17:25 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:22:54 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,15 @@ static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
 	else
 	{
 		dif = compute_diffuse(s, l, i);
-		spec = compute_specular(v.orientation, l.orientation, i.normal, s->light);
+		spec = compute_specular(v.orientation, l.orientation,
+				i.normal, s->light);
 	}
 	amb = compute_ambient(i, s->a_light);
-	return (compute_r(amb, dif, spec) | compute_g(amb, dif, spec) | compute_b(amb, dif, spec));
+	return (
+		compute_r(amb, dif, spec)
+		| compute_g(amb, dif, spec)
+		| compute_b(amb, dif, spec)
+	);
 }
 
 static int	compute_r(int a, int d, int s)
