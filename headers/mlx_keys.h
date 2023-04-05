@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 17:26:39 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 17:51:44 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/05 12:33:31 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 #  define KEY_SPACE 32
 # elif __APPLE__
 #  define ESC 53
-#  define KEY_I 53
+#  define KEY_I 34
 #  define KEY_W 13
 #  define KEY_R 15
 #  define KEY_A 0
