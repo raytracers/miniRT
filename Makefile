@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/03/31 20:44:46 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/04/05 02:55:19 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ RENDER = $(addprefix render/,	\
 
 OPERATIONS = $(addprefix operations/,	\
 	quadratic_solver.c					\
+	cylinder_quadratic.c				\
 	vector_operations.c					\
 	vector_operations2.c				\
 	cross_product.c						\

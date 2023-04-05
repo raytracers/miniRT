@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 23:42:24 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/29 14:10:54 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/04 23:06:07 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_intersection	plane_intersection(t_ray r, union u_object object)
 	plane = object.plane;
 	intersec.exists = 0;
 	denom = dot_product(plane.normal, r.orientation);
-	if (denom < 0.000001 && denom > -0.000001)
+	if (denom < 0.00001 && denom > -0.00001)
 		return (intersec);
 	t = dot_product(vector_dif(plane.origin, r.origin), plane.normal) / denom;
 	if (denom > 0)
