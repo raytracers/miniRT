@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 20:11:03 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/05 03:03:14 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:58:30 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,12 @@ void	body_intr(t_ray r, t_cylinder cy, t_intersection *i, double *t)
 		t[0] + dot_product(vector_dif(r.origin, cy.origin), cy.orientation);
 	m[1] = dot_product(r.orientation, cy.orientation) * \
 		t[1] + dot_product(vector_dif(r.origin, cy.origin), cy.orientation);
-	if (t[0] > 0.0 && (m[0] >= 0 && m[0] <= cy.height))
+	if (t[0] > 0.0 && (m[0] > 0 && m[0] < cy.height))
 	{
 		t_res = t[0];
 		m_res = m[0];
 	}
-	else if (t[1] > 0.0 && (m[1] >= 0 && m[1] <= cy.height))
+	else if (t[1] > 0.0 && (m[1] > 0 && m[1] < cy.height))
 	{
 		t_res = t[1];
 		m_res = m[1];
@@ -67,48 +67,53 @@ void	body_intr(t_ray r, t_cylinder cy, t_intersection *i, double *t)
 	i->normal = get_cylinder_normal(*i, cy, m_res);
 }
 
+#include <stdio.h>
+
 t_intersection	check_cap_intersection(t_ray ray, t_cylinder cy)
 {
 	t_intersection			int1;
 	t_intersection			int2;
-	t_point					p;
+	double					p;
 	union u_object			obj;
+	union u_object			obj2;
 
 	obj.plane.origin = cy.origin;
-	obj.plane.normal = vector_scalar(cy.orientation, -1);
-	int1 = plane_intersection(ray, obj);
-	obj.plane.origin = vector_sum(cy.origin, \
-		vector_scalar(cy.orientation, cy.height));
 	obj.plane.normal = cy.orientation;
-	int2 = plane_intersection(ray, obj);
+	//obj.plane.normal = vector_scalar(cy.orientation, -1);
+	int1 = plane_intersection(ray, obj);
+	obj2.plane.origin = vector_sum(cy.origin, \
+		vector_scalar(cy.orientation, cy.height));
+	obj2.plane.normal = vector_scalar(cy.orientation, -1);
+	//obj2.plane.normal = cy.orientation;
+	int2 = plane_intersection(ray, obj2);
 	if (int1.exists == 1)
 	{
-		p = vector_dif(int1.location, cy.origin);
-		if (!(dot_product(p, p) < pow(cy.diameter / 2.0, 2)))
+		p = get_distance(int1.location, cy.origin);
+		if (pow(p, 2) >= pow(cy.diameter / 2.0, 2))
 			int1.exists = 0;
 	}
 	if (int2.exists == 1)
 	{
-		p = vector_dif(int2.location, obj.plane.origin);
-		if (!(dot_product(p, p) < pow(cy.diameter / 2.0, 2)))
+		p = get_distance(int2.location, obj2.plane.origin);
+		if (pow(p, 2) >= pow(cy.diameter / 2.0, 2))
 			int2.exists = 0;
 	}
 	return (get_cap_intersection(int1, int2));
 }
 
+
 t_intersection	get_cap_intersection(t_intersection int1, t_intersection int2)
 {
-	if (int1.exists == 1 && int2.exists == 1)
-	{
-		if (int1.distance < int2.distance)
-			return (int1);
-		else
-			return (int2);
-	}
-	else if (int1.exists == 1)
+	if (int1.exists == 1)
+	{	
 		return (int1);
-	else
+	}
+	if (int2.exists == 1)
+	{
 		return (int2);
+	}
+	int1.exists = 0;
+	return (int1);
 }
 
 t_point	get_cylinder_normal(t_intersection intersec, t_cylinder cy, double m)
