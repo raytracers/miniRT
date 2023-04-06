@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 12:49:59 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/05 02:50:29 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/06 16:49:45 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 /* ************************* ALGEBRIC OPERATIONS **************************** */
 
-double	quadratic_solver(double a, double b, double c);
+double	quadratic_solver(double b, double c);
 int		cylinder_quadratic(t_ray ray, t_cylinder cy, double *t1, double *t2);
 
 /* ************************************************************************** */
