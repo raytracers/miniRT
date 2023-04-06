@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:59:37 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/21 13:46:21 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:24:00 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,20 @@ t_intersection	sphere_intersection(t_ray r, union u_object object)
 	t_intersection	intersec;
 	t_sphere		sphere;
 	double			sol;
+	int				inside;
 
 	sphere = object.sphere;
 	intersec.exists = 0;
-	sol = quadratic_solver(get_b(r, sphere), get_c(r, sphere));
+	inside = 0;
+	sol = quadratic_solver(get_b(r, sphere), get_c(r, sphere), &inside);
 	if (sol < 0)
 		return (intersec);
 	intersec.exists = 1;
 	intersec.distance = sol;
 	intersec.location = vector_sum(r.origin, vector_scalar(r.orientation, sol));
 	intersec.normal = normalize(vector_dif(intersec.location, sphere.origin));
+	if (inside)
+		intersec.normal = vector_scalar(intersec.normal, -1);
 	intersec.color = sphere.color;
 	return (intersec);
 }

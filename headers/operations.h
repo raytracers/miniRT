@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 12:49:59 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 14:09:33 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/06 10:21:21 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 /* ************************* ALGEBRIC OPERATIONS **************************** */
 
-double	quadratic_solver(double b, double c);
+double	quadratic_solver(double b, double c, int *flag);
 
 /* ************************************************************************** */
 
