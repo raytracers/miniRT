@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:57:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 13:42:56 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	render_px(int x, int y, t_scene *s, t_window *win)
 
 	ray = get_px_ray(x, y, win, s->camera->r_fov);
 	intersec = get_intersection(ray, s->elements);
-	color = get_px_color(intersec, s);
+	color = get_px_color(intersec, ray, s);
 	pixel_put(&win->image, x, y, color);
 }
 
