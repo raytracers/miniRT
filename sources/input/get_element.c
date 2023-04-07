@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/13 02:30:10 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:55:26 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ enum e_element	get_element(char *elem)
 		return (plane);
 	else if (!ft_strncmp(elem, "cy", 3))
 		return (cylinder);
+	else if (!ft_strncmp(elem, "cn", 3))
+		return (cone);
 	else
 		return (nae);
 }

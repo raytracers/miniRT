@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 17:36:20 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/31 20:47:50 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:51:55 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,14 @@ t_intersection	get_intersection(t_ray ray, t_elist *e)
 {
 	t_intersection			intersec;
 	t_intersection			temp;
-	static t_intersec_funcs	fn[3];
+	static t_intersec_funcs	fn[4];
 
 	if (*fn == NULL)
 	{
 		fn[0] = sphere_intersection;
 		fn[1] = plane_intersection;
 		fn[2] = cylinder_intersection;
+		fn[3] = cone_intersection;
 	}
 	intersec.exists = 0;
 	while (e)
