@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:05:05 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/07 21:45:11 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:52:38 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,10 @@ t_intersection	cone_body_intr(t_ray r, t_cylinder cy, double *t)
 
 t_point	get_cone_normal(t_point p, t_cylinder cy, double m)
 {
-   // N = nrm( P-C - (1+k*k)*V*m )
-	t_point n;
-	t_point x; 
-	t_point y;
-	double k;
+	t_point	n;
+	t_point	x;
+	t_point	y;
+	double	k;
 
 	k = 1 + pow(atan((cy.diameter / 2.0) / (double) cy.height), 2);
 	x = vector_dif(p, cy.origin);

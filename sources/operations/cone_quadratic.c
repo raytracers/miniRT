@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 19:12:19 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/07 21:31:31 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:57:18 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,23 +34,14 @@ int	cone_quadratic(t_ray ray, t_cylinder cy, double *t1, double *t2)
 		return (-1);
 	*t1 = (double)((b * -1) - sqrt(delta)) / (2 * a);
 	*t2 = (double)((b * -1) + sqrt(delta)) / (2 * a);
-	double temp;
-	if (*t1 > *t2)
-	{
-		temp = *t1;
-		*t1 = *t2;
-		*t2 = temp;
-	}
+	swap_sols(t1, t2);
 	return (0);
 }
 
 double	cone_a(t_ray ray, t_cylinder cylinder, double k)
 {
-	//a   = D|D - (1+k*k)*(D|V)^2
 	double	x;
-	double  y;
-	
-//half_angle = atan(radius / height)
+	double	y;
 
 	x = dot_product(ray.orientation, ray.orientation);
 	y = pow(dot_product(ray.orientation, cylinder.orientation), 2);
@@ -59,21 +50,20 @@ double	cone_a(t_ray ray, t_cylinder cylinder, double k)
 
 double	cone_b(t_ray ray, t_cylinder cylinder, double k)
 {
-   // b/2 = D|X - (1+k*k)*(D|V)*(X|V)
-	double x;
-	double y;
-	double z;
+	double	x;
+	double	y;
+	double	z;
 
 	x = dot_product(ray.orientation, vector_dif(ray.origin, cylinder.origin));
 	y = dot_product(ray.orientation, cylinder.orientation);
-	z = dot_product(vector_dif(ray.origin, cylinder.origin), cylinder.orientation);
+	z = dot_product(vector_dif(ray.origin, cylinder.origin), \
+		cylinder.orientation);
 	return (2 * (x - (1 + pow(k, 2)) * y * z));
 }
 
 double	cone_c(t_ray ray, t_cylinder cylinder, double k)
 {
-	//c   = X|X - (1+k*k)*(X|V)^2
-	t_point o;
+	t_point	o;
 	double	x;
 	double	y;
 
@@ -83,9 +73,9 @@ double	cone_c(t_ray ray, t_cylinder cylinder, double k)
 	return (x - (1 + pow(k, 2)) * y);
 }
 
-/*void	swap_sols(double *t1, double *t2)
+void	swap_sols(double *t1, double *t2)
 {
-	double temp;
+	double	temp;
 
 	if (*t1 > *t2)
 	{
@@ -93,4 +83,4 @@ double	cone_c(t_ray ray, t_cylinder cylinder, double k)
 		*t1 = *t2;
 		*t2 = temp;
 	}
-}*/
+}
