@@ -6,15 +6,15 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/02 12:08:36 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:09:35 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-/*static void	handle_interactive_key(t_info *info, int keycode);
+static void	handle_interactive_key(t_info *info, int keycode);
 static void	handle_movement(t_info *info, int keycode);
-static void	handle_rotation(t_info *info, int keycode);*/
+static void	handle_rotation(t_info *info, int keycode);
 
 int	handle_destroy(t_info *info)
 {
@@ -26,7 +26,7 @@ int	handle_destroy(t_info *info)
 
 int	handle_keypress(int keycode, t_info	*info)
 {
-	//static int	in_interactive_mode;
+	static int	in_interactive_mode;
 
 	if (keycode == ESC)
 	{
@@ -35,7 +35,7 @@ int	handle_keypress(int keycode, t_info	*info)
 		exit(0);
 	}
 	return (0);
-/*	if (in_interactive_mode)
+	if (in_interactive_mode)
 	{
 		if (keycode == KEY_R)
 		{
@@ -53,7 +53,7 @@ int	handle_keypress(int keycode, t_info	*info)
 	return (0);*/
 }
 
-/*static void	handle_interactive_key(t_info *info, int keycode)
+static void	handle_interactive_key(t_info *info, int keycode)
 {
 	if (keycode == KEY_W || keycode == KEY_S || keycode == KEY_A
 		|| keycode == KEY_D || keycode == KEY_SPACE || keycode == KEY_CTRL)
@@ -100,4 +100,4 @@ static void	handle_rotation(t_info *info, int keycode)
 		turn_up(info->s);
 	else if (keycode == KEY_DOWN)
 		turn_down(info->s);
-}*/
+}
