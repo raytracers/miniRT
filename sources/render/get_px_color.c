@@ -6,88 +6,75 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 16:20:07 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:09:52 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:22:54 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-static int	compute_color(t_intersection i, t_scene *s, double cs);
-static int	compute_blue(t_intersection i, t_scene *s, double cs);
-static int	compute_green(t_intersection i, t_scene *s, double cs);
-static int	compute_red(t_intersection i, t_scene *s, double cs);
+static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v);
+static int	compute_r(int a, int d, int s);
+static int	compute_g(int a, int d, int s);
+static int	compute_b(int a, int d, int s);
 
-int	get_px_color(t_intersection i, t_scene *s)
+int	get_px_color(t_intersection i, t_ray view_d, t_scene *s)
 {
-	double			dist;
-	double			cosinus;
-	t_intersection	obj;
 	t_ray			ray;
 
 	if (!i.exists)
 		return (0);
-	dist = get_distance(i.location, s->light->origin);
 	ray = get_ray(i.location, s->light->origin);
 	ray.origin = vector_sum(ray.origin, vector_scalar(i.normal, 0.0001));
-	obj = get_intersection(ray, s->elements);
-	cosinus = dot_product(i.normal, ray.orientation);
-	if (cosinus < 0 || (obj.exists && obj.distance < dist))
-		cosinus = 0;
-	return (compute_color(i, s, cosinus));
+	return (compute_color(i, s, ray, view_d));
 }
 
-static int	compute_color(t_intersection i, t_scene *s, double cs)
+static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
 {
-	int	color;
+	int				amb;
+	int				dif;
+	int				spec;
+	t_intersection	obj;
 
-	color = 0;
-	color |= compute_blue(i, s, cs);
-	color |= compute_green(i, s, cs) << 8;
-	color |= compute_red(i, s, cs) << 16;
-	return (color);
-}
-
-static int	compute_blue(t_intersection i, t_scene *s, double cs)
-{
-	int		point_b;
-	double	amb_b;
-	double	blu;
-
-	point_b = 255 & i.color;
-	blu = ((255 & s->light->color) / 255.0) * s->light->brightness * cs;
-	if (s->a_light)
-		amb_b = ((255 & s->a_light->color) / 255.0) * s->a_light->ratio;
+	(void)v;
+	obj = get_intersection(l, s->elements);
+	if (obj.exists && obj.distance < get_distance(i.location, s->light->origin))
+	{
+		spec = 0;
+		dif = 0;
+	}
 	else
-		amb_b = 0;
-	return (round(point_b * (amb_b * 0.1 + blu * 0.9)));
+	{
+		dif = compute_diffuse(s, l, i);
+		spec = compute_specular(v.orientation, l.orientation,
+				i.normal, s->light);
+	}
+	amb = compute_ambient(i, s->a_light);
+	return (
+		compute_r(amb, dif, spec)
+		| compute_g(amb, dif, spec)
+		| compute_b(amb, dif, spec)
+	);
 }
 
-static int	compute_green(t_intersection i, t_scene *s, double cs)
+static int	compute_r(int a, int d, int s)
 {
-	int		point_g;
-	double	amb_g;
-	double	grn;
+	int	red;
 
-	point_g = 255 & i.color >> 8;
-	grn = ((255 & (s->light->color >> 8)) / 255.0) * s->light->brightness * cs;
-	if (s->a_light)
-		amb_g = ((255 & (s->a_light->color >> 8)) / 255.0) * s->a_light->ratio;
-	else
-		amb_g = 0;
-	return (round(point_g * (amb_g * 0.1 + grn * 0.9)));
+	red = 0;
+	red = (255 & a >> 16) * 0.1 + (255 & d >> 16) * 0.6 + (255 & s >> 16) * 0.3;
+	return (red << 16);
 }
 
-static int	compute_red(t_intersection i, t_scene *s, double cs)
+static int	compute_g(int a, int d, int s)
 {
-	int		point_r;
-	double	amb_r;
-	double	red;
+	int	green;
 
-	point_r = 255 & i.color >> 16;
-	red = ((255 & (s->light->color >> 16)) / 255.0) * s->light->brightness * cs;
-	if (s->a_light)
-		amb_r = ((255 & (s->a_light->color >> 16)) / 255.0) * s->a_light->ratio;
-	else
-		amb_r = 0;
-	return (round(point_r * (amb_r * 0.1 + red * 0.9)));
+	green = 0;
+	green = (255 & a >> 8) * 0.1 + (255 & d >> 8) * 0.6 + (255 & s >> 8) * 0.3;
+	return (green << 8);
+}
+
+static int	compute_b(int a, int d, int s)
+{
+	return ((255 & a) * 0.1 + (255 & d) * 0.6 + (255 & s) * 0.3);
 }

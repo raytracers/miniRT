@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:     #
 #                                                     +:+ +:+         +:+      #
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -53,6 +53,9 @@ RENDER = $(addprefix render/,	\
 	plane_intersection.c 		\
 	render_scene.c				\
 	get_px_color.c				\
+	compute_diffuse.c			\
+	compute_ambient.c			\
+	compute_specular.c			\
 	get_intersection.c			\
 	interactive_render.c		\
 	move_scene.c				\
@@ -109,7 +112,7 @@ UNAME := $(shell uname -s)
 
 ifeq ($(UNAME), Linux)
 MLX_DIR		= mlx_linux
-IMLX		= -L$(MLX_DIR) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+IMLX		= -L$(MLX_DIR) -lmlx -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz		
 else
 MLX_DIR		= mlx_mac
 IMLX		= -L$(MLX_DIR) -lmlx -framework OpenGL -framework appKit
