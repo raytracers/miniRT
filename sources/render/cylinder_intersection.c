@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 20:11:03 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/06 15:59:56 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/07 09:52:55 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_intersection	body_intr(t_ray r, t_cylinder cy, double *t)
 	while (++i < 2)
 	{
 		intr[i].exists = 0;
-		if (t[i] > 0.0 && (m[i] > 0 && m[i] < cy.height))
+		if (t[i] > 0.0 && (m[i] >= 0 && m[i] <= cy.height))
 		{
 			intr[i].exists = 1;
 			intr[i].location = vector_sum(r.origin, \
