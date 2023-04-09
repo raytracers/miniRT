@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/30 17:56:49 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:32:58 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	interactive_render(t_scene *scene, t_window *win)
 			&x, &y);
 	mlx_put_image_to_window(win->vars.mlx, win->vars.win, win->image.img, 0, 0);
 	mlx_put_image_to_window(win->vars.mlx, win->vars.win, menu, 0, 0);
+	mlx_destroy_image(win->vars.mlx, menu);
 }
 
 static void	render_px(int x, int y, t_scene *s, t_window *win)
