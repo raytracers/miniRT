@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:34:46 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/17 17:26:03 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:43:55 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,10 @@ int	init_camera(char **attributes, t_camera **cam)
 		return (1);
 	if (get_point(attributes[0], &(*cam)->origin)
 		|| get_point(attributes[1], &(*cam)->orientation))
-	{
-		free(*cam);
 		return (1);
-	}
 	(*cam)->fov = get_fov(attributes[2]);
 	if ((*cam)->fov == -1 || !is_normalized((*cam)->orientation))
-	{
-		free(*cam);
 		return (1);
-	}
 	(*cam)->r_fov = fov_to_rfov((*cam)->fov);
 	(*cam)->orientation = normalize((*cam)->orientation);
 	return (0);
