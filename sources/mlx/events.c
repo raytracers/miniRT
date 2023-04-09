@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/09 14:07:42 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:39:48 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	handle_keypress(int keycode, t_info	*info)
 		destroy_scene(info->s);
 		exit(0);
 	}
-	return (0);
 	if (in_interactive_mode)
 	{
 		if (keycode == KEY_R)
