@@ -6,14 +6,14 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 14:34:46 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/09 14:43:55 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/09 15:03:34 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-inline static double	fov_to_rfov(int fov);
-static int				get_fov(char *str);
+static double	fov_to_rfov(int fov);
+static int		get_fov(char *str);
 
 int	init_camera(char **attributes, t_camera **cam)
 {
@@ -45,7 +45,7 @@ static int	get_fov(char *str)
 	return (fov);
 }
 
-static inline double	fov_to_rfov(int fov)
+static double	fov_to_rfov(int fov)
 {
 	return (fov * (M_PI / 180));
 }
