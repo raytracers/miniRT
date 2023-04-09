@@ -41,7 +41,7 @@ TEST(SphereIntersection, DubleIntersectingSpheres)
 	EXPECT_TRUE(inter.location.z > 4.499 && inter.location.z < 5.501);
 	EXPECT_TRUE(inter.normal.x > -0.001 && inter.normal.x < 0.001);
 	EXPECT_TRUE(inter.normal.y > -0.001 && inter.normal.y < 0.001);
-	EXPECT_TRUE(inter.normal.z > 0.999 && inter.normal.z < 1.001);
+	EXPECT_TRUE(inter.normal.z > -1.001 && inter.normal.z < -0.999);
 	EXPECT_DOUBLE_EQ(inter.color, 0);
 }
 

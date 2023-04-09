@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/07 10:09:35 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:07:42 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	handle_keypress(int keycode, t_info	*info)
 		interactive_render(info->s, info->w);
 		in_interactive_mode = 1;
 	}
-	return (0);*/
+	return (0);
 }
 
 static void	handle_interactive_key(t_info *info, int keycode)

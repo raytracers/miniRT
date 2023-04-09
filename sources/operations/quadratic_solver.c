@@ -6,13 +6,13 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 11:39:41 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/06 16:49:34 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:06:37 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-double	quadratic_solver(double b, double c)
+double	quadratic_solver(double b, double c, int *flag)
 {
 	double	delta;
 	double	sol_one;
@@ -23,8 +23,10 @@ double	quadratic_solver(double b, double c)
 	if (delta < 0)
 		return (-1);
 	delta = sqrt(delta);
-	sol_one = (b + delta) / (double) 2;
-	sol_two = (b - delta) / (double) 2;
+	sol_one = (b + delta) / 2;
+	sol_two = (b - delta) / 2;
+	if ((sol_one < 0 && sol_two >= 0) || (sol_one >= 0 && sol_two < 0))
+		*flag = 1;
 	if (sol_one < 0 && sol_two < 0)
 		return (-1);
 	else if (sol_one > 0 && sol_two < 0)
