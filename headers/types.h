@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/30 16:57:44 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/07 19:07:27 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ enum	e_element
 	sphere,
 	plane,
 	cylinder,
+	cone,
 	ambient_light,
 	camera,
 	light,

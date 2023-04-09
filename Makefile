@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/04/09 13:47:10 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/04/09 14:15:10 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CC		= cc
 
 RM		= rm -rf
 
-CFLAGS	= -Wall -Wextra -Werror -O3
+CFLAGS	= -Wall -Wextra -Werror -O3 -g
 
 #-----C FILES-----#
 
@@ -52,6 +52,7 @@ RENDER = $(addprefix render/,	\
 	sphere_intersection.c		\
 	plane_intersection.c 		\
 	cylinder_intersection.c 	\
+	cone_intersection.c			\
 	render_scene.c				\
 	get_px_color.c				\
 	compute_diffuse.c			\
@@ -67,6 +68,7 @@ RENDER = $(addprefix render/,	\
 OPERATIONS = $(addprefix operations/,	\
 	quadratic_solver.c					\
 	cylinder_quadratic.c				\
+	cone_quadratic.c					\
 	vector_operations.c					\
 	vector_operations2.c				\
 	cross_product.c						\

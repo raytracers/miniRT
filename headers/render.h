@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/09 13:47:56 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/09 14:06:07 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_intersection	get_intersection(t_ray ray, t_elist *e);
 t_intersection	sphere_intersection(t_ray ray, union u_object object);
 t_intersection	plane_intersection(t_ray ray, union u_object object);
 t_intersection	cylinder_intersection(t_ray ray, union u_object object);
+t_intersection	cone_intersection(t_ray ray, union u_object object);
 
 /* ************************************************************************** */
 

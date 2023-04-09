@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:00:48 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 16:00:53 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:35:20 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ int	transform_scene(t_scene *scene)
 
 void	transform_objects(t_elist *lst, double **vtm, double **rtm)
 {
-	t_transform	fn[3];
+	t_transform	fn[4];
 
 	fn[sphere] = transform_sphere;
 	fn[plane] = transform_plane;
 	fn[cylinder] = transform_cylinder;
+	fn[cone] = transform_cylinder;
 	while (lst)
 	{
 		fn[lst->type](&lst->object, vtm, rtm);
