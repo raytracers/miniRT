@@ -5,11 +5,19 @@ extern "C"
   #include "../../headers/mini_rt.h"
 }
 
-void init_scene(t_scene *scene);
+void init_my_scene(t_scene *scene)
+{
+	scene->a_light = NULL;
+	scene->light = NULL;
+	scene->camera = NULL;
+	scene->elements = NULL;
+	scene->next = NULL;
+}
+
 
 void scene_read(char *input_file, t_scene *scene)
 {
-	init_scene(scene);
+	init_my_scene(scene);
 	int fd = scene_open(input_file);
 	ASSERT_NE(fd, -1);
 	EXPECT_EQ(scene_load(fd, scene), 0);

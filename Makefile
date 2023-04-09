@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:     #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/04/04 17:48:11 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/04/09 13:47:10 by gcorreia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,7 @@ RENDER = $(addprefix render/,	\
 	transform_scene.c			\
 	sphere_intersection.c		\
 	plane_intersection.c 		\
+	cylinder_intersection.c 	\
 	render_scene.c				\
 	get_px_color.c				\
 	compute_diffuse.c			\
@@ -65,6 +66,7 @@ RENDER = $(addprefix render/,	\
 
 OPERATIONS = $(addprefix operations/,	\
 	quadratic_solver.c					\
+	cylinder_quadratic.c				\
 	vector_operations.c					\
 	vector_operations2.c				\
 	cross_product.c						\
