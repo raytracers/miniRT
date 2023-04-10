@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:     #
 #                                                     +:+ +:+         +:+      #
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -54,6 +54,7 @@ RENDER = $(addprefix render/,	\
 	cylinder_intersection.c 	\
 	cone_intersection.c			\
 	render_scene.c				\
+	render_loop.c				\
 	get_px_color.c				\
 	compute_diffuse.c			\
 	compute_ambient.c			\

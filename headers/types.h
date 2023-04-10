@@ -162,6 +162,7 @@ typedef struct s_window
 	t_vars	vars;
 	int		height;
 	int		width;
+	char	*menu_img_path;
 }				t_window;
 
 typedef struct s_info
