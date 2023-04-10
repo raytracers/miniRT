@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   app.h                                              :+:      :+:    :+:   */
+/*   scene_close.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/13 14:50:58 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/10 20:16:10 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/04/10 19:58:28 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/04/10 20:30:42 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef APP_H
-# define APP_H
+#include "../../headers/mini_rt.h"
+#include <errno.h>
+#include <string.h>
 
-# include "types.h"
-
-/* *********************** FREE FUNCTIONS ***************************** */
-
-void	destroy_scene(t_scene *scene, int scene_fd);
-void	scene_close(int scene_fd);
-#endif
+void	scene_close(int scene_fd)
+{
+	if (close(scene_fd) == -1)
+	{
+		ft_putstr_fd("ERROR: ", STDERR_FILENO);
+		ft_putendl_fd(strerror(errno), STDERR_FILENO);
+	}
+}
