@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:38:29 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 11:52:33 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:27:58 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	init_vars(t_info *info)
 			info->w->height, "MiniRT");
 	mlx_hook(info->w->vars.win, 2, 1L << 0, handle_keypress, info);
 	mlx_hook(info->w->vars.win, 17, 0L << 0, handle_destroy, info);
+	mlx_loop_hook(info->w->vars.mlx, render_loop, info);
 }
 
 static void	init_image(t_window *win)
