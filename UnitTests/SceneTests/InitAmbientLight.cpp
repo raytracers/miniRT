@@ -40,7 +40,7 @@ void test_init_amb_light(char *str)
 
 	attributes = ft_split(str, ' ');
 	amb_light = NULL;
-	EXPECT_EQ(init_ambient_light(attributes, &amb_light), 1);
+	EXPECT_NE(init_ambient_light(attributes, &amb_light), 0);
 	free(amb_light);
 	ft_free_array(attributes);
 }

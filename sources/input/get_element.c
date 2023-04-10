@@ -6,13 +6,13 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 16:42:42 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/07 18:55:26 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/10 18:57:39 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-enum e_element	get_element(char *elem)
+enum e_element	get_element(char *elem, int ln)
 {
 	if (elem == NULL)
 		return (nae);
@@ -31,5 +31,8 @@ enum e_element	get_element(char *elem)
 	else if (!ft_strncmp(elem, "cn", 3))
 		return (cone);
 	else
+	{
+		print_scene_error(err_obj_invalid, ln);
 		return (nae);
+	}
 }

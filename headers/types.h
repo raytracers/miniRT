@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/07 19:07:27 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:20:27 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ typedef struct s_scene
 
 void	elist_addback(t_elist **lst, t_elist *n);
 void	free_elist(t_elist **head);
-t_elist	*elist_new(enum e_element type, char **content);
+t_elist	*elist_new(enum e_element type, char **content, int *op_code);
 t_ray	get_ray(t_point origin, t_point destination);
 t_point	new_point(int x, int y, int z);
 int		init_camera(char **attributes, t_camera **camera);

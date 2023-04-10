@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/10 16:42:30 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:09:20 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,26 @@
 #include <errno.h>
 #include <string.h>
 
-char *get_error_msg(int error_code)
+char	*get_error_msg(int error_code)
 {
-	char	*error_msg[10];
+	char	*error_msg[12];
 
 	error_msg[err_usage] = "USAGE: ./miniRT <filename>.rt";
 	error_msg[err_file_type] = "the current file is not a .rt file";
 	error_msg[err_file_fmt] = "the file formatting is invalid";
 	error_msg[err_file_perm] = "could not read file: permission denied";
 	error_msg[err_file_not_found] = "file not found";
-	error_msg[err_obj_attr_value] = "invalid value for object attribute";	
-	error_msg[err_obj_attr_miss] = "object declaration missing required attr";
+	error_msg[err_obj_attr_fmt] = "invalid format for object's attribute";
+	error_msg[err_obj_attr_value] = "invalid value for object's attribute";
+	error_msg[err_obj_attr_miss] = "wrong attr size in object declaration";
 	error_msg[err_obj_dup] = "multiple unique objects [light, camera, a_light]";
-	error_msg[err_obj_req_miss] = "missing required objs [light, camera]";
+	error_msg[err_obj_invalid] = "invalid object";
 	return (error_msg[error_code]);
 }
 
 void	print_error_msg(int err_code)
 {
-	char *msg;
+	char	*msg;
 
 	msg = get_error_msg(err_code);
 	ft_putstr_fd("ERROR: ", STDERR_FILENO);

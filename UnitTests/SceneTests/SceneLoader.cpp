@@ -139,7 +139,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
-		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		EXPECT_NE(scene_load(scene_fd, &scene), 0);
 		close(scene_fd);
 		destroy_scene(&scene);
 	}
@@ -148,7 +148,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
-		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		EXPECT_NE(scene_load(scene_fd, &scene), 0);
 		close(scene_fd);
 		destroy_scene(&scene);
 	}
@@ -157,7 +157,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
-		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		EXPECT_NE(scene_load(scene_fd, &scene), 0);
 		close(scene_fd);
 		destroy_scene(&scene);
 	}
@@ -186,7 +186,7 @@ TEST(SceneTests, InvalidSceneElement)
 		init_scene(&scene);
 		EXPECT_NE(scene_fd, -1);
 
-		EXPECT_EQ(scene_load(scene_fd, &scene), 1);
+		EXPECT_NE(scene_load(scene_fd, &scene), 0);
 		close(scene_fd);
 	}
 }

@@ -8,9 +8,10 @@ extern "C"
 TEST(ElistNew, NewSphere)
 {
 	t_elist	*node;
+	int		code;
 	char **content = ft_split("0.0,0.0,20.6 12.6 10,0,255", ' ');
 
-	node = elist_new(sphere, content);
+	node = elist_new(sphere, content, &code);
 	ASSERT_NE(node, nullptr);
 	EXPECT_DOUBLE_EQ(node->object.sphere.origin.y, 0.0);
 	EXPECT_DOUBLE_EQ(node->object.sphere.origin.x, 0.0);
@@ -22,7 +23,7 @@ TEST(ElistNew, NewSphere)
 	ft_free_array(content);
 	
 	content = ft_split("0.0,0.0,20.6 10,0,255", ' ');
-	node = elist_new(sphere, content);
+	node = elist_new(sphere, content, &code);
 	EXPECT_EQ(node, nullptr);
 
 	free(node);
@@ -32,9 +33,10 @@ TEST(ElistNew, NewSphere)
 TEST(ElistNew, NewCylinder)
 {
 	t_elist	*node;
+	int		code;
 	char **content = ft_split("50.0,0.0,20.6 0.0,0.0,1.0 14.2 21.42 10,0,255", ' ');
 
-	node = elist_new(cylinder, content);
+	node = elist_new(cylinder, content, &code);
 	ASSERT_NE(node, nullptr);
 	EXPECT_DOUBLE_EQ(node->object.cylinder.origin.x, 50.0);
 	EXPECT_DOUBLE_EQ(node->object.cylinder.origin.y, 0.0);
@@ -50,7 +52,7 @@ TEST(ElistNew, NewCylinder)
 	ft_free_array(content);
 	
 	content = ft_split("50.0,0.0,20.6 14.2 21.42 10,0,255", ' ');
-	node = elist_new(cylinder, content);
+	node = elist_new(cylinder, content, &code);
 	EXPECT_EQ(node, nullptr);
 
 	free(node);
