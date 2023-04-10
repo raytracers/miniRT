@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 17:55:27 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/09 14:06:07 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/10 12:26:38 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 void			render_scene(t_scene *scene, t_window *win);
 void			interactive_render(t_scene *scene, t_window *win);
+int				render_loop(void *param);
 
 /* ************************************************************************** */
 

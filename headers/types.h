@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:26:53 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/07 19:07:27 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/10 14:37:50 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,6 +162,7 @@ typedef struct s_window
 	t_vars	vars;
 	int		height;
 	int		width;
+	char	*menu_img_path;
 }				t_window;
 
 typedef struct s_info

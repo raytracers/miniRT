@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/04/09 14:51:30 by gcorreia         ###   ########.fr        #
+#    Updated: 2023/04/10 12:29:43 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ RENDER = $(addprefix render/,	\
 	cylinder_intersection.c 	\
 	cone_intersection.c			\
 	render_scene.c				\
+	render_loop.c				\
 	get_px_color.c				\
 	compute_diffuse.c			\
 	compute_ambient.c			\
