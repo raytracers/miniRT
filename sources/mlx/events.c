@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 11:13:45 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/09 14:39:48 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/10 20:20:34 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	handle_rotation(t_info *info, int keycode);
 int	handle_destroy(t_info *info)
 {
 	mlx_destroy_window(info->w->vars.mlx, info->w->vars.win);
-	destroy_scene(info->s);
+	destroy_scene(info->s, info->scene_fd);
 	exit(0);
 	return (0);
 }
@@ -31,7 +31,7 @@ int	handle_keypress(int keycode, t_info	*info)
 	if (keycode == ESC)
 	{
 		mlx_destroy_window(info->w->vars.mlx, info->w->vars.win);
-		destroy_scene(info->s);
+		destroy_scene(info->s, info->scene_fd);
 		exit(0);
 	}
 	if (in_interactive_mode)

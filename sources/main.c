@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/29 14:54:41 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/10 20:19:03 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	init_scene(t_scene *scene);
 
 int	main(int argc, char **argv)
 {
-	int			scene_fd;
 	t_scene		scene;
 	t_window	window;
 	t_info		info;
@@ -25,13 +24,13 @@ int	main(int argc, char **argv)
 	info.w = &window;
 	if (!validate_args(argc, argv))
 		return (1);
-	scene_fd = scene_open(argv[1]);
-	if (scene_fd < 0)
+	info.scene_fd = scene_open(argv[1]);
+	if (info.scene_fd < 0)
 		return (2);
 	init_scene(&scene);
-	if (scene_load(scene_fd, &scene) || scene_check(&scene))
+	if (scene_load(info.scene_fd, &scene) || scene_check(&scene))
 	{
-		destroy_scene(&scene);
+		destroy_scene(&scene, info.scene_fd);
 		return (3);
 	}
 	init_window(&info);

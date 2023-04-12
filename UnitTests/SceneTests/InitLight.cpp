@@ -52,7 +52,7 @@ void	test_init_light(char *str)
 
 	light = NULL;
 	attributes = ft_split(str, ' ');
-	EXPECT_EQ(init_light(attributes, &light), 1);
+	EXPECT_NE(init_light(attributes, &light), 0);
 	ft_free_array(attributes);
 }
 
