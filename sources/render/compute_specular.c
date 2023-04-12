@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 15:50:18 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/04 16:18:08 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:09:07 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int	compute_specular(t_point v, t_point l, t_point n, t_light *light)
 	double	ratio;
 
 	ratio = pow(dot_product(v, reflection_vector(n, l)), 100);
-	red = (255 & (light->color >> 16)) * ratio;
-	green = (255 & (light->color >> 8)) * ratio;
-	blue = (255 & light->color) * ratio;
+	red = (255 & (light->color >> 16)) * ratio * light->brightness;
+	green = (255 & (light->color >> 8)) * ratio * light->brightness;
+	blue = (255 & light->color) * ratio * light->brightness;
 	return (red << 16 | green << 8 | blue);
 }
 
