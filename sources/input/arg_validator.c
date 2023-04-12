@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:58:57 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/10 16:36:50 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:53:22 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ int	validate_args(int argc, char **argv)
 {
 	if (!check_argc(argc - 1))
 	{
-		ft_putendl_fd(get_error_msg(err_usage), STDERR_FILENO);
+		print_error_msg(err_usage);
+		ft_putstr_fd("\n", STDERR_FILENO);
 		return (0);
 	}
 	if (!check_file_extension(argv[1]))

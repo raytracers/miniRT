@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/10 19:09:20 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:43:20 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*get_error_msg(int error_code)
 	error_msg[err_obj_attr_miss] = "wrong attr size in object declaration";
 	error_msg[err_obj_dup] = "multiple unique objects [light, camera, a_light]";
 	error_msg[err_obj_invalid] = "invalid object";
-	return (error_msg[error_code]);
+	return (ft_strdup(error_msg[error_code]));
 }
 
 void	print_error_msg(int err_code)
@@ -38,6 +38,7 @@ void	print_error_msg(int err_code)
 	msg = get_error_msg(err_code);
 	ft_putstr_fd("ERROR: ", STDERR_FILENO);
 	ft_putstr_fd(msg, STDERR_FILENO);
+	free(msg);
 }
 
 void	print_file_error(int err_code, char *filename)
@@ -49,13 +50,10 @@ void	print_file_error(int err_code, char *filename)
 
 void	print_scene_error(int err_code, int line_number)
 {
-	char	*nbr_str;
-
-	nbr_str = ft_itoa(line_number);
 	print_error_msg(err_code);
 	ft_putstr_fd(": line ", STDERR_FILENO);
-	ft_putendl_fd(nbr_str, STDERR_FILENO);
-	free(nbr_str);
+	ft_putnbr_fd(line_number, STDERR_FILENO);
+	ft_putstr_fd("\n", STDERR_FILENO);
 }
 
 void	print_error(char *filename)
