@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 15:14:37 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/12 19:43:20 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/12 19:59:13 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_error_msg(int error_code)
 	error_msg[err_usage] = "USAGE: ./miniRT <filename>.rt";
 	error_msg[err_file_type] = "the current file is not a .rt file";
 	error_msg[err_file_fmt] = "the file formatting is invalid";
-	error_msg[err_file_perm] = "could not read file: permission denied";
+	error_msg[err_file_perm] = "could not read file - permission denied";
 	error_msg[err_file_not_found] = "file not found";
 	error_msg[err_obj_attr_fmt] = "invalid format for object's attribute";
 	error_msg[err_obj_attr_value] = "invalid value for object's attribute";
