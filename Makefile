@@ -6,7 +6,7 @@
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 15:25:00 by lfarias-          #+#    #+#              #
-#    Updated: 2023/04/10 12:29:43 by lfarias-         ###   ########.fr        #
+#    Updated: 2023/04/12 20:50:13 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ OPERATIONS = $(addprefix operations/,	\
 
 APP = $(addprefix app/,	\
 	destroy_scene.c		\
+	logger.c 			\
 )
 
 MY_MLX		= $(addprefix mlx/,	\

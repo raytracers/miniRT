@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_checker.c                                    :+:      :+:    :+:   */
+/*   logger.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 18:07:32 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/12 21:03:14 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/04/12 20:41:16 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/04/12 20:44:03 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
 
-int	scene_check(t_scene *scene)
+void	log_msg(char *msg)
 {
-	log_msg("performing sanity checks");
-	if (scene->camera == NULL)
-	{
-		ft_putstr_fd("ERROR: No camera data found\n", STDERR_FILENO);
-		return (1);
-	}
-	if (scene->light == NULL)
-	{
-		ft_putstr_fd("ERROR: No light data found\n", STDERR_FILENO);
-		return (1);
-	}
-	return (0);
+	ft_putstr_fd("[log]:\t", STDOUT_FILENO);
+	ft_putendl_fd(msg, STDOUT_FILENO);
 }

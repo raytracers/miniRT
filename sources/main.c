@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/29 14:54:41 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:03:33 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 	t_window	window;
 	t_info		info;
 
+	log_msg("starting application");
 	info.s = &scene;
 	info.w = &window;
 	if (!validate_args(argc, argv))
@@ -29,6 +30,7 @@ int	main(int argc, char **argv)
 	if (scene_fd < 0)
 		return (2);
 	init_scene(&scene);
+	log_msg("loading the scene elements");
 	if (scene_load(scene_fd, &scene) || scene_check(&scene))
 	{
 		destroy_scene(&scene);

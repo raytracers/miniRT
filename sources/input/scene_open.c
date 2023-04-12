@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 02:16:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/03/28 14:01:09 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:48:01 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	scene_open(char *filename)
 {
 	int	scene_fd;
 
+	log_msg("opening the .rt file");
 	scene_fd = open(filename, O_WRONLY);
 	if (scene_fd < 0 && errno == EISDIR)
 	{
