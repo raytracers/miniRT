@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/12 21:32:48 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:21:13 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ void	render_scene(t_scene *scene, t_window *win)
 {
 	int		x;
 	int		y;
+	long	render_start;
+	long	render_finish;
 
 	x = 0;
 	log_msg("doing expensive and really obscure calculations");
+	render_start = get_currtime_ms();
 	while (x < win->width)
 	{
 		y = 0;
@@ -32,7 +35,8 @@ void	render_scene(t_scene *scene, t_window *win)
 		}
 		++x;
 	}
-	log_msg("the scene is fully rendered!");
+	render_finish = get_currtime_ms();
+	log_render_time(render_finish - render_start);
 	win->menu_img_path = "images/Render_menu.xpm";
 }
 

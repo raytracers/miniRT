@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   logger.c                                           :+:      :+:    :+:   */
+/*   timer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 20:41:16 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/14 18:25:59 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/04/14 17:55:53 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/04/14 18:07:21 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
+#include <sys/time.h>
 
-void	log_msg(char *msg)
+long	get_currtime_ms(void)
 {
-	ft_putstr_fd("[log]:\t", STDOUT_FILENO);
-	ft_putendl_fd(msg, STDOUT_FILENO);
-}
+	struct timeval	current_time;
+	long			ctime;
 
-void	log_render_time(long time)
-{
-	long	seconds;
-
-	seconds = time / 1000;
-	ft_putstr_fd("[log]:\tRENDER READY - time elapsed: ", STDOUT_FILENO);
-	ft_putnbr_fd(seconds, STDOUT_FILENO);
-	ft_putstr_fd(" seconds!\n", STDOUT_FILENO);
+	gettimeofday(&current_time, NULL);
+	ctime = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
+	return (ctime);
 }
