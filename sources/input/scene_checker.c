@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 18:07:32 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/12 21:03:14 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:00:10 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int	scene_check(t_scene *scene)
 		ft_putstr_fd("ERROR: No light data found\n", STDERR_FILENO);
 		return (1);
 	}
+	log_scene(scene);
 	return (0);
 }

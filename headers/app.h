@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 14:50:58 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/14 18:14:40 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:00:00 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 void	destroy_scene(t_scene *scene);
 void	log_msg(char *msg);
 void	log_render_time(long time);
+void	log_scene(t_scene *scene);
 long	get_currtime_ms(void);
 #endif
