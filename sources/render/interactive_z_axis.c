@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 15:10:58 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/03/29 18:49:43 by gcorreia         ###   ########.fr       */
+/*   Updated: 2023/04/13 18:26:43 by gcorreia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	spin_left(t_scene *s)
 	matrix[2][2] = 1;
 	matrix[2][3] = 0;
 	transform_light(s->light, matrix);
-	transform_objects(s->elements, matrix, NULL);
+	transform_objects(s->elements, matrix, matrix);
 	free_matrix(matrix);
 }
 
@@ -56,7 +56,7 @@ void	spin_right(t_scene *s)
 	matrix[2][2] = 1;
 	matrix[2][3] = 0;
 	transform_light(s->light, matrix);
-	transform_objects(s->elements, matrix, NULL);
+	transform_objects(s->elements, matrix, matrix);
 	free_matrix(matrix);
 }
 

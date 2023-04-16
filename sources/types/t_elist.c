@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 16:12:08 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/07 18:52:43 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/10 19:18:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ typedef int	(*t_init_function)(char **, union u_object *);
 static t_elist	*elist_last(t_elist *lst);
 static void		get_functions(t_init_function *functions);
 
-t_elist	*elist_new(enum e_element type, char **content)
+t_elist	*elist_new(enum e_element type, char **content, int *op_code)
 {
 	t_init_function	init_fn[4];
 	t_elist			*new_node;
@@ -27,7 +27,8 @@ t_elist	*elist_new(enum e_element type, char **content)
 		return (NULL);
 	get_functions(init_fn);
 	new_node->type = type;
-	if (init_fn[type](content, &new_node->object))
+	*op_code = init_fn[type](content, &new_node->object);
+	if (*op_code != 0)
 	{
 		free(new_node);
 		return (NULL);

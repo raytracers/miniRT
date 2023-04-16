@@ -20,7 +20,7 @@ int	handle_destroy(t_info *info)
 {
 	log_msg("Good Bye :-)");
 	mlx_destroy_window(info->w->vars.mlx, info->w->vars.win);
-	destroy_scene(info->s);
+	destroy_scene(info->s, info->scene_fd);
 	exit(0);
 	return (0);
 }

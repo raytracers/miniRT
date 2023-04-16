@@ -16,7 +16,6 @@ static void	init_scene(t_scene *scene);
 
 int	main(int argc, char **argv)
 {
-	int			scene_fd;
 	t_scene		scene;
 	t_window	window;
 	t_info		info;
@@ -26,14 +25,14 @@ int	main(int argc, char **argv)
 	info.w = &window;
 	if (!validate_args(argc, argv))
 		return (1);
-	scene_fd = scene_open(argv[1]);
-	if (scene_fd < 0)
+	info.scene_fd = scene_open(argv[1]);
+	if (info.scene_fd < 0)
 		return (2);
 	init_scene(&scene);
 	log_msg("loading the scene elements");
 	if (scene_load(scene_fd, &scene) || scene_check(&scene))
 	{
-		destroy_scene(&scene);
+		destroy_scene(&scene, info.scene_fd);
 		return (3);
 	}
 	init_window(&info);

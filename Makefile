@@ -1,7 +1,7 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:     #
 #                                                     +:+ +:+         +:+      #
 #    By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
@@ -82,6 +82,7 @@ OPERATIONS = $(addprefix operations/,	\
 )
 
 APP = $(addprefix app/,	\
+	scene_close.c		\
 	destroy_scene.c		\
 	logger.c 			\
 	timer.c				\
