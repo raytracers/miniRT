@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:41:16 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:50:41 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/16 11:21:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ void	log_render_time(long time)
 
 void	log_scene(t_scene *scene)
 {
-	int	elements_qty[7];
-	char	*field_names[5];
-	int i;
+	int		elements_qty[7];
+	char	*field_names[4];
+	int		i;
 
 	count_elements(scene, elements_qty);
 	ft_putstr_fd("[log]:\tsuccessfully loaded scene with:", STDOUT_FILENO);
@@ -42,9 +42,8 @@ void	log_scene(t_scene *scene)
 	field_names[1] = "\n\tPlane(s): ";
 	field_names[2] = "\n\tCylinder(s): ";
 	field_names[3] = "\n\tCones(s): ";
-	field_names[4] = "\n\tAmbient Light: yes";
 	i = -1;
-	while (++i < 5)
+	while (++i < 4)
 	{
 		if(elements_qty[i] != 0)
 		{
@@ -52,6 +51,8 @@ void	log_scene(t_scene *scene)
 			ft_putnbr_fd(elements_qty[i], STDOUT_FILENO);
 		}
 	}
+	if (scene->a_light != NULL)
+		ft_putstr_fd("\n\tambient light: yes", STDOUT_FILENO);
 	ft_putstr_fd("\n", STDOUT_FILENO);
 }
 

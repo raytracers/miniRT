@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/12 21:53:29 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/16 11:39:44 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	interactive_render(t_scene *scene, t_window *win)
 	int		y;
 
 	x = 0;
-	log_msg("entering interactive mode");
 	while (x < win->width)
 	{
 		y = 0;
