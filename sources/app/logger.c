@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 20:41:16 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/16 11:21:43 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/16 12:09:19 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	log_scene(t_scene *scene)
 	i = -1;
 	while (++i < 4)
 	{
-		if(elements_qty[i] != 0)
+		if (elements_qty[i] != 0)
 		{
 			ft_putstr_fd(field_names[i], STDOUT_FILENO);
 			ft_putnbr_fd(elements_qty[i], STDOUT_FILENO);
