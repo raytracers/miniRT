@@ -60,6 +60,8 @@ set(Sources
 	../sources/render/plane_intersection.c
 	../sources/render/cylinder_intersection.c
 	../sources/app/destroy_scene.c
+	../sources/app/logger.c
+	../sources/app/scene_close.c
 )
 
 add_library(${This} ${Sources} ${Libft} ${Headers})

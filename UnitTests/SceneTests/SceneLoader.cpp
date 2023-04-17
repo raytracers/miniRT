@@ -29,7 +29,7 @@ TEST(SceneTests, SceneLoaderValid)
 	int		scene_fd;
 
 	{
-		scene_fd = open("../../../scenes/scene.rt", O_RDONLY);
+		scene_fd = open("../../../scenes/tests/scene.rt", O_RDONLY);
 		ASSERT_NE(scene_fd, -1);
 		init_scene(&scene);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
@@ -55,8 +55,7 @@ TEST(SceneTests, SceneLoaderValid)
 		init_array(orientation, 0, 0, 1.0);
 		check_cylinder(&scene.elements->next->next->object, origin, orientation,\
 			14.2, 21.42, 0x0A00FF);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 }
 
@@ -74,8 +73,7 @@ TEST(SceneTests, LoadSingleElement)
 		EXPECT_NE(scene_fd, -1);
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 		check_ambient_light(scene.a_light, 0.2, 0xFFFFFF);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/camera.rt", O_RDONLY);	
@@ -85,8 +83,7 @@ TEST(SceneTests, LoadSingleElement)
 		init_array(origin, -50.0, 0, 20);
 		init_array(orientation, 0, 0, 1);
 		check_camera(scene.camera, origin, orientation, 70);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/light.rt", O_RDONLY);	
@@ -95,8 +92,7 @@ TEST(SceneTests, LoadSingleElement)
 		EXPECT_EQ(scene_load(scene_fd, &scene), 0);
 		init_array(origin, -40,0,30);
 		check_light(scene.light, origin, 0.7);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 }
 
@@ -140,8 +136,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_NE(scene_load(scene_fd, &scene), 0);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/duplicate_light.rt", O_RDONLY);
@@ -149,8 +144,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_NE(scene_load(scene_fd, &scene), 0);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 	{
 		scene_fd = open("../../../scenes/tests/duplicate_camera.rt", O_RDONLY);
@@ -158,8 +152,7 @@ TEST(SceneTests, DuplicateUniqueObjects)
 		EXPECT_NE(scene_fd, -1);
 
 		EXPECT_NE(scene_load(scene_fd, &scene), 0);
-		close(scene_fd);
-		destroy_scene(&scene);
+		destroy_scene(&scene, scene_fd);
 	}
 }
 
