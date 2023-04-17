@@ -6,7 +6,7 @@
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 20:56:33 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/12 21:03:33 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/17 11:44:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	main(int argc, char **argv)
 		return (2);
 	init_scene(&scene);
 	log_msg("loading the scene elements");
-	if (scene_load(scene_fd, &scene) || scene_check(&scene))
+	if (scene_load(info.scene_fd, &scene) || scene_check(&scene))
 	{
 		destroy_scene(&scene, info.scene_fd);
 		return (3);
