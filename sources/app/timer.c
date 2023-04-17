@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_checker.c                                    :+:      :+:    :+:   */
+/*   timer.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfarias- <lfarias-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/27 18:07:32 by lfarias-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:00:10 by lfarias-         ###   ########.fr       */
+/*   Created: 2023/04/14 17:55:53 by lfarias-          #+#    #+#             */
+/*   Updated: 2023/04/14 18:07:21 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
+#include <sys/time.h>
 
-int	scene_check(t_scene *scene)
+long	get_currtime_ms(void)
 {
-	log_msg("performing sanity checks");
-	if (scene->camera == NULL)
-	{
-		ft_putstr_fd("ERROR: No camera data found\n", STDERR_FILENO);
-		return (1);
-	}
-	if (scene->light == NULL)
-	{
-		ft_putstr_fd("ERROR: No light data found\n", STDERR_FILENO);
-		return (1);
-	}
-	log_scene(scene);
-	return (0);
+	struct timeval	current_time;
+	long			ctime;
+
+	gettimeofday(&current_time, NULL);
+	ctime = (current_time.tv_sec * 1000) + (current_time.tv_usec / 1000);
+	return (ctime);
 }

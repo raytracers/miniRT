@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:38:29 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/10 12:27:58 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/04/12 21:02:08 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	init_image(t_window *win);
 
 void	init_window(t_info *info)
 {
+	log_msg("building the engine");
 	init_vars(info);
 	init_image(info->w);
 }
