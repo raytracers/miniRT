@@ -91,3 +91,26 @@ To generate the camera rays we would:
 
 #### Get closest intersections for each camera ray
 To get the closest intersection for each of the camera rays we check it's collision with every object in the scene and calculate their distance.  Afterwards, if any intersection exists, we pick the one with the lowest positive distance.
+
+#### Intersection coloring
+To color the intersections we first factor in if that intersection exists, if it doesn't exist we color the corresponding pixel black, otherwise we calculate it's color.
+
+To calculate the color of the intersections that exist we cast a ray from the intersection to the light spot origin. If the ray reaches the light spot without intersecting we compute the diffuse and specular light components for that pixel and add them together with the ambient light component. If the ray doesn't reach the light spot, only the ambient light component of the pixel color is taken into account which results in a darker spot.
+
+### Running the ray tracer
+##### Platforms supported: Linux and Macos.
+To try it out follow these simple steps:
+
+1 Clone this repository wherever you like:
+
+```
+git clone https://github.com/raytracers/miniRT
+```
+2 Enter the cloned repository and run make inside it:
+```
+cd miniRT && make
+```
+3 Run the miniRT executable with any of the scenes inside the scenes directory or with your own built scene
+```
+./miniRT scenes/cool_spheres.rt
+```
