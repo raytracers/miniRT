@@ -78,3 +78,16 @@ The attributes in each line can be separeted by an arbitrary number of space cha
 
 To validate the file we read it line by line initializing their respective elements and if an error is encoutered we free all the alocated resources and print an error message detailing the error encoutered.
 
+#### Objects rotation and translation
+In order to simplify the camera ray generation we can position the camera at the origin and align it with the z axis, that way we only need to consider the x and y axis when computing the ray origin. In our program we decided to align the camera along the negative z axis and this was achieved by multiplying every positional vector in the scene by a view transformation matrix that translated and rotated the vector accordingly and multiplying every normal/direction vector by the rotation component of the view transformation matrix.
+
+#### Camera rays generation
+To generate the camera rays we would:
+
+1. Consider the screen as a 1 by 1 square with it's center on the camera origin;
+2. Distort this square accordingly to consider the camera's FOV and the window's aspect ratio;
+3. Generate a rays that have their origins 1 unit behind the camera's origin along the z axis and pass in the center of each pixzel;
+4. Move the origin of these rays to their respective pixel coordinates.
+
+#### Get closest intersections for each camera ray
+To get the closest intersection for each of the camera rays we check it's collision with every object in the scene and calculate their distance.  Afterwards, if any intersection exists, we pick the one with the lowest positive distance.
