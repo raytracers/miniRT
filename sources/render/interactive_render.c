@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/16 11:39:44 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/05/29 23:54:43 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,19 @@ void	interactive_render(t_scene *scene, t_window *win)
 	int		y;
 
 	x = 0;
+	mlx_clear_window(win->vars.mlx, win->vars.win);
 	while (x < win->width)
 	{
 		y = 0;
 		while (y < win->height)
 		{
-			render_px(x, y, scene, win);
-			++y;
+			if (y % 3 != 0)
+				render_px(x, y, scene, win);
+			else
+				pixel_put(&win->image, x, y, 0x000000);
+			y++;
 		}
-		++x;
+		x++;
 	}
 	win->menu_img_path = "images/Interactive_menu.xpm";
 }
