@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:15:36 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/14 18:21:13 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/05/31 22:15:56 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,16 @@ static void	render_px(int x, int y, t_scene *s, t_window *win)
 
 static t_ray	get_px_ray(int x, int y, t_window *win, double fov)
 {
-	double	a_ratio;
-	double	fov_mult;
+	static double	a_ratio;
+	static double	fov_mult;
 	t_point	origin;
 	t_ray	ray;
 
-	a_ratio = (double)win->width / win->height;
-	fov_mult = tan(fov / 2.0);
+	if (a_ratio == 0)
+	{
+		a_ratio = (double)win->width / win->height;
+		fov_mult = tan(fov / 2.0);
+	}
 	origin.x = (2 * ((x + 0.5) / win->width) - 1) * a_ratio * fov_mult;
 	origin.y = (1 - 2 * ((y + 0.5) / win->height)) * fov_mult;
 	origin.z = 0;

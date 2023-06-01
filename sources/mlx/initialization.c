@@ -6,7 +6,7 @@
 /*   By: gcorreia <gcorreia@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 10:38:29 by gcorreia          #+#    #+#             */
-/*   Updated: 2023/04/12 21:02:08 by lfarias-         ###   ########.fr       */
+/*   Updated: 2023/05/31 22:24:18 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	init_window(t_info *info)
 
 static void	init_vars(t_info *info)
 {
-	info->w->width = 1920;
-	info->w->height = 1080;
+	info->w->width = 1600;
+	info->w->height = 900;
 	info->w->vars.mlx = mlx_init();
 	info->w->vars.win = mlx_new_window(info->w->vars.mlx, info->w->width,
 			info->w->height, "MiniRT");
