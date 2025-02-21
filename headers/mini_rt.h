@@ -15,8 +15,6 @@
 
 # include "../libs/libft/libft.h"
 # include "../libs/mlx42/include/MLX42/MLX42.h"
-# include "mlx_functions.h"
-# include "mlx_keys.h"
 # include "types.h"
 # include "input.h"
 # include "error.h"
