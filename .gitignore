@@ -4,7 +4,7 @@
 # Project
 build
 miniRT
-mlx_linux/test/mlx-test
+./libs/mlx42/.git*
 
 ### C ###
 # Prerequisites

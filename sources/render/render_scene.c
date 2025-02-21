@@ -12,57 +12,58 @@
 
 #include "../../headers/mini_rt.h"
 
-static void				render_px(int x, int y, t_scene *s, t_window *win);
-static t_ray			get_px_ray(int x, int y, t_window *win, double fov);
+static void	render_px(int x, int y, t_scene *s, mlx_image_t *image);
+static t_ray	get_px_ray(int x, int y, mlx_image_t *image, double fov);
 
-void	render_scene(t_scene *scene, t_window *win)
+void	render_scene(t_scene *scene, mlx_image_t *image)
 {
-	int		x;
-	int		y;
-	long	render_start;
-	long	render_finish;
+	uint32_t	x;
+	uint32_t	y;
+	long		render_start;
+	long		render_finish;
+	
 
 	x = 0;
 	log_msg("doing expensive and really obscure calculations");
 	render_start = get_currtime_ms();
-	while (x < win->width)
+	while (x < image->width)
 	{
 		y = 0;
-		while (y < win->height)
+		while (y < image->height)
 		{
-			render_px(x, y, scene, win);
+			render_px(x, y, scene, image);
 			++y;
 		}
 		++x;
 	}
 	render_finish = get_currtime_ms();
 	log_render_time(render_finish - render_start);
-	win->menu_img_path = "images/Render_menu.xpm";
+	//win->menu_img_path = "images/Render_menu.xpm";
 }
 
-static void	render_px(int x, int y, t_scene *s, t_window *win)
+static void	render_px(int x, int y, t_scene *s, mlx_image_t *image)
 {
-	t_ray			ray;
+	t_ray		ray;
 	t_intersection	intersec;
-	int				color;
+	int		color;
 
-	ray = get_px_ray(x, y, win, s->camera->r_fov);
+	ray = get_px_ray(x, y, image, s->camera->r_fov);
 	intersec = get_intersection(ray, s->elements);
 	color = get_px_color(intersec, ray, s);
-	pixel_put(&win->image, x, y, color);
+	mlx_put_pixel(image, x, y, color);
 }
 
-static t_ray	get_px_ray(int x, int y, t_window *win, double fov)
+static t_ray	get_px_ray(int x, int y, mlx_image_t *image, double fov)
 {
 	double	a_ratio;
 	double	fov_mult;
 	t_point	origin;
 	t_ray	ray;
 
-	a_ratio = (double)win->width / win->height;
+	a_ratio = (double)image->width / image->height;
 	fov_mult = tan(fov / 2.0);
-	origin.x = (2 * ((x + 0.5) / win->width) - 1) * a_ratio * fov_mult;
-	origin.y = (1 - 2 * ((y + 0.5) / win->height)) * fov_mult;
+	origin.x = (2 * ((x + 0.5) / image->width) - 1) * a_ratio * fov_mult;
+	origin.y = (1 - 2 * ((y + 0.5) / image->height)) * fov_mult;
 	origin.z = 0;
 	ray = get_ray(new_point(0, 0, 1), origin);
 	ray.origin = origin;

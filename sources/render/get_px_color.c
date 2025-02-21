@@ -28,7 +28,7 @@ int	get_px_color(t_intersection i, t_ray view_d, t_scene *s)
 	return (compute_color(i, s, ray, view_d));
 }
 
-static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
+/* static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
 {
 	int				amb;
 	int				dif;
@@ -54,6 +54,29 @@ static int	compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
 		| compute_g(amb, dif, spec)
 		| compute_b(amb, dif, spec)
 	);
+} */
+
+static int compute_color(t_intersection i, t_scene *s, t_ray l, t_ray v)
+{
+    int amb, dif, spec;
+    t_intersection obj;
+
+    obj = get_intersection(l, s->elements);
+    if (obj.exists && obj.distance < get_distance(i.location, s->light->origin))
+    {
+        spec = 0;
+        dif = 0;
+    }
+    else
+    {
+        dif = compute_diffuse(s, l, i);
+        spec = compute_specular(v.orientation, l.orientation, i.normal, s->light);
+    }
+    amb = compute_ambient(i, s->a_light);
+    int r = compute_r(amb, dif, spec);
+    int g = compute_g(amb, dif, spec);
+    int b = compute_b(amb, dif, spec);
+    return (0xFF << 24) | r | g | b;  // Add full alpha
 }
 
 static int	compute_r(int a, int d, int s)

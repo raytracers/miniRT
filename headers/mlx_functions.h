@@ -15,9 +15,9 @@
 
 # include "types.h"
 
-void	init_window(t_info *info);
-void	pixel_put(t_img *img, int x, int y, int color);
-int		handle_keypress(int keycode, t_info *info);
-int		handle_destroy(t_info *info);
+// void	init_window(t_info *info);
+void	pixel_put(mlx_image_t *img, int x, int y, uint32_t color);
+// int		handle_keypress(int keycode, t_info *info);
+// int		handle_destroy(t_info *info);
 
 #endif

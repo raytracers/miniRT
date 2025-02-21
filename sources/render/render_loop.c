@@ -22,9 +22,9 @@ int	render_loop(void *param)
 	info = (t_info *) param;
 	menu = mlx_xpm_file_to_image(info->w->vars.mlx, info->w->menu_img_path,
 			&x, &y);
-	mlx_put_image_to_window(info->w->vars.mlx, info->w->vars.win, \
+	mlx_image_to_window(info->w->vars.mlx, info->w->vars.win, \
 												info->w->image.img, 0, 0);
-	mlx_put_image_to_window(info->w->vars.mlx, info->w->vars.win, menu, 0, 0);
+	mlx_image_to_window(info->w->vars.mlx, info->w->vars.win, menu, 0, 0);
 	mlx_destroy_image(info->w->vars.mlx, menu);
 	return (0);
 }

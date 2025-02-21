@@ -13,6 +13,7 @@
 #ifndef TYPES_H
 # define TYPES_H
 
+#include "../libs/mlx42/include/MLX42/MLX42.h"
 /* *************************** CONSTANTS ************************************ */
 
 # ifndef M_PI
@@ -141,7 +142,7 @@ int		init_light(char **attributes, t_light **light);
 
 /* ************************ MLX RELATED TYPES ******************************* */
 
-typedef struct s_image
+/*typedef struct s_image
 {
 	void	*img;
 	char	*addr;
@@ -163,14 +164,15 @@ typedef struct s_window
 	int		height;
 	int		width;
 	char	*menu_img_path;
-}				t_window;
+}				t_window; */
 
-typedef struct s_info
+typedef struct s_data
 {
-	t_scene		*s;
-	t_window	*w;
-	int			scene_fd;
-}	t_info;
+	mlx_t		*engine;
+	mlx_image_t	*image;
+	t_scene		*scene_info;
+	int		scene_fd;
+}	t_appdata;
 
 /* ************************************************************************** */
 

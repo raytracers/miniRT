@@ -17,9 +17,9 @@
 
 /* **************************** Render Functions **************************** */
 
-void			render_scene(t_scene *scene, t_window *win);
-void			interactive_render(t_scene *scene, t_window *win);
-int				render_loop(void *param);
+void			render_scene(t_scene *scene, mlx_image_t *image);
+//void			interactive_render(t_scene *scene, t_window *win);
+int			render_loop(void *param);
 
 /* ************************************************************************** */
 
