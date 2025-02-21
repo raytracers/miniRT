@@ -126,11 +126,11 @@ typedef struct s_scene
 
 }	t_scene;
 
-void	elist_addback(t_elist **lst, t_elist *n);
-void	free_elist(t_elist **head);
-t_elist	*elist_new(enum e_element type, char **content, int *op_code);
-t_ray	get_ray(t_point origin, t_point destination);
-t_point	new_point(int x, int y, int z);
+void		elist_addback(t_elist **lst, t_elist *n);
+void		free_elist(t_elist **head);
+t_elist		*elist_new(enum e_element type, char **content, int *op_code);
+t_ray		get_ray(t_point origin, t_point destination);
+t_point		new_point(int x, int y, int z);
 int		init_camera(char **attributes, t_camera **camera);
 int		init_ambient_light(char **attributes, t_a_light **amb_light);
 int		init_sphere(char **attributes, union u_object *sphere);
@@ -141,30 +141,6 @@ int		init_light(char **attributes, t_light **light);
 /* ************************************************************************** */
 
 /* ************************ MLX RELATED TYPES ******************************* */
-
-/*typedef struct s_image
-{
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}				t_img;
-
-typedef struct s_vars
-{
-	void	*mlx;
-	void	*win;
-}				t_vars;
-
-typedef struct s_window
-{
-	t_img	image;
-	t_vars	vars;
-	int		height;
-	int		width;
-	char	*menu_img_path;
-}				t_window; */
 
 typedef struct s_data
 {

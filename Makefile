@@ -92,12 +92,6 @@ APP = $(addprefix app/, \
     timer.c \
 )
 
-#MY_MLX = $(addprefix mlx/, \
-#     utils.c \
-#)
-#    events.c \
-# )
-
 MAIN    = main.c
 SRCS    = $(addprefix sources/, $(MAIN) $(APP) $(INPUT) $(TYPES) $(RENDER) $(OPERATIONS) $(MY_MLX))
 OBJS    = $(SRCS:.c=.o)
