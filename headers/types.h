@@ -14,6 +14,8 @@
 # define TYPES_H
 
 #include "../libs/mlx42/include/MLX42/MLX42.h"
+#include <pthread.h>
+
 /* *************************** CONSTANTS ************************************ */
 
 # ifndef M_PI
@@ -142,14 +144,25 @@ int		init_light(char **attributes, t_light **light);
 
 /* ************************ MLX RELATED TYPES ******************************* */
 
+
+typedef struct {
+	int			thread_id;
+	int			start_y;
+	int			end_y;
+	mlx_image_t		*image;
+	t_scene			*scene;
+		
+} t_threaddata;
+
 typedef struct s_data
 {
-	mlx_t		*engine;
-	mlx_image_t	*image;
-	t_scene		*scene_info;
-	int		scene_fd;
+	mlx_t			*engine;
+	mlx_image_t		*image;
+	t_scene			*scene_info;
+	int			scene_fd;
+	t_threaddata		thread_data[4];
+	pthread_barrier_t	frame_barrier;
 }	t_appdata;
-
 /* ************************************************************************** */
 
 #endif

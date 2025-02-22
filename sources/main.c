@@ -12,48 +12,74 @@
 
 #include "../headers/mini_rt.h"
 
-static void	init_scene(t_scene *scene);
-void		init_engine(t_appdata *app_data);
+static int	init_scene(t_appdata *scene, char *filepath);
+static int	init_engine(t_appdata *app_data);
+static int	init_render_loop(t_appdata *app_data);
+
+// TODO find a better way to declare and manage macros
+#define NUM_THREADS 4
+#define SCREEN_HEIGHT 1020;
 
 int	main(int argc, char **argv)
 {
 	t_scene		scene;
 	t_appdata	app_data;
 
-	log_msg("starting application");
-	if (!validate_args(argc, argv))
-		return (1);
 	app_data.scene_info = &scene;
-	app_data.scene_fd = scene_open(argv[1]);
-	if (app_data.scene_fd < 0)
-		return (2);
-	init_scene(app_data.scene_info);
-	log_msg("loading the scene elements");
-	if (scene_load(app_data.scene_fd, app_data.scene_info) || scene_check(app_data.scene_info))
-	{
-		destroy_scene(&scene, app_data.scene_fd);
-		return (3);
+	log_msg("starting application");
+
+	if (!validate_args(argc, argv)) {
+		return (1);
 	}
-	init_engine(&app_data);
-	transform_scene(app_data.scene_info);
-	render_scene(app_data.scene_info, app_data.image);
-	mlx_image_to_window(app_data.engine, app_data.image, 0, 0);
-	mlx_loop(app_data.engine);
-	mlx_terminate(app_data.engine);
+
+	if (init_scene(&app_data, argv[1]) != 0 \
+		|| init_engine(&app_data) != 0 \
+		|| init_render_loop(&app_data) != 0) {
+		
+		return (2);
+	}
+
 	return (0);
 }
 
-static void	init_scene(t_scene *scene)
-{
-	scene->a_light = NULL;
-	scene->light = NULL;
-	scene->camera = NULL;
-	scene->elements = NULL;
+static int	init_render_loop(t_appdata *app_data) {
+	
+	// on change transform the scene
+	mlx_image_to_window(app_data->engine, app_data->image, 0, 0);
+	transform_scene(app_data->scene_info);
+	render_scene(app_data->scene_info, app_data->image);
+	mlx_loop(app_data->engine);
+	mlx_terminate(app_data->engine);
+
+	return (0);
 }
 
-void	init_engine(t_appdata *app_data)
+static int	init_scene(t_appdata *app_data, char* filepath)
 {
-	log_msg("building the engine");
+	app_data->scene_info->a_light = NULL;
+	app_data->scene_info->light = NULL;
+	app_data->scene_info->camera = NULL;
+	app_data->scene_info->elements = NULL;
+	app_data->scene_fd = scene_open(filepath);
+
+	if (app_data->scene_fd < 0) {
+		return (2);
+	}
+
+	log_msg("loading the scene elements");
+
+	if (scene_load(app_data->scene_fd, app_data->scene_info) || scene_check(app_data->scene_info))
+	{
+		destroy_scene(app_data->scene_info, app_data->scene_fd);
+		return (3);
+	}
+
+	return (0);
+}
+
+static int	init_engine(t_appdata *app_data)
+{
+	log_msg("starting the graphics engine");
 	app_data->engine = mlx_init(1920, 1080, "MiniRT", true);
 	if(!app_data->engine) {
 		// error handling logic
@@ -62,6 +88,8 @@ void	init_engine(t_appdata *app_data)
 	if (!app_data->image) {
 		// error handling logic
 	}
+
+	return (0);
 }
 
 /*static void	init_vars(t_info *info)

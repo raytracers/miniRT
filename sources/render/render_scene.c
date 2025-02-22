@@ -11,34 +11,58 @@
 /* ************************************************************************** */
 
 #include "../../headers/mini_rt.h"
+#include <pthread.h>
 
 static void	render_px(int x, int y, t_scene *s, mlx_image_t *image);
 static t_ray	get_px_ray(int x, int y, mlx_image_t *image, double fov);
 
+#define NUM_THREADS 4
+#define SCREEN_WIDTH 1920
+#define SCREEN_HEIGHT 1080
+#define PIXEL_SIZE 4
+
+void *render_area(void *arg) {
+	t_threaddata	*frame_data;
+
+	frame_data = (t_threaddata *)arg;
+
+	for (int y = frame_data->start_y; y < frame_data->end_y; y++) {
+		for (int x = 0; x < SCREEN_WIDTH; x++) {
+			render_px(x, y, frame_data->scene, frame_data->image);
+		}
+	}
+
+	return NULL;
+}
+
 void	render_scene(t_scene *scene, mlx_image_t *image)
 {
-	uint32_t	x;
-	uint32_t	y;
 	long		render_start;
 	long		render_finish;
+	pthread_t	threads[NUM_THREADS];
+	t_threaddata	thread_data[NUM_THREADS];
 	
 
-	x = 0;
 	log_msg("doing expensive and really obscure calculations");
+	//pthread_barrier_init(&app_data->frame_barrier, NULL, NUM_THREADS + 1);
+	int strip_height = SCREEN_HEIGHT / NUM_THREADS;
 	render_start = get_currtime_ms();
-	while (x < image->width)
-	{
-		y = 0;
-		while (y < image->height)
-		{
-			render_px(x, y, scene, image);
-			++y;
-		}
-		++x;
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+		thread_data[i].thread_id = i + 1;
+		thread_data[i].start_y = i * strip_height;
+		thread_data[i].end_y = (i == NUM_THREADS - 1) ? SCREEN_HEIGHT : (i + 1) * strip_height;
+		thread_data[i].scene = scene;
+		thread_data[i].image = image;
+		pthread_create(&threads[i], NULL, render_area, &thread_data[i]);
 	}
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+		pthread_join(threads[i], NULL);
+	}
+
 	render_finish = get_currtime_ms();
 	log_render_time(render_finish - render_start);
-	//win->menu_img_path = "images/Render_menu.xpm";
 }
 
 static void	render_px(int x, int y, t_scene *s, mlx_image_t *image)
