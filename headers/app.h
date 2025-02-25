@@ -25,4 +25,7 @@ void	log_msg(char *msg);
 void	log_render_time(long time);
 void	log_scene(t_scene *scene);
 long	get_currtime_ms(void);
+
+/* ************************ Key ************************************** */
+void key_hook(mlx_key_data_t keydata, void* param);
 #endif

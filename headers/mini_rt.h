@@ -24,4 +24,18 @@
 # include <stdlib.h>
 # include <math.h>
 
+// SCREEN 
+#define RES_720_WIDTH 1280
+#define RES_720_HEIGHT 720
+#define RES_1080_WIDTH 1920
+#define RES_1080_HEIGHT 1080
+
+# ifndef SCREEN_WIDTH
+#  define SCREEN_WIDTH RES_720_WIDTH
+# endif
+
+# ifndef SCREEN_HEIGHT
+#  define SCREEN_HEIGHT RES_720_HEIGHT
+# endif 
+
 #endif

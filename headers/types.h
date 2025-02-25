@@ -15,12 +15,17 @@
 
 #include "../libs/mlx42/include/MLX42/MLX42.h"
 #include <pthread.h>
-
+#include <stdatomic.h>
 /* *************************** CONSTANTS ************************************ */
 
 # ifndef M_PI
 #  define M_PI 3.14159265358979323846
 # endif
+
+# ifndef MLX_KEYSET_SIZE
+#  define MLX_KEYSET_SIZE 350
+# endif
+
 /* ************************************************************************** */
 
 /* *********************** SPACE RELATED TYPES ****************************** */
@@ -149,20 +154,32 @@ typedef struct {
 	int			thread_id;
 	int			start_y;
 	int			end_y;
-	mlx_image_t		*image;
-	t_scene			*scene;
-		
+	struct s_data		*app_data;
 } t_threaddata;
 
 typedef struct s_data
 {
 	mlx_t			*engine;
-	mlx_image_t		*image;
+	mlx_image_t*		render_image;   // Image being rendered to
+	mlx_image_t*		display_image;  // Image being displayed
 	t_scene			*scene_info;
 	int			scene_fd;
+	bool			*keys;
+
+	// multi-thread rendering
 	t_threaddata		thread_data[4];
-	pthread_barrier_t	frame_barrier;
-}	t_appdata;
+	pthread_t		threads[4]; // TODO change to a macro.
+	pthread_mutex_t		render_mutex;
+	pthread_cond_t		start_render_cond;
+	pthread_cond_t		frame_ready_cond;
+	bool			start_rendering;
+	bool			rendering_in_progress;
+	bool			image_displayed;
+	atomic_int		threads_done;
+	double			refresh_interval;
+	float			*accum_buffer;
+	int			sample_count;
+} t_appdata;
 /* ************************************************************************** */
 
 #endif

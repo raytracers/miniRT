@@ -15,10 +15,31 @@
 
 # include "types.h"
 
+
+// SCREEN 
+#define RES_720_WIDTH 1280
+#define RES_720_HEIGHT 720
+#define RES_1080_WIDTH 1920
+#define RES_1080_HEIGHT 1080
+
+# ifndef SCREEN_WIDTH
+#  define SCREEN_WIDTH RES_720_WIDTH
+# endif
+
+# ifndef SCREEN_HEIGHT
+#  define SCREEN_HEIGHT RES_720_HEIGHT
+# endif 
+
+#define NUM_THREADS 4
+
 /* **************************** Render Functions **************************** */
 
-void			render_scene(t_scene *scene, mlx_image_t *image);
-int			render_loop(void *param);
+void			render_scene(void *arg);
+void			render_loop(void *arg);
+void			*render_area(void *arg);
+void			trigger_render(void *arg);
+void			display_loop(void *arg);
+void			display_initial_frame(t_appdata *app_data);
 
 /* ************************************************************************** */
 

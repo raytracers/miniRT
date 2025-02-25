@@ -90,6 +90,7 @@ APP = $(addprefix app/, \
     destroy_scene.c \
     logger.c \
     timer.c \
+    events.c \
 )
 
 MAIN    = main.c
